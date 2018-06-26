@@ -662,9 +662,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 8dd3c5c2-646f-4e79-9cb9-38ab5c5ea5a8
-  projectName: game-cortabundas
-  organizationId: anddersonrs
+  cloudProjectId: 5cc6c2fc-fbb5-403f-a62a-87d10e629d68
+  projectName: game-cortabundas (1)
+  organizationId: tavares-antonio
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
