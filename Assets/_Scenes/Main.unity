@@ -812,9 +812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2226477e18f4ad7428f990665e36c95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
+  sensitivity: 3
   smoothing: 2
-  player: {fileID: 1831872545}
 --- !u!1 &1222013693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d355d9b3a3d05b4188788e2bbf58a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!43 &2114168619
 Mesh:
   m_ObjectHideFlags: 0
