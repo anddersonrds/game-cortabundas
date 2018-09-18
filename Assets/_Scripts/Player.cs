@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
      void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
     }
 }
 
