@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 10.0F;
+    public float speed = 10.0F;  
 
      void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;        
     }
 
     void Update()
     {
-        float translation = Input.GetAxis("Vertical") * speed;
-        float straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
+      
+            float translation = Input.GetAxis("Vertical") * speed;
+            float straffe = Input.GetAxis("Horizontal") * speed;
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
 
-        transform.Translate(straffe, 0, translation);
+            transform.Translate(straffe, 0, translation);
 
-        if (Input.GetKeyDown("escape"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-
+            if (Input.GetKeyDown("escape"))
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
     }
-}
+       
+ }
+
 
