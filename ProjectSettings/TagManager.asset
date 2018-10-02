@@ -7,7 +7,7 @@ TagManager:
   - Grabbable
   - Collectible
   - Climbable
-  - Escada
+  - waypoints
   layers:
   - Default
   - TransparentFX
