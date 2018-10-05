@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : StateMachineBehaviour
-{
-
-    GameObject NPC;
+public class Patrol : NpcBaseFsM
+{ 
     GameObject[] wayPoints;
     int currentWP;
 
@@ -17,16 +15,15 @@ public class Patrol : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        NPC = animator.gameObject;
-        currentWP = 0;
-	
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+        currentWP = 0;	
 	}
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (wayPoints.Length == 0) return;
 
-        if (Vector3.Distance(wayPoints[currentWP].transform.position, NPC.transform.position) < 3.0f)
+        if (Vector3.Distance(wayPoints[currentWP].transform.position, NPC.transform.position) < accuracy)
         {
             currentWP++;
             if (currentWP >= wayPoints.Length)
@@ -35,13 +32,7 @@ public class Patrol : StateMachineBehaviour
             }
         }
 
-        var direction = wayPoints[currentWP].transform.position - NPC.transform.position;
-
-        NPC.transform.rotation = Quaternion.Slerp(NPC.transform.rotation, Quaternion.LookRotation(direction), 1.0f * Time.deltaTime);
-
-        NPC.transform.Translate(0, 0, Time.deltaTime * 1.5f);
-
-	
+        agent.SetDestination(wayPoints[currentWP].transform.position);
 	}
 	
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

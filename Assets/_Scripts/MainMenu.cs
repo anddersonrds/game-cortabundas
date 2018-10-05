@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu,optionsMenu;
+    public Animator anim;
 
 
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
+        anim.SetTrigger("FadeOut");        
     }
 
     public void Exit()
@@ -33,6 +34,11 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
 
         mainMenu.SetActive(true);
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
