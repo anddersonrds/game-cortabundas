@@ -8,6 +8,7 @@ TagManager:
   - Collectible
   - Climbable
   - waypoints
+  - Enemy
   layers:
   - Default
   - TransparentFX

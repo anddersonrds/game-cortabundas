@@ -1,0 +1,2474 @@
+fileFormatVersion: 2
+guid: bb2b0e992842b7a43a4ad17b74674d06
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Alcapao
+    100002: Alisar Porta
+    100004: Alisar Porta001
+    100006: Brise quebrado - 004
+    100008: Brise quebrado - 005
+    100010: Brise quebrado - 006
+    100012: Brise quebrado - 007
+    100014: Brise quebrado - 008
+    100016: Brise quebrado - 009
+    100018: Brise002
+    100020: Brise004
+    100022: Brise005
+    100024: Brise006
+    100026: Brise007
+    100028: Brise008
+    100030: Brise009
+    100032: Brise01
+    100034: Brise010
+    100036: Brise011
+    100038: Brise012
+    100040: Brise03
+    100042: Brisequebrado002
+    100044: Brisequebrado003
+    100046: Brisequebrado01
+    100048: caixa teste 01
+    100050: caixa teste 02
+    100052: caixa teste 03
+    100054: Caminho Puzzle Forro
+    100056: Cena 01 - Laje
+    100058: Cena 01 - Parede 01
+    100060: Cena 01 - Parede 02
+    100062: Cena 01 - Parede 03
+    100064: Cena 01 - Parede 04
+    100066: Cena 01 - Piso
+    100068: Cena 02 - Estrutura Porta Alcapao
+    100070: Cena 02 - Laje 01
+    100072: Cena 02 - Laje 02
+    100074: Cena 02 - Parede 01
+    100076: Cena 02 - Parede 02
+    100078: Cena 02 - Parede 03
+    100080: Cena 02 - Parede 04
+    100082: Cena 02 - Parede Forro 01
+    100084: Cena 02 - Parede Forro 02
+    100086: Cena 02 - Parede forro 03
+    100088: Cena 02 - Parede Forro 04
+    100090: Cena 02 - Parede Forro 05
+    100092: Cena 02 - Piso
+    100094: Cena 02 - Porta alcapao
+    100096: Cena 03 - Parede 01
+    100098: Cena 03 - Parede 02
+    100100: Cena 03 - Parede 03
+    100102: Cena 03 - Parede 04
+    100104: Cena 03 - Piso
+    100106: Cena 04 - Laje
+    100108: Cena 04 - Parede 01
+    100110: Cena 04 - Parede 02
+    100112: Cena 04 - Parede 03
+    100114: Cena 04 - Parede 04
+    100116: Cena 04 - Parede 05
+    100118: Cena 04 - Parede 06
+    100120: Cena 04 - Parede 07
+    100122: Cena 04 - Parede 08
+    100124: Cena 04 - Piso
+    100126: Cena 05 - Laje
+    100128: Cena 05 - Parede 01
+    100130: Cena 05 - Parede 02
+    100132: Cena 05 - Parede 03
+    100134: Cena 05 - Parede 04
+    100136: Cena 05 - Parede 05
+    100138: Cena 05 - Parede 06
+    100140: Cena 05 - Parede 07
+    100142: Cena 05 - Parede 08
+    100144: Cena 05 - Piso
+    100146: Cena 06 - Janela
+    100148: Cena 06 - Parede 01
+    100150: Cena 06 - Parede 02
+    100152: Cena 06 - Parede 03
+    100154: Cena 06 - Parede 04
+    100156: Cena 06 - Parede 04 1
+    100158: Cena 06 - Parede 05
+    100160: Cena 06 - Parede 06
+    100162: Cena 06 - Piso
+    100164: Circle012
+    100166: Circulacao - Laje
+    100168: Circulacao - Parede 01
+    100170: Circulacao - Parede 02
+    100172: Circulacao - Parede 03
+    100174: Circulacao - Parede 04
+    100176: Circulacao - Parede 05
+    100178: Circulacao - Parede 06
+    100180: Circulacao - Parede 07
+    100182: Circulacao - Parede 08
+    100184: Circulacao - Parede 09
+    100186: Circulacao - Parede 10
+    100188: Circulacao - Parede 11
+    100190: Circulacao - Parede 13
+    100192: Circulacao - Parede 14
+    100194: Circulacao - Parede 14 1
+    100196: Circulacao - Parede 15
+    100198: Circulacao - Parede 16
+    100200: Circulacao - Piso
+    100202: Coberta - Tesoura madeira001
+    100204: Coberta - Tesoura madeira002
+    100206: //RootNode
+    100208: Degrau escada
+    100210: Degrau escada001
+    100212: Degrau escada002
+    100214: Degrau escada003
+    100216: Degrau escada004
+    100218: Degrau escada005
+    100220: Degrau escada006
+    100222: Degrau escada007
+    100224: Degrau escada008
+    100226: Degrau escada009
+    100228: Degrau escada010
+    100230: Degrau escada011
+    100232: Degrau escada012
+    100234: Degrau escada013
+    100236: Degrau escada014
+    100238: Degrau escada015
+    100240: Degrau escada016
+    100242: Degrau escada017
+    100244: Degrau escada018
+    100246: Degrau escada019
+    100248: Divisoria Banheiro
+    100250: Divisoria banheiro pia
+    100252: Divisoria Banheiro10
+    100254: Divisoria Banheiro11
+    100256: Divisoria Banheiro12
+    100258: Divisoria Banheiro13
+    100260: Divisoria Banheiro14
+    100262: Divisoria Banheiro15
+    100264: Divisoria Banheiro16
+    100266: Divisoria Banheiro17
+    100268: Divisoria Banheiro18
+    100270: Divisoria Banheiro19
+    100272: Divisoria Banheiro2
+    100274: Divisoria Banheiro20
+    100276: Divisoria Banheiro3
+    100278: Divisoria Banheiro4
+    100280: Divisoria Banheiro5
+    100282: Divisoria Banheiro6
+    100284: Divisoria Banheiro7
+    100286: Divisoria Banheiro8
+    100288: Divisoria Banheiro9
+    100290: Dobradica 005
+    100292: Dobradica 006
+    100294: Dobradica 007
+    100296: Dobradica 008
+    100298: Dobradica 009
+    100300: Dobradica 01
+    100302: Dobradica 010
+    100304: Dobradica 011
+    100306: Dobradica 012
+    100308: Dobradica 013
+    100310: Dobradica 014
+    100312: Dobradica 015
+    100314: Dobradica 016
+    100316: Dobradica 017
+    100318: Dobradica 018
+    100320: Dobradica 019
+    100322: Dobradica 02
+    100324: Dobradica 020
+    100326: Dobradica 021
+    100328: Dobradica 022
+    100330: Dobradica 023
+    100332: Dobradica 024
+    100334: Dobradica 025
+    100336: Dobradica 026
+    100338: Dobradica 027
+    100340: Dobradica 028
+    100342: Dobradica 029
+    100344: Dobradica 03
+    100346: Dobradica 030
+    100348: Dobradica 031
+    100350: Dobradica 032
+    100352: Dobradica 033
+    100354: Dobradica 034
+    100356: Dobradica 035
+    100358: Dobradica 036
+    100360: Dobradica 037
+    100362: Dobradica 038
+    100364: Dobradica 039
+    100366: Dobradica 04
+    100368: Dobradica 040
+    100370: Dobradica 041
+    100372: Dobradica 042
+    100374: Dobradica 043
+    100376: Dobradica 044
+    100378: Dobradica 045
+    100380: Dobradica 046
+    100382: Dobradica 047
+    100384: Dobradica 048
+    100386: Dobradica 049
+    100388: Dobradica 05
+    100390: Dobradica 050
+    100392: Dobradica 051
+    100394: Dobradica 052
+    100396: Dobradica 053
+    100398: Dobradica 054
+    100400: Dobradica 055
+    100402: Dobradica 056
+    100404: Dobradica 057
+    100406: Dobradica 058
+    100408: Dobradica 059
+    100410: Dobradica 06
+    100412: Dobradica 060
+    100414: Dobradica 061
+    100416: Dobradica 062
+    100418: Dobradica 063
+    100420: Dobradica 064
+    100422: Dobradica 065
+    100424: Dobradica 066
+    100426: Dobradica 067
+    100428: Dobradica 068
+    100430: Dobradica 069
+    100432: Dobradica 07
+    100434: Dobradica 070
+    100436: Dobradica 071
+    100438: Dobradica 072
+    100440: Dobradica 08
+    100442: Escada
+    100444: Escada - Laje
+    100446: Escada - Parede 01
+    100448: Escada - Parede 02
+    100450: Escada - Parede 03
+    100452: Escada - Parede 04
+    100454: Escada 003
+    100456: Escada 02
+    100458: Escada 1
+    100460: Escada Madeira
+    100462: Estante 005
+    100464: Estante 006
+    100466: Estante 007
+    100468: Estante 008
+    100470: Estante 009
+    100472: Estante 01
+    100474: Estante 010
+    100476: Estante 015
+    100478: Estante 016
+    100480: Estante 017
+    100482: Estante 018
+    100484: Estrutura telhado 01
+    100486: Estrutura Telhado 02
+    100488: Forro Refeitorio - Peca Fixa075
+    100490: Forro Refeitorio - Peca Fixa076
+    100492: Forro Refeitorio - Peca Fixa079
+    100494: Forro Refeitorio - Peca Fixa080
+    100496: Forro Refeitorio - Peca Fixa081
+    100498: Forro Refeitorio - Peca Quebrada 002
+    100500: Forro Refeitorio - Peca Quebrada 003
+    100502: Forro Refeitorio - Peca quebrada 003
+    100504: Forro Refeitorio - Peca quebrada 004
+    100506: Forro Refeitorio - Peca Quebrada 005
+    100508: Forro Refeitorio - Peca Quebrada 006
+    100510: Forro Refeitorio - Peca Quebrada 007
+    100512: Forro Refeitorio - Peca quebrada 007
+    100514: Forro Refeitorio - Peca quebrada 008
+    100516: Forro Refeitorio - Peca quebrada 009
+    100518: Forro Refeitorio - Peca quebrada 010
+    100520: Janela
+    100522: Janela0
+    100524: Janela10
+    100526: Janela109
+    100528: Janela111
+    100530: Janela112
+    100532: Janela113
+    100534: Janela114
+    100536: Janela115
+    100538: Janela116
+    100540: Janela117
+    100542: Janela118
+    100544: Janela119
+    100546: Janela120
+    100548: Janela121
+    100550: Janela122
+    100552: Janela123
+    100554: Janela124
+    100556: Janela125
+    100558: Janela126
+    100560: Janela128
+    100562: Janela129
+    100564: Janela134
+    100566: Janela135
+    100568: Janela136
+    100570: Janela137
+    100572: Janela138
+    100574: Janela139
+    100576: Janela146
+    100578: Janela147
+    100580: Janela148
+    100582: Janela149
+    100584: Janela150
+    100586: Janela151
+    100588: Janela152
+    100590: Janela27
+    100592: Janela31
+    100594: Janela32
+    100596: Janela33
+    100598: Janela40
+    100600: Janela41
+    100602: Janela47
+    100604: janelas
+    100606: janelas001
+    100608: janelas002
+    100610: Laje Quebrada
+    100612: Laje quebrada 01
+    100614: Laje Quebrada 02
+    100616: Laje quebrada 03
+    100618: Laje Quebrada 04
+    100620: Laje quebrada 05
+    100622: Laje Quebrada 07
+    100624: Laje Quebrada 08
+    100626: Laje Quebrada 09
+    100628: Laje Quebrada 10
+    100630: Laje Quebrada Textura
+    100632: Macaneta
+    100634: Macaneta001
+    100636: Macaneta002
+    100638: 'Parede '
+    100640: Parede  1
+    100642: Parede escada 06
+    100644: Parede Quebrada 01
+    100646: Parede Quebrada 01 1
+    100648: Parede Quebrada 02
+    100650: Parede Quebrada 03
+    100652: Parede Quebrada 04
+    100654: Parque Quebrada 004
+    100656: Parque Quebrada 005
+    100658: Parque Quebrada 006
+    100660: Parque Quebrada 007
+    100662: Parque Quebrada 008
+    100664: Parque Quebrada 009
+    100666: Parque Quebrada 010
+    100668: Parque Quebrada 011
+    100670: Parque Quebrada 012
+    100672: Parque Quebrada 013
+    100674: Parque Quebrada 014
+    100676: Parque Quebrada 015
+    100678: Parque Quebrada 016
+    100680: Parque Quebrada 017
+    100682: Parque Quebrada 018
+    100684: Parque Quebrada 019
+    100686: Parque Quebrada 020
+    100688: Parque Quebrada 021
+    100690: Parque Quebrada 022
+    100692: Parque Quebrada 023
+    100694: Parque Quebrada 03
+    100696: Parte fixa forro
+    100698: Parte Quebrada 003
+    100700: Parte Quebrada 004
+    100702: Parte Quebrada 005
+    100704: Parte Quebrada 006
+    100706: Parte Quebrada 007
+    100708: Parte Quebrada 008
+    100710: Parte Quebrada 009
+    100712: Parte Quebrada 01
+    100714: Parte Quebrada 010
+    100716: Parte Quebrada 011
+    100718: Parte Quebrada 012
+    100720: Parte Quebrada 013
+    100722: Parte Quebrada 014
+    100724: Parte Quebrada 016
+    100726: Parte Quebrada 017
+    100728: Parte Quebrada 018
+    100730: Parte Quebrada 019
+    100732: Parte Quebrada 02
+    100734: Parte Quebrada 020
+    100736: Parte Quebrada 021
+    100738: Parte Quebrada 022
+    100740: Parte Quebrada 023
+    100742: Parte Quebrada 024
+    100744: Parte Quebrada 026
+    100746: Parte Quebrada 027
+    100748: Parte Quebrada 028
+    100750: Parte Quebrada 029
+    100752: Parte Quebrada 030
+    100754: Parte Quebrada 031
+    100756: Parte Quebrada 032
+    100758: Parte Quebrada 033
+    100760: Parte Quebrada 034
+    100762: Parte Quebrada 035
+    100764: Parte Quebrada 036
+    100766: Parte Quebrada 037
+    100768: Parte Quebrada 038
+    100770: Parte Quebrada 039
+    100772: Parte Quebrada 040
+    100774: Parte Quebrada 041
+    100776: Parte Quebrada 042
+    100778: Parte Quebrada 043
+    100780: Parte Quebrada 044
+    100782: Parte Quebrada 045
+    100784: Parte Quebrada 046
+    100786: Parte Quebrada 047
+    100788: Parte Quebrada 048
+    100790: Parte quebrada Forro
+    100792: Particle View 001
+    100794: Peca forro
+    100796: Peca Forro 003
+    100798: Peca Forro 004
+    100800: Peca Forro 005
+    100802: Peca Forro 006
+    100804: Peca Forro 007
+    100806: Peca Forro 008
+    100808: Peca Forro 009
+    100810: Peca Forro 010
+    100812: Peca Forro 02
+    100814: Peca quebrada Forro
+    100816: Peca quebrada Forro 1
+    100818: Peca quebrada Forro001
+    100820: Peca quebrada Forro002
+    100822: Peca quebrada Forro003
+    100824: Peca quebrada Forro004
+    100826: Peca quebrada Forro005
+    100828: Peca quebrada Forro006
+    100830: Peca quebrada Forro009
+    100832: Peca quebrada Forro010
+    100834: Peca quebrada Forro011
+    100836: Peca quebrada Forro012
+    100838: Peca quebrada Forro013
+    100840: Peca quebrada Forro014
+    100842: Peca quebrada Forro015
+    100844: Peca quebrada Forro016
+    100846: Peca quebrada Forro017
+    100848: Peca quebrada Forro018
+    100850: Peca quebrada Forro019
+    100852: pia
+    100854: pia 2
+    100856: pia 3
+    100858: pia 4
+    100860: Porta Banheiro
+    100862: Porta Banheiro 1
+    100864: Porta Banheiro001
+    100866: Porta Banheiro002
+    100868: Porta Banheiro003
+    100870: Porta Banheiro004
+    100872: Porta Banheiro005
+    100874: Porta Banheiro006
+    100876: Porta Banheiro007
+    100878: Porta Banheiro008
+    100880: Porta Banheiro009
+    100882: Porta Banheiro010
+    100884: Porta Banheiro011
+    100886: Porta Banheiro012
+    100888: Porta Banheiro013
+    100890: Porta Banheiro014
+    100892: Porta Banheiro015
+    100894: Porta Banheiro016
+    100896: Porta Banheiro017
+    100898: Porta Banheiro018
+    100900: Porta Banheiro019
+    100902: Porta Banheiro020
+    100904: Porta Banheiro021
+    100906: Porta Banheiro022
+    100908: Porta Banheiro023
+    100910: Porta Banheiro024
+    100912: Porta Banheiro025
+    100914: Porta Banheiro026
+    100916: Porta Banheiro027
+    100918: Porta Banheiro028
+    100920: Porta Banheiro029
+    100922: Porta Banheiro030
+    100924: Porta de Madeira Grande 01
+    100926: Porta de Madeira Grande Folha 02
+    100928: 'Porta Madeira '
+    100930: Porta Madeira 002
+    100932: Porta Madeira 003
+    100934: PortaMadeira
+    100936: PortaMadeiraGrande
+    100938: Puzzle Forro
+    100940: RCena 06 - Laje
+    100942: RCena 06 - Parede 07
+    100944: Rectangle105
+    100946: Rectangle157
+    100948: Rectangle170
+    100950: Rectangle171
+    100952: Rectangle172
+    100954: Rectangle173
+    100956: Rectangle174
+    100958: Rectangle175
+    100960: Rectangle176
+    100962: Rectangle177
+    100964: Rectangle178
+    100966: Rectangle179
+    100968: Rectangle180
+    100970: Rectangle181
+    100972: Rectangle182
+    100974: Rectangle183
+    100976: Rectangle184
+    100978: Rectangle185
+    100980: Rectangle186
+    100982: Rectangle187
+    100984: Rectangle188
+    100986: Rectangle189
+    100988: Rectangle190
+    100990: Rectangle191
+    100992: Rectangle192
+    100994: Rectangle194
+    100996: Rectangle195
+    100998: Rectangle196
+    101000: Rectangle197
+    101002: Rectangle198
+    101004: Rectangle201
+    101006: Rectangle202
+    101008: Rectangle203
+    101010: Telhado
+    101012: Telhado 01
+    101014: Telhado 02
+    400000: Alcapao
+    400002: Alisar Porta
+    400004: Alisar Porta001
+    400006: Brise quebrado - 004
+    400008: Brise quebrado - 005
+    400010: Brise quebrado - 006
+    400012: Brise quebrado - 007
+    400014: Brise quebrado - 008
+    400016: Brise quebrado - 009
+    400018: Brise002
+    400020: Brise004
+    400022: Brise005
+    400024: Brise006
+    400026: Brise007
+    400028: Brise008
+    400030: Brise009
+    400032: Brise01
+    400034: Brise010
+    400036: Brise011
+    400038: Brise012
+    400040: Brise03
+    400042: Brisequebrado002
+    400044: Brisequebrado003
+    400046: Brisequebrado01
+    400048: caixa teste 01
+    400050: caixa teste 02
+    400052: caixa teste 03
+    400054: Caminho Puzzle Forro
+    400056: Cena 01 - Laje
+    400058: Cena 01 - Parede 01
+    400060: Cena 01 - Parede 02
+    400062: Cena 01 - Parede 03
+    400064: Cena 01 - Parede 04
+    400066: Cena 01 - Piso
+    400068: Cena 02 - Estrutura Porta Alcapao
+    400070: Cena 02 - Laje 01
+    400072: Cena 02 - Laje 02
+    400074: Cena 02 - Parede 01
+    400076: Cena 02 - Parede 02
+    400078: Cena 02 - Parede 03
+    400080: Cena 02 - Parede 04
+    400082: Cena 02 - Parede Forro 01
+    400084: Cena 02 - Parede Forro 02
+    400086: Cena 02 - Parede forro 03
+    400088: Cena 02 - Parede Forro 04
+    400090: Cena 02 - Parede Forro 05
+    400092: Cena 02 - Piso
+    400094: Cena 02 - Porta alcapao
+    400096: Cena 03 - Parede 01
+    400098: Cena 03 - Parede 02
+    400100: Cena 03 - Parede 03
+    400102: Cena 03 - Parede 04
+    400104: Cena 03 - Piso
+    400106: Cena 04 - Laje
+    400108: Cena 04 - Parede 01
+    400110: Cena 04 - Parede 02
+    400112: Cena 04 - Parede 03
+    400114: Cena 04 - Parede 04
+    400116: Cena 04 - Parede 05
+    400118: Cena 04 - Parede 06
+    400120: Cena 04 - Parede 07
+    400122: Cena 04 - Parede 08
+    400124: Cena 04 - Piso
+    400126: Cena 05 - Laje
+    400128: Cena 05 - Parede 01
+    400130: Cena 05 - Parede 02
+    400132: Cena 05 - Parede 03
+    400134: Cena 05 - Parede 04
+    400136: Cena 05 - Parede 05
+    400138: Cena 05 - Parede 06
+    400140: Cena 05 - Parede 07
+    400142: Cena 05 - Parede 08
+    400144: Cena 05 - Piso
+    400146: Cena 06 - Janela
+    400148: Cena 06 - Parede 01
+    400150: Cena 06 - Parede 02
+    400152: Cena 06 - Parede 03
+    400154: Cena 06 - Parede 04
+    400156: Cena 06 - Parede 04 1
+    400158: Cena 06 - Parede 05
+    400160: Cena 06 - Parede 06
+    400162: Cena 06 - Piso
+    400164: Circle012
+    400166: Circulacao - Laje
+    400168: Circulacao - Parede 01
+    400170: Circulacao - Parede 02
+    400172: Circulacao - Parede 03
+    400174: Circulacao - Parede 04
+    400176: Circulacao - Parede 05
+    400178: Circulacao - Parede 06
+    400180: Circulacao - Parede 07
+    400182: Circulacao - Parede 08
+    400184: Circulacao - Parede 09
+    400186: Circulacao - Parede 10
+    400188: Circulacao - Parede 11
+    400190: Circulacao - Parede 13
+    400192: Circulacao - Parede 14
+    400194: Circulacao - Parede 14 1
+    400196: Circulacao - Parede 15
+    400198: Circulacao - Parede 16
+    400200: Circulacao - Piso
+    400202: Coberta - Tesoura madeira001
+    400204: Coberta - Tesoura madeira002
+    400206: //RootNode
+    400208: Degrau escada
+    400210: Degrau escada001
+    400212: Degrau escada002
+    400214: Degrau escada003
+    400216: Degrau escada004
+    400218: Degrau escada005
+    400220: Degrau escada006
+    400222: Degrau escada007
+    400224: Degrau escada008
+    400226: Degrau escada009
+    400228: Degrau escada010
+    400230: Degrau escada011
+    400232: Degrau escada012
+    400234: Degrau escada013
+    400236: Degrau escada014
+    400238: Degrau escada015
+    400240: Degrau escada016
+    400242: Degrau escada017
+    400244: Degrau escada018
+    400246: Degrau escada019
+    400248: Divisoria Banheiro
+    400250: Divisoria banheiro pia
+    400252: Divisoria Banheiro10
+    400254: Divisoria Banheiro11
+    400256: Divisoria Banheiro12
+    400258: Divisoria Banheiro13
+    400260: Divisoria Banheiro14
+    400262: Divisoria Banheiro15
+    400264: Divisoria Banheiro16
+    400266: Divisoria Banheiro17
+    400268: Divisoria Banheiro18
+    400270: Divisoria Banheiro19
+    400272: Divisoria Banheiro2
+    400274: Divisoria Banheiro20
+    400276: Divisoria Banheiro3
+    400278: Divisoria Banheiro4
+    400280: Divisoria Banheiro5
+    400282: Divisoria Banheiro6
+    400284: Divisoria Banheiro7
+    400286: Divisoria Banheiro8
+    400288: Divisoria Banheiro9
+    400290: Dobradica 005
+    400292: Dobradica 006
+    400294: Dobradica 007
+    400296: Dobradica 008
+    400298: Dobradica 009
+    400300: Dobradica 01
+    400302: Dobradica 010
+    400304: Dobradica 011
+    400306: Dobradica 012
+    400308: Dobradica 013
+    400310: Dobradica 014
+    400312: Dobradica 015
+    400314: Dobradica 016
+    400316: Dobradica 017
+    400318: Dobradica 018
+    400320: Dobradica 019
+    400322: Dobradica 02
+    400324: Dobradica 020
+    400326: Dobradica 021
+    400328: Dobradica 022
+    400330: Dobradica 023
+    400332: Dobradica 024
+    400334: Dobradica 025
+    400336: Dobradica 026
+    400338: Dobradica 027
+    400340: Dobradica 028
+    400342: Dobradica 029
+    400344: Dobradica 03
+    400346: Dobradica 030
+    400348: Dobradica 031
+    400350: Dobradica 032
+    400352: Dobradica 033
+    400354: Dobradica 034
+    400356: Dobradica 035
+    400358: Dobradica 036
+    400360: Dobradica 037
+    400362: Dobradica 038
+    400364: Dobradica 039
+    400366: Dobradica 04
+    400368: Dobradica 040
+    400370: Dobradica 041
+    400372: Dobradica 042
+    400374: Dobradica 043
+    400376: Dobradica 044
+    400378: Dobradica 045
+    400380: Dobradica 046
+    400382: Dobradica 047
+    400384: Dobradica 048
+    400386: Dobradica 049
+    400388: Dobradica 05
+    400390: Dobradica 050
+    400392: Dobradica 051
+    400394: Dobradica 052
+    400396: Dobradica 053
+    400398: Dobradica 054
+    400400: Dobradica 055
+    400402: Dobradica 056
+    400404: Dobradica 057
+    400406: Dobradica 058
+    400408: Dobradica 059
+    400410: Dobradica 06
+    400412: Dobradica 060
+    400414: Dobradica 061
+    400416: Dobradica 062
+    400418: Dobradica 063
+    400420: Dobradica 064
+    400422: Dobradica 065
+    400424: Dobradica 066
+    400426: Dobradica 067
+    400428: Dobradica 068
+    400430: Dobradica 069
+    400432: Dobradica 07
+    400434: Dobradica 070
+    400436: Dobradica 071
+    400438: Dobradica 072
+    400440: Dobradica 08
+    400442: Escada
+    400444: Escada - Laje
+    400446: Escada - Parede 01
+    400448: Escada - Parede 02
+    400450: Escada - Parede 03
+    400452: Escada - Parede 04
+    400454: Escada 003
+    400456: Escada 02
+    400458: Escada 1
+    400460: Escada Madeira
+    400462: Estante 005
+    400464: Estante 006
+    400466: Estante 007
+    400468: Estante 008
+    400470: Estante 009
+    400472: Estante 01
+    400474: Estante 010
+    400476: Estante 015
+    400478: Estante 016
+    400480: Estante 017
+    400482: Estante 018
+    400484: Estrutura telhado 01
+    400486: Estrutura Telhado 02
+    400488: Forro Refeitorio - Peca Fixa075
+    400490: Forro Refeitorio - Peca Fixa076
+    400492: Forro Refeitorio - Peca Fixa079
+    400494: Forro Refeitorio - Peca Fixa080
+    400496: Forro Refeitorio - Peca Fixa081
+    400498: Forro Refeitorio - Peca Quebrada 002
+    400500: Forro Refeitorio - Peca Quebrada 003
+    400502: Forro Refeitorio - Peca quebrada 003
+    400504: Forro Refeitorio - Peca quebrada 004
+    400506: Forro Refeitorio - Peca Quebrada 005
+    400508: Forro Refeitorio - Peca Quebrada 006
+    400510: Forro Refeitorio - Peca Quebrada 007
+    400512: Forro Refeitorio - Peca quebrada 007
+    400514: Forro Refeitorio - Peca quebrada 008
+    400516: Forro Refeitorio - Peca quebrada 009
+    400518: Forro Refeitorio - Peca quebrada 010
+    400520: Janela
+    400522: Janela0
+    400524: Janela10
+    400526: Janela109
+    400528: Janela111
+    400530: Janela112
+    400532: Janela113
+    400534: Janela114
+    400536: Janela115
+    400538: Janela116
+    400540: Janela117
+    400542: Janela118
+    400544: Janela119
+    400546: Janela120
+    400548: Janela121
+    400550: Janela122
+    400552: Janela123
+    400554: Janela124
+    400556: Janela125
+    400558: Janela126
+    400560: Janela128
+    400562: Janela129
+    400564: Janela134
+    400566: Janela135
+    400568: Janela136
+    400570: Janela137
+    400572: Janela138
+    400574: Janela139
+    400576: Janela146
+    400578: Janela147
+    400580: Janela148
+    400582: Janela149
+    400584: Janela150
+    400586: Janela151
+    400588: Janela152
+    400590: Janela27
+    400592: Janela31
+    400594: Janela32
+    400596: Janela33
+    400598: Janela40
+    400600: Janela41
+    400602: Janela47
+    400604: janelas
+    400606: janelas001
+    400608: janelas002
+    400610: Laje Quebrada
+    400612: Laje quebrada 01
+    400614: Laje Quebrada 02
+    400616: Laje quebrada 03
+    400618: Laje Quebrada 04
+    400620: Laje quebrada 05
+    400622: Laje Quebrada 07
+    400624: Laje Quebrada 08
+    400626: Laje Quebrada 09
+    400628: Laje Quebrada 10
+    400630: Laje Quebrada Textura
+    400632: Macaneta
+    400634: Macaneta001
+    400636: Macaneta002
+    400638: 'Parede '
+    400640: Parede  1
+    400642: Parede escada 06
+    400644: Parede Quebrada 01
+    400646: Parede Quebrada 01 1
+    400648: Parede Quebrada 02
+    400650: Parede Quebrada 03
+    400652: Parede Quebrada 04
+    400654: Parque Quebrada 004
+    400656: Parque Quebrada 005
+    400658: Parque Quebrada 006
+    400660: Parque Quebrada 007
+    400662: Parque Quebrada 008
+    400664: Parque Quebrada 009
+    400666: Parque Quebrada 010
+    400668: Parque Quebrada 011
+    400670: Parque Quebrada 012
+    400672: Parque Quebrada 013
+    400674: Parque Quebrada 014
+    400676: Parque Quebrada 015
+    400678: Parque Quebrada 016
+    400680: Parque Quebrada 017
+    400682: Parque Quebrada 018
+    400684: Parque Quebrada 019
+    400686: Parque Quebrada 020
+    400688: Parque Quebrada 021
+    400690: Parque Quebrada 022
+    400692: Parque Quebrada 023
+    400694: Parque Quebrada 03
+    400696: Parte fixa forro
+    400698: Parte Quebrada 003
+    400700: Parte Quebrada 004
+    400702: Parte Quebrada 005
+    400704: Parte Quebrada 006
+    400706: Parte Quebrada 007
+    400708: Parte Quebrada 008
+    400710: Parte Quebrada 009
+    400712: Parte Quebrada 01
+    400714: Parte Quebrada 010
+    400716: Parte Quebrada 011
+    400718: Parte Quebrada 012
+    400720: Parte Quebrada 013
+    400722: Parte Quebrada 014
+    400724: Parte Quebrada 016
+    400726: Parte Quebrada 017
+    400728: Parte Quebrada 018
+    400730: Parte Quebrada 019
+    400732: Parte Quebrada 02
+    400734: Parte Quebrada 020
+    400736: Parte Quebrada 021
+    400738: Parte Quebrada 022
+    400740: Parte Quebrada 023
+    400742: Parte Quebrada 024
+    400744: Parte Quebrada 026
+    400746: Parte Quebrada 027
+    400748: Parte Quebrada 028
+    400750: Parte Quebrada 029
+    400752: Parte Quebrada 030
+    400754: Parte Quebrada 031
+    400756: Parte Quebrada 032
+    400758: Parte Quebrada 033
+    400760: Parte Quebrada 034
+    400762: Parte Quebrada 035
+    400764: Parte Quebrada 036
+    400766: Parte Quebrada 037
+    400768: Parte Quebrada 038
+    400770: Parte Quebrada 039
+    400772: Parte Quebrada 040
+    400774: Parte Quebrada 041
+    400776: Parte Quebrada 042
+    400778: Parte Quebrada 043
+    400780: Parte Quebrada 044
+    400782: Parte Quebrada 045
+    400784: Parte Quebrada 046
+    400786: Parte Quebrada 047
+    400788: Parte Quebrada 048
+    400790: Parte quebrada Forro
+    400792: Particle View 001
+    400794: Peca forro
+    400796: Peca Forro 003
+    400798: Peca Forro 004
+    400800: Peca Forro 005
+    400802: Peca Forro 006
+    400804: Peca Forro 007
+    400806: Peca Forro 008
+    400808: Peca Forro 009
+    400810: Peca Forro 010
+    400812: Peca Forro 02
+    400814: Peca quebrada Forro
+    400816: Peca quebrada Forro 1
+    400818: Peca quebrada Forro001
+    400820: Peca quebrada Forro002
+    400822: Peca quebrada Forro003
+    400824: Peca quebrada Forro004
+    400826: Peca quebrada Forro005
+    400828: Peca quebrada Forro006
+    400830: Peca quebrada Forro009
+    400832: Peca quebrada Forro010
+    400834: Peca quebrada Forro011
+    400836: Peca quebrada Forro012
+    400838: Peca quebrada Forro013
+    400840: Peca quebrada Forro014
+    400842: Peca quebrada Forro015
+    400844: Peca quebrada Forro016
+    400846: Peca quebrada Forro017
+    400848: Peca quebrada Forro018
+    400850: Peca quebrada Forro019
+    400852: pia
+    400854: pia 2
+    400856: pia 3
+    400858: pia 4
+    400860: Porta Banheiro
+    400862: Porta Banheiro 1
+    400864: Porta Banheiro001
+    400866: Porta Banheiro002
+    400868: Porta Banheiro003
+    400870: Porta Banheiro004
+    400872: Porta Banheiro005
+    400874: Porta Banheiro006
+    400876: Porta Banheiro007
+    400878: Porta Banheiro008
+    400880: Porta Banheiro009
+    400882: Porta Banheiro010
+    400884: Porta Banheiro011
+    400886: Porta Banheiro012
+    400888: Porta Banheiro013
+    400890: Porta Banheiro014
+    400892: Porta Banheiro015
+    400894: Porta Banheiro016
+    400896: Porta Banheiro017
+    400898: Porta Banheiro018
+    400900: Porta Banheiro019
+    400902: Porta Banheiro020
+    400904: Porta Banheiro021
+    400906: Porta Banheiro022
+    400908: Porta Banheiro023
+    400910: Porta Banheiro024
+    400912: Porta Banheiro025
+    400914: Porta Banheiro026
+    400916: Porta Banheiro027
+    400918: Porta Banheiro028
+    400920: Porta Banheiro029
+    400922: Porta Banheiro030
+    400924: Porta de Madeira Grande 01
+    400926: Porta de Madeira Grande Folha 02
+    400928: 'Porta Madeira '
+    400930: Porta Madeira 002
+    400932: Porta Madeira 003
+    400934: PortaMadeira
+    400936: PortaMadeiraGrande
+    400938: Puzzle Forro
+    400940: RCena 06 - Laje
+    400942: RCena 06 - Parede 07
+    400944: Rectangle105
+    400946: Rectangle157
+    400948: Rectangle170
+    400950: Rectangle171
+    400952: Rectangle172
+    400954: Rectangle173
+    400956: Rectangle174
+    400958: Rectangle175
+    400960: Rectangle176
+    400962: Rectangle177
+    400964: Rectangle178
+    400966: Rectangle179
+    400968: Rectangle180
+    400970: Rectangle181
+    400972: Rectangle182
+    400974: Rectangle183
+    400976: Rectangle184
+    400978: Rectangle185
+    400980: Rectangle186
+    400982: Rectangle187
+    400984: Rectangle188
+    400986: Rectangle189
+    400988: Rectangle190
+    400990: Rectangle191
+    400992: Rectangle192
+    400994: Rectangle194
+    400996: Rectangle195
+    400998: Rectangle196
+    401000: Rectangle197
+    401002: Rectangle198
+    401004: Rectangle201
+    401006: Rectangle202
+    401008: Rectangle203
+    401010: Telhado
+    401012: Telhado 01
+    401014: Telhado 02
+    2100000: No Name
+    2100002: 01 - Default
+    2300000: Alisar Porta
+    2300002: Alisar Porta001
+    2300004: Brise quebrado - 004
+    2300006: Brise quebrado - 005
+    2300008: Brise quebrado - 006
+    2300010: Brise quebrado - 007
+    2300012: Brise quebrado - 008
+    2300014: Brise quebrado - 009
+    2300016: Brise002
+    2300018: Brise004
+    2300020: Brise005
+    2300022: Brise006
+    2300024: Brise007
+    2300026: Brise008
+    2300028: Brise009
+    2300030: Brise01
+    2300032: Brise010
+    2300034: Brise011
+    2300036: Brise012
+    2300038: Brise03
+    2300040: Brisequebrado002
+    2300042: Brisequebrado003
+    2300044: Brisequebrado01
+    2300046: caixa teste 01
+    2300048: caixa teste 02
+    2300050: caixa teste 03
+    2300052: Cena 01 - Laje
+    2300054: Cena 01 - Parede 01
+    2300056: Cena 01 - Parede 02
+    2300058: Cena 01 - Parede 03
+    2300060: Cena 01 - Parede 04
+    2300062: Cena 01 - Piso
+    2300064: Cena 02 - Estrutura Porta Alcapao
+    2300066: Cena 02 - Laje 01
+    2300068: Cena 02 - Laje 02
+    2300070: Cena 02 - Parede 01
+    2300072: Cena 02 - Parede 02
+    2300074: Cena 02 - Parede 03
+    2300076: Cena 02 - Parede 04
+    2300078: Cena 02 - Parede Forro 01
+    2300080: Cena 02 - Parede Forro 02
+    2300082: Cena 02 - Parede forro 03
+    2300084: Cena 02 - Parede Forro 04
+    2300086: Cena 02 - Parede Forro 05
+    2300088: Cena 02 - Piso
+    2300090: Cena 02 - Porta alcapao
+    2300092: Cena 03 - Parede 01
+    2300094: Cena 03 - Parede 02
+    2300096: Cena 03 - Parede 03
+    2300098: Cena 03 - Parede 04
+    2300100: Cena 03 - Piso
+    2300102: Cena 04 - Laje
+    2300104: Cena 04 - Parede 01
+    2300106: Cena 04 - Parede 02
+    2300108: Cena 04 - Parede 03
+    2300110: Cena 04 - Parede 04
+    2300112: Cena 04 - Parede 05
+    2300114: Cena 04 - Parede 06
+    2300116: Cena 04 - Parede 07
+    2300118: Cena 04 - Parede 08
+    2300120: Cena 04 - Piso
+    2300122: Cena 05 - Laje
+    2300124: Cena 05 - Parede 01
+    2300126: Cena 05 - Parede 02
+    2300128: Cena 05 - Parede 03
+    2300130: Cena 05 - Parede 04
+    2300132: Cena 05 - Parede 05
+    2300134: Cena 05 - Parede 06
+    2300136: Cena 05 - Parede 07
+    2300138: Cena 05 - Parede 08
+    2300140: Cena 05 - Piso
+    2300142: Cena 06 - Janela
+    2300144: Cena 06 - Parede 01
+    2300146: Cena 06 - Parede 02
+    2300148: Cena 06 - Parede 03
+    2300150: Cena 06 - Parede 04
+    2300152: Cena 06 - Parede 04 1
+    2300154: Cena 06 - Parede 05
+    2300156: Cena 06 - Parede 06
+    2300158: Cena 06 - Piso
+    2300160: Circle012
+    2300162: Circulacao - Laje
+    2300164: Circulacao - Parede 01
+    2300166: Circulacao - Parede 02
+    2300168: Circulacao - Parede 03
+    2300170: Circulacao - Parede 04
+    2300172: Circulacao - Parede 05
+    2300174: Circulacao - Parede 06
+    2300176: Circulacao - Parede 07
+    2300178: Circulacao - Parede 08
+    2300180: Circulacao - Parede 09
+    2300182: Circulacao - Parede 10
+    2300184: Circulacao - Parede 11
+    2300186: Circulacao - Parede 13
+    2300188: Circulacao - Parede 14
+    2300190: Circulacao - Parede 14 1
+    2300192: Circulacao - Parede 15
+    2300194: Circulacao - Parede 16
+    2300196: Circulacao - Piso
+    2300198: Coberta - Tesoura madeira001
+    2300200: Coberta - Tesoura madeira002
+    2300202: Degrau escada
+    2300204: Degrau escada001
+    2300206: Degrau escada002
+    2300208: Degrau escada003
+    2300210: Degrau escada004
+    2300212: Degrau escada005
+    2300214: Degrau escada006
+    2300216: Degrau escada007
+    2300218: Degrau escada008
+    2300220: Degrau escada009
+    2300222: Degrau escada010
+    2300224: Degrau escada011
+    2300226: Degrau escada012
+    2300228: Degrau escada013
+    2300230: Degrau escada014
+    2300232: Degrau escada015
+    2300234: Degrau escada016
+    2300236: Degrau escada017
+    2300238: Degrau escada018
+    2300240: Degrau escada019
+    2300242: Divisoria Banheiro
+    2300244: Divisoria banheiro pia
+    2300246: Divisoria Banheiro10
+    2300248: Divisoria Banheiro11
+    2300250: Divisoria Banheiro12
+    2300252: Divisoria Banheiro13
+    2300254: Divisoria Banheiro14
+    2300256: Divisoria Banheiro15
+    2300258: Divisoria Banheiro16
+    2300260: Divisoria Banheiro17
+    2300262: Divisoria Banheiro18
+    2300264: Divisoria Banheiro19
+    2300266: Divisoria Banheiro2
+    2300268: Divisoria Banheiro20
+    2300270: Divisoria Banheiro3
+    2300272: Divisoria Banheiro4
+    2300274: Divisoria Banheiro5
+    2300276: Divisoria Banheiro6
+    2300278: Divisoria Banheiro7
+    2300280: Divisoria Banheiro8
+    2300282: Divisoria Banheiro9
+    2300284: Dobradica 005
+    2300286: Dobradica 006
+    2300288: Dobradica 007
+    2300290: Dobradica 008
+    2300292: Dobradica 009
+    2300294: Dobradica 01
+    2300296: Dobradica 010
+    2300298: Dobradica 011
+    2300300: Dobradica 012
+    2300302: Dobradica 013
+    2300304: Dobradica 014
+    2300306: Dobradica 015
+    2300308: Dobradica 016
+    2300310: Dobradica 017
+    2300312: Dobradica 018
+    2300314: Dobradica 019
+    2300316: Dobradica 02
+    2300318: Dobradica 020
+    2300320: Dobradica 021
+    2300322: Dobradica 022
+    2300324: Dobradica 023
+    2300326: Dobradica 024
+    2300328: Dobradica 025
+    2300330: Dobradica 026
+    2300332: Dobradica 027
+    2300334: Dobradica 028
+    2300336: Dobradica 029
+    2300338: Dobradica 03
+    2300340: Dobradica 030
+    2300342: Dobradica 031
+    2300344: Dobradica 032
+    2300346: Dobradica 033
+    2300348: Dobradica 034
+    2300350: Dobradica 035
+    2300352: Dobradica 036
+    2300354: Dobradica 037
+    2300356: Dobradica 038
+    2300358: Dobradica 039
+    2300360: Dobradica 04
+    2300362: Dobradica 040
+    2300364: Dobradica 041
+    2300366: Dobradica 042
+    2300368: Dobradica 043
+    2300370: Dobradica 044
+    2300372: Dobradica 045
+    2300374: Dobradica 046
+    2300376: Dobradica 047
+    2300378: Dobradica 048
+    2300380: Dobradica 049
+    2300382: Dobradica 05
+    2300384: Dobradica 050
+    2300386: Dobradica 051
+    2300388: Dobradica 052
+    2300390: Dobradica 053
+    2300392: Dobradica 054
+    2300394: Dobradica 055
+    2300396: Dobradica 056
+    2300398: Dobradica 057
+    2300400: Dobradica 058
+    2300402: Dobradica 059
+    2300404: Dobradica 06
+    2300406: Dobradica 060
+    2300408: Dobradica 061
+    2300410: Dobradica 062
+    2300412: Dobradica 063
+    2300414: Dobradica 064
+    2300416: Dobradica 065
+    2300418: Dobradica 066
+    2300420: Dobradica 067
+    2300422: Dobradica 068
+    2300424: Dobradica 069
+    2300426: Dobradica 07
+    2300428: Dobradica 070
+    2300430: Dobradica 071
+    2300432: Dobradica 072
+    2300434: Dobradica 08
+    2300436: Escada - Laje
+    2300438: Escada - Parede 01
+    2300440: Escada - Parede 02
+    2300442: Escada - Parede 03
+    2300444: Escada - Parede 04
+    2300446: Escada 003
+    2300448: Escada 02
+    2300450: Escada 1
+    2300452: Escada Madeira
+    2300454: Estante 005
+    2300456: Estante 006
+    2300458: Estante 007
+    2300460: Estante 008
+    2300462: Estante 009
+    2300464: Estante 01
+    2300466: Estante 010
+    2300468: Estante 015
+    2300470: Estante 016
+    2300472: Estante 017
+    2300474: Estante 018
+    2300476: Estrutura telhado 01
+    2300478: Estrutura Telhado 02
+    2300480: Forro Refeitorio - Peca Fixa075
+    2300482: Forro Refeitorio - Peca Fixa076
+    2300484: Forro Refeitorio - Peca Fixa079
+    2300486: Forro Refeitorio - Peca Fixa080
+    2300488: Forro Refeitorio - Peca Fixa081
+    2300490: Forro Refeitorio - Peca Quebrada 002
+    2300492: Forro Refeitorio - Peca Quebrada 003
+    2300494: Forro Refeitorio - Peca quebrada 003
+    2300496: Forro Refeitorio - Peca quebrada 004
+    2300498: Forro Refeitorio - Peca Quebrada 005
+    2300500: Forro Refeitorio - Peca Quebrada 006
+    2300502: Forro Refeitorio - Peca Quebrada 007
+    2300504: Forro Refeitorio - Peca quebrada 007
+    2300506: Forro Refeitorio - Peca quebrada 008
+    2300508: Forro Refeitorio - Peca quebrada 009
+    2300510: Forro Refeitorio - Peca quebrada 010
+    2300512: Janela
+    2300514: Janela0
+    2300516: Janela10
+    2300518: Janela109
+    2300520: Janela111
+    2300522: Janela112
+    2300524: Janela113
+    2300526: Janela114
+    2300528: Janela115
+    2300530: Janela116
+    2300532: Janela117
+    2300534: Janela118
+    2300536: Janela119
+    2300538: Janela120
+    2300540: Janela121
+    2300542: Janela122
+    2300544: Janela123
+    2300546: Janela124
+    2300548: Janela125
+    2300550: Janela126
+    2300552: Janela128
+    2300554: Janela129
+    2300556: Janela134
+    2300558: Janela135
+    2300560: Janela136
+    2300562: Janela137
+    2300564: Janela138
+    2300566: Janela139
+    2300568: Janela146
+    2300570: Janela147
+    2300572: Janela148
+    2300574: Janela149
+    2300576: Janela150
+    2300578: Janela151
+    2300580: Janela152
+    2300582: Janela27
+    2300584: Janela31
+    2300586: Janela32
+    2300588: Janela33
+    2300590: Janela40
+    2300592: Janela41
+    2300594: Janela47
+    2300596: Laje quebrada 01
+    2300598: Laje Quebrada 02
+    2300600: Laje quebrada 03
+    2300602: Laje Quebrada 04
+    2300604: Laje quebrada 05
+    2300606: Laje Quebrada 07
+    2300608: Laje Quebrada 08
+    2300610: Laje Quebrada 09
+    2300612: Laje Quebrada 10
+    2300614: Laje Quebrada Textura
+    2300616: Macaneta
+    2300618: Macaneta001
+    2300620: Macaneta002
+    2300622: 'Parede '
+    2300624: Parede  1
+    2300626: Parede escada 06
+    2300628: Parede Quebrada 01
+    2300630: Parede Quebrada 01 1
+    2300632: Parede Quebrada 02
+    2300634: Parede Quebrada 03
+    2300636: Parede Quebrada 04
+    2300638: Parque Quebrada 004
+    2300640: Parque Quebrada 005
+    2300642: Parque Quebrada 006
+    2300644: Parque Quebrada 007
+    2300646: Parque Quebrada 008
+    2300648: Parque Quebrada 009
+    2300650: Parque Quebrada 010
+    2300652: Parque Quebrada 011
+    2300654: Parque Quebrada 012
+    2300656: Parque Quebrada 013
+    2300658: Parque Quebrada 014
+    2300660: Parque Quebrada 015
+    2300662: Parque Quebrada 016
+    2300664: Parque Quebrada 017
+    2300666: Parque Quebrada 018
+    2300668: Parque Quebrada 019
+    2300670: Parque Quebrada 020
+    2300672: Parque Quebrada 021
+    2300674: Parque Quebrada 022
+    2300676: Parque Quebrada 023
+    2300678: Parque Quebrada 03
+    2300680: Parte Quebrada 003
+    2300682: Parte Quebrada 004
+    2300684: Parte Quebrada 005
+    2300686: Parte Quebrada 006
+    2300688: Parte Quebrada 007
+    2300690: Parte Quebrada 008
+    2300692: Parte Quebrada 009
+    2300694: Parte Quebrada 01
+    2300696: Parte Quebrada 010
+    2300698: Parte Quebrada 011
+    2300700: Parte Quebrada 012
+    2300702: Parte Quebrada 013
+    2300704: Parte Quebrada 014
+    2300706: Parte Quebrada 016
+    2300708: Parte Quebrada 017
+    2300710: Parte Quebrada 018
+    2300712: Parte Quebrada 019
+    2300714: Parte Quebrada 02
+    2300716: Parte Quebrada 020
+    2300718: Parte Quebrada 021
+    2300720: Parte Quebrada 022
+    2300722: Parte Quebrada 023
+    2300724: Parte Quebrada 024
+    2300726: Parte Quebrada 026
+    2300728: Parte Quebrada 027
+    2300730: Parte Quebrada 028
+    2300732: Parte Quebrada 029
+    2300734: Parte Quebrada 030
+    2300736: Parte Quebrada 031
+    2300738: Parte Quebrada 032
+    2300740: Parte Quebrada 033
+    2300742: Parte Quebrada 034
+    2300744: Parte Quebrada 035
+    2300746: Parte Quebrada 036
+    2300748: Parte Quebrada 037
+    2300750: Parte Quebrada 038
+    2300752: Parte Quebrada 039
+    2300754: Parte Quebrada 040
+    2300756: Parte Quebrada 041
+    2300758: Parte Quebrada 042
+    2300760: Parte Quebrada 043
+    2300762: Parte Quebrada 044
+    2300764: Parte Quebrada 045
+    2300766: Parte Quebrada 046
+    2300768: Parte Quebrada 047
+    2300770: Parte Quebrada 048
+    2300772: Peca forro
+    2300774: Peca Forro 003
+    2300776: Peca Forro 004
+    2300778: Peca Forro 005
+    2300780: Peca Forro 006
+    2300782: Peca Forro 007
+    2300784: Peca Forro 008
+    2300786: Peca Forro 009
+    2300788: Peca Forro 010
+    2300790: Peca Forro 02
+    2300792: pia
+    2300794: pia 2
+    2300796: pia 3
+    2300798: pia 4
+    2300800: Porta Banheiro 1
+    2300802: Porta Banheiro002
+    2300804: Porta Banheiro003
+    2300806: Porta Banheiro006
+    2300808: Porta Banheiro008
+    2300810: Porta Banheiro010
+    2300812: Porta Banheiro011
+    2300814: Porta Banheiro014
+    2300816: Porta Banheiro016
+    2300818: Porta Banheiro018
+    2300820: Porta Banheiro019
+    2300822: Porta Banheiro022
+    2300824: Porta Banheiro024
+    2300826: Porta Banheiro026
+    2300828: Porta Banheiro027
+    2300830: Porta Banheiro030
+    2300832: 'Porta Madeira '
+    2300834: Porta Madeira 002
+    2300836: Porta Madeira 003
+    2300838: RCena 06 - Laje
+    2300840: RCena 06 - Parede 07
+    2300842: Rectangle105
+    2300844: Rectangle157
+    2300846: Rectangle170
+    2300848: Rectangle171
+    2300850: Rectangle172
+    2300852: Rectangle173
+    2300854: Rectangle174
+    2300856: Rectangle175
+    2300858: Rectangle176
+    2300860: Rectangle177
+    2300862: Rectangle178
+    2300864: Rectangle179
+    2300866: Rectangle180
+    2300868: Rectangle181
+    2300870: Rectangle182
+    2300872: Rectangle183
+    2300874: Rectangle184
+    2300876: Rectangle185
+    2300878: Rectangle186
+    2300880: Rectangle187
+    2300882: Rectangle188
+    2300884: Rectangle189
+    2300886: Rectangle190
+    2300888: Rectangle191
+    2300890: Rectangle192
+    2300892: Rectangle194
+    2300894: Rectangle195
+    2300896: Rectangle196
+    2300898: Rectangle197
+    2300900: Rectangle198
+    2300902: Rectangle201
+    2300904: Rectangle202
+    2300906: Rectangle203
+    2300908: Telhado 01
+    2300910: Telhado 02
+    3300000: Alisar Porta
+    3300002: Alisar Porta001
+    3300004: Brise quebrado - 004
+    3300006: Brise quebrado - 005
+    3300008: Brise quebrado - 006
+    3300010: Brise quebrado - 007
+    3300012: Brise quebrado - 008
+    3300014: Brise quebrado - 009
+    3300016: Brise002
+    3300018: Brise004
+    3300020: Brise005
+    3300022: Brise006
+    3300024: Brise007
+    3300026: Brise008
+    3300028: Brise009
+    3300030: Brise01
+    3300032: Brise010
+    3300034: Brise011
+    3300036: Brise012
+    3300038: Brise03
+    3300040: Brisequebrado002
+    3300042: Brisequebrado003
+    3300044: Brisequebrado01
+    3300046: caixa teste 01
+    3300048: caixa teste 02
+    3300050: caixa teste 03
+    3300052: Cena 01 - Laje
+    3300054: Cena 01 - Parede 01
+    3300056: Cena 01 - Parede 02
+    3300058: Cena 01 - Parede 03
+    3300060: Cena 01 - Parede 04
+    3300062: Cena 01 - Piso
+    3300064: Cena 02 - Estrutura Porta Alcapao
+    3300066: Cena 02 - Laje 01
+    3300068: Cena 02 - Laje 02
+    3300070: Cena 02 - Parede 01
+    3300072: Cena 02 - Parede 02
+    3300074: Cena 02 - Parede 03
+    3300076: Cena 02 - Parede 04
+    3300078: Cena 02 - Parede Forro 01
+    3300080: Cena 02 - Parede Forro 02
+    3300082: Cena 02 - Parede forro 03
+    3300084: Cena 02 - Parede Forro 04
+    3300086: Cena 02 - Parede Forro 05
+    3300088: Cena 02 - Piso
+    3300090: Cena 02 - Porta alcapao
+    3300092: Cena 03 - Parede 01
+    3300094: Cena 03 - Parede 02
+    3300096: Cena 03 - Parede 03
+    3300098: Cena 03 - Parede 04
+    3300100: Cena 03 - Piso
+    3300102: Cena 04 - Laje
+    3300104: Cena 04 - Parede 01
+    3300106: Cena 04 - Parede 02
+    3300108: Cena 04 - Parede 03
+    3300110: Cena 04 - Parede 04
+    3300112: Cena 04 - Parede 05
+    3300114: Cena 04 - Parede 06
+    3300116: Cena 04 - Parede 07
+    3300118: Cena 04 - Parede 08
+    3300120: Cena 04 - Piso
+    3300122: Cena 05 - Laje
+    3300124: Cena 05 - Parede 01
+    3300126: Cena 05 - Parede 02
+    3300128: Cena 05 - Parede 03
+    3300130: Cena 05 - Parede 04
+    3300132: Cena 05 - Parede 05
+    3300134: Cena 05 - Parede 06
+    3300136: Cena 05 - Parede 07
+    3300138: Cena 05 - Parede 08
+    3300140: Cena 05 - Piso
+    3300142: Cena 06 - Janela
+    3300144: Cena 06 - Parede 01
+    3300146: Cena 06 - Parede 02
+    3300148: Cena 06 - Parede 03
+    3300150: Cena 06 - Parede 04
+    3300152: Cena 06 - Parede 04 1
+    3300154: Cena 06 - Parede 05
+    3300156: Cena 06 - Parede 06
+    3300158: Cena 06 - Piso
+    3300160: Circle012
+    3300162: Circulacao - Laje
+    3300164: Circulacao - Parede 01
+    3300166: Circulacao - Parede 02
+    3300168: Circulacao - Parede 03
+    3300170: Circulacao - Parede 04
+    3300172: Circulacao - Parede 05
+    3300174: Circulacao - Parede 06
+    3300176: Circulacao - Parede 07
+    3300178: Circulacao - Parede 08
+    3300180: Circulacao - Parede 09
+    3300182: Circulacao - Parede 10
+    3300184: Circulacao - Parede 11
+    3300186: Circulacao - Parede 13
+    3300188: Circulacao - Parede 14
+    3300190: Circulacao - Parede 14 1
+    3300192: Circulacao - Parede 15
+    3300194: Circulacao - Parede 16
+    3300196: Circulacao - Piso
+    3300198: Coberta - Tesoura madeira001
+    3300200: Coberta - Tesoura madeira002
+    3300202: Degrau escada
+    3300204: Degrau escada001
+    3300206: Degrau escada002
+    3300208: Degrau escada003
+    3300210: Degrau escada004
+    3300212: Degrau escada005
+    3300214: Degrau escada006
+    3300216: Degrau escada007
+    3300218: Degrau escada008
+    3300220: Degrau escada009
+    3300222: Degrau escada010
+    3300224: Degrau escada011
+    3300226: Degrau escada012
+    3300228: Degrau escada013
+    3300230: Degrau escada014
+    3300232: Degrau escada015
+    3300234: Degrau escada016
+    3300236: Degrau escada017
+    3300238: Degrau escada018
+    3300240: Degrau escada019
+    3300242: Divisoria Banheiro
+    3300244: Divisoria banheiro pia
+    3300246: Divisoria Banheiro10
+    3300248: Divisoria Banheiro11
+    3300250: Divisoria Banheiro12
+    3300252: Divisoria Banheiro13
+    3300254: Divisoria Banheiro14
+    3300256: Divisoria Banheiro15
+    3300258: Divisoria Banheiro16
+    3300260: Divisoria Banheiro17
+    3300262: Divisoria Banheiro18
+    3300264: Divisoria Banheiro19
+    3300266: Divisoria Banheiro2
+    3300268: Divisoria Banheiro20
+    3300270: Divisoria Banheiro3
+    3300272: Divisoria Banheiro4
+    3300274: Divisoria Banheiro5
+    3300276: Divisoria Banheiro6
+    3300278: Divisoria Banheiro7
+    3300280: Divisoria Banheiro8
+    3300282: Divisoria Banheiro9
+    3300284: Dobradica 005
+    3300286: Dobradica 006
+    3300288: Dobradica 007
+    3300290: Dobradica 008
+    3300292: Dobradica 009
+    3300294: Dobradica 01
+    3300296: Dobradica 010
+    3300298: Dobradica 011
+    3300300: Dobradica 012
+    3300302: Dobradica 013
+    3300304: Dobradica 014
+    3300306: Dobradica 015
+    3300308: Dobradica 016
+    3300310: Dobradica 017
+    3300312: Dobradica 018
+    3300314: Dobradica 019
+    3300316: Dobradica 02
+    3300318: Dobradica 020
+    3300320: Dobradica 021
+    3300322: Dobradica 022
+    3300324: Dobradica 023
+    3300326: Dobradica 024
+    3300328: Dobradica 025
+    3300330: Dobradica 026
+    3300332: Dobradica 027
+    3300334: Dobradica 028
+    3300336: Dobradica 029
+    3300338: Dobradica 03
+    3300340: Dobradica 030
+    3300342: Dobradica 031
+    3300344: Dobradica 032
+    3300346: Dobradica 033
+    3300348: Dobradica 034
+    3300350: Dobradica 035
+    3300352: Dobradica 036
+    3300354: Dobradica 037
+    3300356: Dobradica 038
+    3300358: Dobradica 039
+    3300360: Dobradica 04
+    3300362: Dobradica 040
+    3300364: Dobradica 041
+    3300366: Dobradica 042
+    3300368: Dobradica 043
+    3300370: Dobradica 044
+    3300372: Dobradica 045
+    3300374: Dobradica 046
+    3300376: Dobradica 047
+    3300378: Dobradica 048
+    3300380: Dobradica 049
+    3300382: Dobradica 05
+    3300384: Dobradica 050
+    3300386: Dobradica 051
+    3300388: Dobradica 052
+    3300390: Dobradica 053
+    3300392: Dobradica 054
+    3300394: Dobradica 055
+    3300396: Dobradica 056
+    3300398: Dobradica 057
+    3300400: Dobradica 058
+    3300402: Dobradica 059
+    3300404: Dobradica 06
+    3300406: Dobradica 060
+    3300408: Dobradica 061
+    3300410: Dobradica 062
+    3300412: Dobradica 063
+    3300414: Dobradica 064
+    3300416: Dobradica 065
+    3300418: Dobradica 066
+    3300420: Dobradica 067
+    3300422: Dobradica 068
+    3300424: Dobradica 069
+    3300426: Dobradica 07
+    3300428: Dobradica 070
+    3300430: Dobradica 071
+    3300432: Dobradica 072
+    3300434: Dobradica 08
+    3300436: Escada - Laje
+    3300438: Escada - Parede 01
+    3300440: Escada - Parede 02
+    3300442: Escada - Parede 03
+    3300444: Escada - Parede 04
+    3300446: Escada 003
+    3300448: Escada 02
+    3300450: Escada 1
+    3300452: Escada Madeira
+    3300454: Estante 005
+    3300456: Estante 006
+    3300458: Estante 007
+    3300460: Estante 008
+    3300462: Estante 009
+    3300464: Estante 01
+    3300466: Estante 010
+    3300468: Estante 015
+    3300470: Estante 016
+    3300472: Estante 017
+    3300474: Estante 018
+    3300476: Estrutura telhado 01
+    3300478: Estrutura Telhado 02
+    3300480: Forro Refeitorio - Peca Fixa075
+    3300482: Forro Refeitorio - Peca Fixa076
+    3300484: Forro Refeitorio - Peca Fixa079
+    3300486: Forro Refeitorio - Peca Fixa080
+    3300488: Forro Refeitorio - Peca Fixa081
+    3300490: Forro Refeitorio - Peca Quebrada 002
+    3300492: Forro Refeitorio - Peca Quebrada 003
+    3300494: Forro Refeitorio - Peca quebrada 003
+    3300496: Forro Refeitorio - Peca quebrada 004
+    3300498: Forro Refeitorio - Peca Quebrada 005
+    3300500: Forro Refeitorio - Peca Quebrada 006
+    3300502: Forro Refeitorio - Peca Quebrada 007
+    3300504: Forro Refeitorio - Peca quebrada 007
+    3300506: Forro Refeitorio - Peca quebrada 008
+    3300508: Forro Refeitorio - Peca quebrada 009
+    3300510: Forro Refeitorio - Peca quebrada 010
+    3300512: Janela
+    3300514: Janela0
+    3300516: Janela10
+    3300518: Janela109
+    3300520: Janela111
+    3300522: Janela112
+    3300524: Janela113
+    3300526: Janela114
+    3300528: Janela115
+    3300530: Janela116
+    3300532: Janela117
+    3300534: Janela118
+    3300536: Janela119
+    3300538: Janela120
+    3300540: Janela121
+    3300542: Janela122
+    3300544: Janela123
+    3300546: Janela124
+    3300548: Janela125
+    3300550: Janela126
+    3300552: Janela128
+    3300554: Janela129
+    3300556: Janela134
+    3300558: Janela135
+    3300560: Janela136
+    3300562: Janela137
+    3300564: Janela138
+    3300566: Janela139
+    3300568: Janela146
+    3300570: Janela147
+    3300572: Janela148
+    3300574: Janela149
+    3300576: Janela150
+    3300578: Janela151
+    3300580: Janela152
+    3300582: Janela27
+    3300584: Janela31
+    3300586: Janela32
+    3300588: Janela33
+    3300590: Janela40
+    3300592: Janela41
+    3300594: Janela47
+    3300596: Laje quebrada 01
+    3300598: Laje Quebrada 02
+    3300600: Laje quebrada 03
+    3300602: Laje Quebrada 04
+    3300604: Laje quebrada 05
+    3300606: Laje Quebrada 07
+    3300608: Laje Quebrada 08
+    3300610: Laje Quebrada 09
+    3300612: Laje Quebrada 10
+    3300614: Laje Quebrada Textura
+    3300616: Macaneta
+    3300618: Macaneta001
+    3300620: Macaneta002
+    3300622: 'Parede '
+    3300624: Parede  1
+    3300626: Parede escada 06
+    3300628: Parede Quebrada 01
+    3300630: Parede Quebrada 01 1
+    3300632: Parede Quebrada 02
+    3300634: Parede Quebrada 03
+    3300636: Parede Quebrada 04
+    3300638: Parque Quebrada 004
+    3300640: Parque Quebrada 005
+    3300642: Parque Quebrada 006
+    3300644: Parque Quebrada 007
+    3300646: Parque Quebrada 008
+    3300648: Parque Quebrada 009
+    3300650: Parque Quebrada 010
+    3300652: Parque Quebrada 011
+    3300654: Parque Quebrada 012
+    3300656: Parque Quebrada 013
+    3300658: Parque Quebrada 014
+    3300660: Parque Quebrada 015
+    3300662: Parque Quebrada 016
+    3300664: Parque Quebrada 017
+    3300666: Parque Quebrada 018
+    3300668: Parque Quebrada 019
+    3300670: Parque Quebrada 020
+    3300672: Parque Quebrada 021
+    3300674: Parque Quebrada 022
+    3300676: Parque Quebrada 023
+    3300678: Parque Quebrada 03
+    3300680: Parte Quebrada 003
+    3300682: Parte Quebrada 004
+    3300684: Parte Quebrada 005
+    3300686: Parte Quebrada 006
+    3300688: Parte Quebrada 007
+    3300690: Parte Quebrada 008
+    3300692: Parte Quebrada 009
+    3300694: Parte Quebrada 01
+    3300696: Parte Quebrada 010
+    3300698: Parte Quebrada 011
+    3300700: Parte Quebrada 012
+    3300702: Parte Quebrada 013
+    3300704: Parte Quebrada 014
+    3300706: Parte Quebrada 016
+    3300708: Parte Quebrada 017
+    3300710: Parte Quebrada 018
+    3300712: Parte Quebrada 019
+    3300714: Parte Quebrada 02
+    3300716: Parte Quebrada 020
+    3300718: Parte Quebrada 021
+    3300720: Parte Quebrada 022
+    3300722: Parte Quebrada 023
+    3300724: Parte Quebrada 024
+    3300726: Parte Quebrada 026
+    3300728: Parte Quebrada 027
+    3300730: Parte Quebrada 028
+    3300732: Parte Quebrada 029
+    3300734: Parte Quebrada 030
+    3300736: Parte Quebrada 031
+    3300738: Parte Quebrada 032
+    3300740: Parte Quebrada 033
+    3300742: Parte Quebrada 034
+    3300744: Parte Quebrada 035
+    3300746: Parte Quebrada 036
+    3300748: Parte Quebrada 037
+    3300750: Parte Quebrada 038
+    3300752: Parte Quebrada 039
+    3300754: Parte Quebrada 040
+    3300756: Parte Quebrada 041
+    3300758: Parte Quebrada 042
+    3300760: Parte Quebrada 043
+    3300762: Parte Quebrada 044
+    3300764: Parte Quebrada 045
+    3300766: Parte Quebrada 046
+    3300768: Parte Quebrada 047
+    3300770: Parte Quebrada 048
+    3300772: Peca forro
+    3300774: Peca Forro 003
+    3300776: Peca Forro 004
+    3300778: Peca Forro 005
+    3300780: Peca Forro 006
+    3300782: Peca Forro 007
+    3300784: Peca Forro 008
+    3300786: Peca Forro 009
+    3300788: Peca Forro 010
+    3300790: Peca Forro 02
+    3300792: pia
+    3300794: pia 2
+    3300796: pia 3
+    3300798: pia 4
+    3300800: Porta Banheiro 1
+    3300802: Porta Banheiro002
+    3300804: Porta Banheiro003
+    3300806: Porta Banheiro006
+    3300808: Porta Banheiro008
+    3300810: Porta Banheiro010
+    3300812: Porta Banheiro011
+    3300814: Porta Banheiro014
+    3300816: Porta Banheiro016
+    3300818: Porta Banheiro018
+    3300820: Porta Banheiro019
+    3300822: Porta Banheiro022
+    3300824: Porta Banheiro024
+    3300826: Porta Banheiro026
+    3300828: Porta Banheiro027
+    3300830: Porta Banheiro030
+    3300832: 'Porta Madeira '
+    3300834: Porta Madeira 002
+    3300836: Porta Madeira 003
+    3300838: RCena 06 - Laje
+    3300840: RCena 06 - Parede 07
+    3300842: Rectangle105
+    3300844: Rectangle157
+    3300846: Rectangle170
+    3300848: Rectangle171
+    3300850: Rectangle172
+    3300852: Rectangle173
+    3300854: Rectangle174
+    3300856: Rectangle175
+    3300858: Rectangle176
+    3300860: Rectangle177
+    3300862: Rectangle178
+    3300864: Rectangle179
+    3300866: Rectangle180
+    3300868: Rectangle181
+    3300870: Rectangle182
+    3300872: Rectangle183
+    3300874: Rectangle184
+    3300876: Rectangle185
+    3300878: Rectangle186
+    3300880: Rectangle187
+    3300882: Rectangle188
+    3300884: Rectangle189
+    3300886: Rectangle190
+    3300888: Rectangle191
+    3300890: Rectangle192
+    3300892: Rectangle194
+    3300894: Rectangle195
+    3300896: Rectangle196
+    3300898: Rectangle197
+    3300900: Rectangle198
+    3300902: Rectangle201
+    3300904: Rectangle202
+    3300906: Rectangle203
+    3300908: Telhado 01
+    3300910: Telhado 02
+    4300000: Cena 01 - Parede 01
+    4300002: Cena 01 - Parede 02
+    4300004: Cena 01 - Parede 03
+    4300006: Cena 01 - Parede 04
+    4300008: Cena 01 - Laje
+    4300010: Brise01
+    4300012: Brisequebrado01
+    4300014: Brise002
+    4300016: Cena 02 - Parede 01
+    4300018: Cena 02 - Parede 02
+    4300020: Cena 02 - Parede 03
+    4300022: Cena 02 - Parede 04
+    4300024: Brise03
+    4300026: Brise004
+    4300028: Cena 02 - Laje 01
+    4300030: Estante 01
+    4300032: Estante 005
+    4300034: Estante 006
+    4300036: Estante 007
+    4300038: Estante 008
+    4300040: Estante 009
+    4300042: Estante 010
+    4300044: caixa teste 01
+    4300046: caixa teste 03
+    4300048: caixa teste 02
+    4300050: Cena 02 - Parede Forro 01
+    4300052: Cena 02 - Parede forro 03
+    4300054: Cena 02 - Parede Forro 02
+    4300056: Cena 02 - Parede Forro 04
+    4300058: Coberta - Tesoura madeira001
+    4300060: Coberta - Tesoura madeira002
+    4300062: Cena 02 - Parede Forro 05
+    4300064: Cena 02 - Laje 02
+    4300066: Circle012
+    4300068: Cena 03 - Parede 04
+    4300070: Cena 03 - Parede 01
+    4300072: Circulacao - Parede 02
+    4300074: Circulacao - Parede 01
+    4300076: Circulacao - Parede 03
+    4300078: Circulacao - Parede 04
+    4300080: Circulacao - Parede 05
+    4300082: Circulacao - Parede 06
+    4300084: Circulacao - Parede 07
+    4300086: Cena 02 - Porta alcapao
+    4300088: Cena 02 - Estrutura Porta Alcapao
+    4300090: Brisequebrado002
+    4300092: Cena 03 - Parede 02
+    4300094: Cena 03 - Parede 03
+    4300096: Cena 04 - Parede 01
+    4300098: Cena 04 - Parede 02
+    4300100: Cena 04 - Parede 03
+    4300102: Cena 04 - Parede 04
+    4300104: Circulacao - Parede 08
+    4300106: Circulacao - Parede 09
+    4300108: Circulacao - Parede 10
+    4300110: Circulacao - Parede 11
+    4300112: Circulacao - Parede 13
+    4300114: Circulacao - Parede 14
+    4300116: Circulacao - Parede 15
+    4300118: Circulacao - Parede 16
+    4300120: Cena 04 - Parede 06
+    4300122: Cena 04 - Parede 05
+    4300124: Cena 04 - Parede 08
+    4300126: Cena 04 - Parede 07
+    4300128: Cena 05 - Parede 01
+    4300130: Cena 05 - Parede 04
+    4300132: Cena 05 - Parede 03
+    4300134: Cena 05 - Parede 02
+    4300136: Cena 05 - Parede 05
+    4300138: Cena 05 - Parede 08
+    4300140: Escada - Parede 01
+    4300142: Escada - Parede 02
+    4300144: Escada - Parede 03
+    4300146: Escada - Parede 04
+    4300148: Cena 06 - Parede 01
+    4300150: Cena 06 - Parede 05
+    4300152: Cena 06 - Parede 02
+    4300154: Cena 06 - Parede 04
+    4300156: Cena 06 - Parede 03
+    4300158: RCena 06 - Parede 07
+    4300160: Cena 06 - Parede 06
+    4300162: Cena 05 - Parede 06
+    4300164: Cena 05 - Parede 07
+    4300166: Cena 06 - Piso
+    4300168: Circulacao - Piso
+    4300170: Cena 02 - Piso
+    4300172: Cena 01 - Piso
+    4300174: Cena 05 - Piso
+    4300176: Cena 04 - Piso
+    4300178: Rectangle105
+    4300180: Cena 03 - Piso
+    4300182: Brise005
+    4300184: Brise006
+    4300186: Brisequebrado003
+    4300188: Brise007
+    4300190: Brise quebrado - 004
+    4300192: Estante 015
+    4300194: Estante 016
+    4300196: Estante 017
+    4300198: Estante 018
+    4300200: Janela
+    4300202: Janela109
+    4300204: Janela10
+    4300206: Janela111
+    4300208: Janela112
+    4300210: Janela113
+    4300212: Janela114
+    4300214: Janela115
+    4300216: Janela116
+    4300218: Janela117
+    4300220: Janela118
+    4300222: Janela119
+    4300224: Janela120
+    4300226: Janela121
+    4300228: Janela122
+    4300230: Janela123
+    4300232: Janela124
+    4300234: Janela125
+    4300236: Janela126
+    4300238: Janela27
+    4300240: Janela128
+    4300242: Janela129
+    4300244: Brise quebrado - 005
+    4300246: Janela0
+    4300248: Janela31
+    4300250: Brise008
+    4300252: Janela32
+    4300254: Janela33
+    4300256: Brise009
+    4300258: Janela134
+    4300260: Janela135
+    4300262: Janela136
+    4300264: Janela137
+    4300266: Brise010
+    4300268: Brise quebrado - 006
+    4300270: Janela138
+    4300272: Janela139
+    4300274: Brise011
+    4300276: Janela40
+    4300278: Janela41
+    4300280: Brise012
+    4300282: Janela146
+    4300284: Janela47
+    4300286: Circulacao - Laje
+    4300288: Parede Quebrada 01
+    4300290: Cena 04 - Laje
+    4300292: Laje quebrada 01
+    4300294: Laje Quebrada 02
+    4300296: Laje quebrada 03
+    4300298: Laje Quebrada 07
+    4300300: Laje Quebrada 04
+    4300302: Laje quebrada 05
+    4300304: Laje Quebrada 10
+    4300306: Laje Quebrada 09
+    4300308: Laje Quebrada 08
+    4300310: Laje Quebrada Textura
+    4300312: Divisoria Banheiro
+    4300314: Divisoria Banheiro2
+    4300316: Divisoria Banheiro3
+    4300318: Divisoria Banheiro4
+    4300320: Divisoria Banheiro5
+    4300322: Dobradica 02
+    4300324: Porta Banheiro
+    4300326: Dobradica 03
+    4300328: Dobradica 04
+    4300330: Dobradica 01
+    4300332: Dobradica 005
+    4300334: Dobradica 006
+    4300336: Dobradica 007
+    4300338: Dobradica 008
+    4300340: Porta Banheiro002
+    4300342: Dobradica 013
+    4300344: Dobradica 014
+    4300346: Dobradica 015
+    4300348: Dobradica 016
+    4300350: Porta Banheiro003
+    4300352: Dobradica 009
+    4300354: Dobradica 010
+    4300356: Dobradica 011
+    4300358: Dobradica 012
+    4300360: Porta Banheiro006
+    4300362: Divisoria Banheiro7
+    4300364: Divisoria Banheiro8
+    4300366: Divisoria Banheiro9
+    4300368: Divisoria Banheiro10
+    4300370: Dobradica 022
+    4300372: Dobradica 030
+    4300374: Dobradica 031
+    4300376: Dobradica 032
+    4300378: Porta Banheiro008
+    4300380: Dobradica 017
+    4300382: Dobradica 018
+    4300384: Dobradica 019
+    4300386: Dobradica 020
+    4300388: Porta Banheiro010
+    4300390: Dobradica 026
+    4300392: Dobradica 027
+    4300394: Dobradica 028
+    4300396: Dobradica 029
+    4300398: Porta Banheiro011
+    4300400: Dobradica 021
+    4300402: Dobradica 023
+    4300404: Dobradica 024
+    4300406: Dobradica 025
+    4300408: Porta Banheiro014
+    4300410: Divisoria Banheiro6
+    4300412: Divisoria banheiro pia
+    4300414: pia
+    4300416: pia 2
+    4300418: Divisoria Banheiro17
+    4300420: Divisoria Banheiro18
+    4300422: Divisoria Banheiro19
+    4300424: Divisoria Banheiro20
+    4300426: Divisoria Banheiro12
+    4300428: Divisoria Banheiro13
+    4300430: Divisoria Banheiro14
+    4300432: Divisoria Banheiro15
+    4300434: pia 4
+    4300436: Dobradica 038
+    4300438: Dobradica 049
+    4300440: Dobradica 060
+    4300442: Dobradica 064
+    4300444: Porta Banheiro016
+    4300446: Dobradica 033
+    4300448: Dobradica 034
+    4300450: Dobradica 035
+    4300452: Dobradica 036
+    4300454: Porta Banheiro018
+    4300456: Dobradica 042
+    4300458: Dobradica 043
+    4300460: Dobradica 044
+    4300462: Dobradica 045
+    4300464: Porta Banheiro019
+    4300466: Dobradica 037
+    4300468: Dobradica 039
+    4300470: Dobradica 040
+    4300472: Dobradica 041
+    4300474: Porta Banheiro022
+    4300476: Dobradica 052
+    4300478: Dobradica 061
+    4300480: Dobradica 062
+    4300482: Dobradica 063
+    4300484: Porta Banheiro024
+    4300486: Dobradica 046
+    4300488: Dobradica 047
+    4300490: Dobradica 048
+    4300492: Dobradica 050
+    4300494: Porta Banheiro026
+    4300496: Dobradica 056
+    4300498: Dobradica 057
+    4300500: Dobradica 058
+    4300502: Dobradica 059
+    4300504: Porta Banheiro027
+    4300506: Dobradica 051
+    4300508: Dobradica 053
+    4300510: Dobradica 054
+    4300512: Dobradica 055
+    4300514: Porta Banheiro030
+    4300516: Divisoria Banheiro16
+    4300518: Divisoria Banheiro11
+    4300520: Rectangle157
+    4300522: pia 3
+    4300524: Parede Quebrada 01
+    4300526: Parede Quebrada 02
+    4300528: Circulacao - Parede 14
+    4300530: Cena 06 - Parede 04
+    4300532: Cena 05 - Laje
+    4300534: Cena 06 - Janela
+    4300536: Forro Refeitorio - Peca Fixa075
+    4300538: Forro Refeitorio - Peca Quebrada 002
+    4300540: Forro Refeitorio - Peca quebrada 003
+    4300542: Forro Refeitorio - Peca Fixa076
+    4300544: Forro Refeitorio - Peca Quebrada 003
+    4300546: Forro Refeitorio - Peca quebrada 004
+    4300548: Forro Refeitorio - Peca Fixa079
+    4300550: Forro Refeitorio - Peca Fixa080
+    4300552: Forro Refeitorio - Peca Quebrada 005
+    4300554: Forro Refeitorio - Peca Quebrada 006
+    4300556: Forro Refeitorio - Peca quebrada 007
+    4300558: Forro Refeitorio - Peca quebrada 008
+    4300560: Forro Refeitorio - Peca Fixa081
+    4300562: Forro Refeitorio - Peca Quebrada 007
+    4300564: Forro Refeitorio - Peca quebrada 009
+    4300566: Forro Refeitorio - Peca quebrada 010
+    4300568: Peca forro
+    4300570: Rectangle170
+    4300572: Rectangle171
+    4300574: Rectangle172
+    4300576: Rectangle173
+    4300578: Rectangle174
+    4300580: Rectangle175
+    4300582: Rectangle176
+    4300584: Rectangle177
+    4300586: Rectangle178
+    4300588: Rectangle179
+    4300590: Rectangle180
+    4300592: Rectangle181
+    4300594: Rectangle182
+    4300596: Rectangle183
+    4300598: Rectangle184
+    4300600: Rectangle185
+    4300602: Rectangle186
+    4300604: Rectangle187
+    4300606: Rectangle188
+    4300608: Rectangle189
+    4300610: Rectangle190
+    4300612: Rectangle191
+    4300614: Rectangle192
+    4300616: Rectangle194
+    4300618: Rectangle195
+    4300620: Rectangle196
+    4300622: Rectangle198
+    4300624: Rectangle197
+    4300626: Parte Quebrada 016
+    4300628: Parque Quebrada 010
+    4300630: Peca Forro 02
+    4300632: Peca Forro 003
+    4300634: Peca Forro 004
+    4300636: Peca Forro 005
+    4300638: Peca Forro 006
+    4300640: Peca Forro 007
+    4300642: Peca Forro 008
+    4300644: Parte Quebrada 019
+    4300646: Parte Quebrada 020
+    4300648: Parte Quebrada 021
+    4300650: Parte Quebrada 022
+    4300652: Parte Quebrada 023
+    4300654: Parte Quebrada 024
+    4300656: Parque Quebrada 012
+    4300658: Parte Quebrada 026
+    4300660: Peca Forro 009
+    4300662: Peca Forro 010
+    4300664: Parque Quebrada 020
+    4300666: Parte Quebrada 041
+    4300668: Parte Quebrada 042
+    4300670: Parque Quebrada 023
+    4300672: Parte Quebrada 047
+    4300674: Parte Quebrada 048
+    4300676: Parque Quebrada 021
+    4300678: Parte Quebrada 043
+    4300680: Parte Quebrada 044
+    4300682: Parque Quebrada 022
+    4300684: Parte Quebrada 045
+    4300686: Parte Quebrada 046
+    4300688: Parque Quebrada 019
+    4300690: Parte Quebrada 039
+    4300692: Parte Quebrada 040
+    4300694: Parque Quebrada 018
+    4300696: Parte Quebrada 037
+    4300698: Parte Quebrada 038
+    4300700: Parque Quebrada 017
+    4300702: Parte Quebrada 035
+    4300704: Parte Quebrada 036
+    4300706: Parque Quebrada 016
+    4300708: Parte Quebrada 033
+    4300710: Parte Quebrada 034
+    4300712: Parque Quebrada 015
+    4300714: Parte Quebrada 031
+    4300716: Parte Quebrada 032
+    4300718: Parque Quebrada 014
+    4300720: Parte Quebrada 029
+    4300722: Parte Quebrada 030
+    4300724: Parque Quebrada 013
+    4300726: Parte Quebrada 027
+    4300728: Parte Quebrada 028
+    4300730: Parque Quebrada 006
+    4300732: Parte Quebrada 007
+    4300734: Parte Quebrada 008
+    4300736: Parque Quebrada 005
+    4300738: Parte Quebrada 005
+    4300740: Parte Quebrada 006
+    4300742: Parque Quebrada 004
+    4300744: Parte Quebrada 003
+    4300746: Parte Quebrada 004
+    4300748: Parte Quebrada 02
+    4300750: Parque Quebrada 03
+    4300752: Parte Quebrada 01
+    4300754: Parque Quebrada 007
+    4300756: Parte Quebrada 009
+    4300758: Parte Quebrada 010
+    4300760: Parque Quebrada 008
+    4300762: Parte Quebrada 011
+    4300764: Parte Quebrada 012
+    4300766: Parque Quebrada 009
+    4300768: Parte Quebrada 013
+    4300770: Parte Quebrada 014
+    4300772: 'Parede '
+    4300774: 'Parede '
+    4300776: Escada Madeira
+    4300778: Rectangle201
+    4300780: Parede Quebrada 03
+    4300782: Degrau escada010
+    4300784: Degrau escada001
+    4300786: Degrau escada002
+    4300788: Degrau escada003
+    4300790: Degrau escada004
+    4300792: Degrau escada005
+    4300794: Degrau escada006
+    4300796: Degrau escada007
+    4300798: Degrau escada008
+    4300800: Degrau escada009
+    4300802: Escada 02
+    4300804: Escada 003
+    4300806: Degrau escada011
+    4300808: Degrau escada012
+    4300810: Degrau escada013
+    4300812: Degrau escada014
+    4300814: Degrau escada015
+    4300816: Degrau escada016
+    4300818: Degrau escada017
+    4300820: Degrau escada018
+    4300822: Degrau escada019
+    4300824: Degrau escada
+    4300826: Escada
+    4300828: Rectangle203
+    4300830: Rectangle202
+    4300832: Parede escada 06
+    4300834: RCena 06 - Laje
+    4300836: Escada - Laje
+    4300838: Dobradica 05
+    4300840: Dobradica 06
+    4300842: Dobradica 07
+    4300844: Dobradica 08
+    4300846: Alisar Porta
+    4300848: 'Porta Madeira '
+    4300850: Macaneta
+    4300852: Alisar Porta001
+    4300854: Dobradica 070
+    4300856: Dobradica 071
+    4300858: Dobradica 072
+    4300860: Dobradica 069
+    4300862: Porta Madeira 003
+    4300864: Macaneta002
+    4300866: Dobradica 066
+    4300868: Dobradica 067
+    4300870: Dobradica 068
+    4300872: Macaneta001
+    4300874: Porta Madeira 002
+    4300876: Dobradica 065
+    4300878: Brise quebrado - 007
+    4300880: Janela147
+    4300882: Janela148
+    4300884: Brise quebrado - 008
+    4300886: Janela149
+    4300888: Janela150
+    4300890: Brise quebrado - 009
+    4300892: Janela151
+    4300894: Janela152
+    4300896: Telhado 02
+    4300898: Telhado 01
+    4300900: Estrutura Telhado 02
+    4300902: Estrutura telhado 01
+    4300904: Parte Quebrada 017
+    4300906: Parte Quebrada 018
+    4300908: Parque Quebrada 011
+    4300910: Parede Quebrada 04
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

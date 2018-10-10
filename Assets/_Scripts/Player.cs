@@ -26,7 +26,20 @@ public class Player : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
     }
-       
- }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            RadialBlur camera = GetComponentInChildren<RadialBlur>();
+            camera.StartShader();
+        }
+    }
+
+}
+
+
+    
+
 
 
