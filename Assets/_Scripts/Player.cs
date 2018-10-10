@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 10.0F;
+    public float speed;
+
+    public AudioSource walking;
+    public AudioSource running;
 
     public Slider staminaSlider;
     public int maxStamina;
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
         transform.Translate(straffe, 0, translation);
 
         if (Input.GetKey(KeyCode.LeftShift))
-        {
+        { 
             staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
             speed = 12.0F;
         }
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour
         {
             staminaSlider.value += Time.deltaTime / staminaRegen * staminaRegenMult;
             speed = 6.0F;
+            this.running.Play();
         }
 
         if (staminaSlider.value >= maxStamina)
@@ -54,6 +58,7 @@ public class Player : MonoBehaviour
         {
             staminaSlider.value = 0;
             speed = 3.0F;
+            this.running.Stop();
         }
 
         if (Input.GetKeyDown("escape"))
