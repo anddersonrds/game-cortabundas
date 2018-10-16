@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : NpcBaseFsM {
+public class Searching : NpcBaseFsM {
 
 	
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
-        NPC.GetComponent<NpcAi>().StartAttack();
-	}
-	
+        base.OnStateEnter(animator, stateInfo, layerIndex);        
+    }
+    
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       // NPC.transform.LookAt(player.transform.position);
-	}
-	
+        NPC.GetComponent<NpcAi>().Searching();       
+    }
+    
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-     //   NPC.GetComponent<NpcAi>().StopAttack();
-	}
-
-	
+            
+	}	
 }

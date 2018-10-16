@@ -8,6 +8,7 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0,360)]
     public float viewAngle;
+    public bool ItsInFoV = false;
 
     [HideInInspector]
     public List<Transform> VisibleTargets = new List<Transform>();
@@ -44,11 +45,15 @@ public class FieldOfView : MonoBehaviour
 
                 if(!Physics.Raycast(transform.position, dirToTarget, distanceToTarget, obstacleMask))
                 {
-                   VisibleTargets.Add(target);
-                    Debug.Log(target);
-                }
+                    ItsInFoV = true;
+                    VisibleTargets.Add(target);                    
+                }                
             }
-        }
+            else
+            {
+                ItsInFoV = false;
+            }
+        }       
     }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)

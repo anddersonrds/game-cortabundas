@@ -11,13 +11,14 @@ public class Chase : NpcBaseFsM {
 	}
 	
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        //agent.SetDestination(player.transform.position);
+    {        
+        agent.SetDestination(player.transform.position);               
 	}
 	
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-	
-	}
+        NPC.GetComponent<NpcAi>().fov = false;
+
+    }
 	
 }

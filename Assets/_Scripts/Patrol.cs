@@ -39,14 +39,4 @@ public class Patrol : NpcBaseFsM
     {
 	
 	}
-	
-	override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-	
-	}
-	
-	override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-	
-	}
 }

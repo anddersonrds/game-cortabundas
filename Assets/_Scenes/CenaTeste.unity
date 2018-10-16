@@ -162,6 +162,21 @@ Prefab:
       propertyPath: m_StoppingDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114750615777978790, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: viewAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750615777978790, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: viewRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114689316431636206, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 1698636554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9caf26b232dbd0428601e1513e9b09f, type: 2}
   m_IsPrefabAsset: 0
@@ -654,7 +669,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1551184847
 BoxCollider:
@@ -808,6 +823,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!195 &1698636554 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
+    type: 2}
+  m_PrefabInternal: {fileID: 130429217}
 --- !u!1 &1720865681
 GameObject:
   m_ObjectHideFlags: 0
