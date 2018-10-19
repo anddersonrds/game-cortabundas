@@ -46,7 +46,7 @@ public class NpcAi : MonoBehaviour
         yield return new WaitForSeconds(5);
         LastPosPlayer = (player.transform.position);
         agent.SetDestination(LastPosPlayer);
-        counter = counter +1;           
+        counter = counter +1;       
 
         if(counter >= 3)
         {
