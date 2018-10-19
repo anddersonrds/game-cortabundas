@@ -41,12 +41,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         { 
             staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
-            speed = 12.0F;
+            speed = 6.0F;
         }
         else
         {
             staminaSlider.value += Time.deltaTime / staminaRegen * staminaRegenMult;
-            speed = 6.0F;
+            speed = 4.0F;
             this.running.Play();
         }
 
