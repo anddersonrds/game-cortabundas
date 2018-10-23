@@ -182,12 +182,7 @@ Prefab:
   m_IsPrefabAsset: 0
 --- !u!1 &221609113 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1965841990258564, guid: ae011f7b123ce2c43a01ce71ed4e9cc0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1178378683}
---- !u!82 &221609114 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 82666193190724608, guid: ae011f7b123ce2c43a01ce71ed4e9cc0,
+  m_CorrespondingSourceObject: {fileID: 1994257815455204, guid: 690c5cd8e5994a547b2762175a01f375,
     type: 2}
   m_PrefabInternal: {fileID: 1178378683}
 --- !u!1 &457379785
@@ -466,59 +461,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.46
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalPosition.y
       value: 2.27
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalPosition.z
       value: -4.8321056
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4015368577811940, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    - target: {fileID: 4466898135084038, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1965841990258564, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114385885126209324, guid: ae011f7b123ce2c43a01ce71ed4e9cc0,
-        type: 2}
-      propertyPath: walking
-      value: 
-      objectReference: {fileID: 221609114}
-    - target: {fileID: 114385885126209324, guid: ae011f7b123ce2c43a01ce71ed4e9cc0,
-        type: 2}
-      propertyPath: staminaSlider
-      value: 
-      objectReference: {fileID: 1693648763}
-    - target: {fileID: 1965841990258564, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
-      propertyPath: m_TagString
+    - target: {fileID: 1994257815455204, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
+      propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114607389293628100, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
-  m_SourcePrefab: {fileID: 100100000, guid: ae011f7b123ce2c43a01ce71ed4e9cc0, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1355087464
 Prefab:

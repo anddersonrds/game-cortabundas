@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
 
+    
     public AudioSource walking;
     public AudioSource running;
 
@@ -16,21 +17,22 @@ public class Player : MonoBehaviour
     public int staminaFallMult;
     private int staminaRegen;
     public int staminaRegenMult;
+    
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
+        
         staminaSlider.maxValue = maxStamina;
         staminaSlider.value = maxStamina;
 
         staminaFall = 1;
         staminaRegen = 1;
+        
     }
 
-    void Update()
-    {
-      
+    private void FixedUpdate()
+    {        
         float translation = Input.GetAxis("Vertical") * speed;
         float straffe = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(straffe, 0, translation);
 
+        
         if (Input.GetKey(KeyCode.LeftShift))
         { 
             staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
@@ -60,6 +63,7 @@ public class Player : MonoBehaviour
             speed = 3.0F;
             this.running.Stop();
         }
+        
 
         if (Input.GetKeyDown("escape"))
         {
