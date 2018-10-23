@@ -35,7 +35,7 @@ public class LadderClimb : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {               
-                player.transform.Translate ( new Vector3 (0, 1, 0) * Time.deltaTime * speed);
+                player.transform.Translate ( new Vector3 (0, 1, 0) * Time.deltaTime * speed);               
             }
 
             if (Input.GetKey(KeyCode.S))
