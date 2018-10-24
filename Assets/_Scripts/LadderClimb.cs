@@ -32,7 +32,7 @@ public class LadderClimb : MonoBehaviour
         if (canClimb)
         {
             player.GetComponent<Rigidbody>().useGravity = false;
-            Debug.Log("Entrou");
+
             if (Input.GetKey(KeyCode.W))
             {               
                 player.transform.Translate ( new Vector3 (0, 1, 0) * Time.deltaTime * speed);               
