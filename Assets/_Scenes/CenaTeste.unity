@@ -157,6 +157,21 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 221609113}
+    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9caf26b232dbd0428601e1513e9b09f, type: 2}
   m_IsPrefabAsset: 0
@@ -511,6 +526,11 @@ Prefab:
         type: 2}
       propertyPath: staminaRegenMult
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
+        type: 2}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}

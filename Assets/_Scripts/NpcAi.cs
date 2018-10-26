@@ -7,11 +7,11 @@ public class NpcAi : MonoBehaviour
     public GameObject player;
     public Animator anim;
     public bool fov;
-    public Vector3 LastPosPlayer;
-    public NavMeshAgent agent;    
+    public Vector3 LastPosPlayer, playerPos;
+    public NavMeshAgent agent;
     public GameObject[] wayPoints;
     public float accuracy = 3.0f;
-    private int currentWP;    
+    private int currentWP;
 
     //IA Memory
     private int Count = 0;
@@ -22,35 +22,34 @@ public class NpcAi : MonoBehaviour
     //IA Hearing 
     Vector3 noisePosition;
     private bool canHear = false;
-    public float noiseDistance = 50f;    
+    public float noiseDistance = 50f;
     private bool canLooking = false;
 
-  
+
     void Awake()
     {
         wayPoints = GameObject.FindGameObjectsWithTag("waypoints");
     }
 
     void Start()
-    {      
+    {
         anim = GetComponent<Animator>();
         currentWP = 0;
     }
-    
+
     private void FixedUpdate()
     {
-        Debug.Log(isChasing);
+        AtackPlayer();
     }
 
     void Update()
     {
         fov = GetComponent<FieldOfView>().ItsInFoV;
 
-        if (fov == false && canHear == false && seeLastPosition == false)
+        if (fov == false && canHear == false && seeLastPosition == false && isChasing == false)
         {
             Patrol();
             NoiseCheck();
-            CheckPlayerLastPos();
         }
         else if (canHear == true && fov == false)
         {
@@ -59,10 +58,11 @@ public class NpcAi : MonoBehaviour
         }
         else if (fov == true && isChasing == false)
         {
-            Chase();            
+            Chase();
         }
-        else if (fov == false && seeLastPosition == true && canHear == false)
+        else
         {
+            Debug.Log("Procurando");
             GoToLastPlayerPosition();
         }
     }
@@ -85,13 +85,10 @@ public class NpcAi : MonoBehaviour
 
     void Chase()
     {
-        if (fov)
+        if (fov == true)
         {
             Debug.Log("Perseguindo");
             agent.SetDestination(player.transform.position);
-        }              
-        else
-        {
             isChasing = true;
         }
     }
@@ -111,42 +108,46 @@ public class NpcAi : MonoBehaviour
     }
 
     void GoToNoisePosition()
-    {       
+    {
         Debug.Log("Ouvindo");
         agent.SetDestination(noisePosition);
-        
-        if (Vector3.Distance(transform.position, noisePosition) <= 1f && canLooking == true)
+
+        if (Vector3.Distance(transform.position, noisePosition) <= 2f && canLooking == true)
         {
             anim.SetBool("Looking", true);
             StartCoroutine(WaitTimeLokking());
         }
-    }
-    
-    void CheckPlayerLastPos()
-    {
-        if (fov == false && isChasing == true)
+        else if (Vector3.Distance(transform.position, noisePosition) <= 2f && fov == true)
         {
-            LastPosPlayer = player.transform.position;
-            seeLastPosition = true;
-            canHear = false;          
-        }
-        else
-        {
-            seeLastPosition = false;
-            isChasing = false;
+            canHear = false;
+            canLooking = false;
+            Chase();
         }
     }
 
     void GoToLastPlayerPosition()
     {
-        
-        agent.SetDestination(LastPosPlayer);      
+        StartCoroutine(WaitForChase());
 
-        if(Vector3.Distance(transform.position, LastPosPlayer) <= 1f && seeLastPosition == true)
+        if (Vector3.Distance(transform.position, LastPosPlayer) <= 2f)
         {
-            anim.SetBool("Looking", true);
             agent.isStopped = true;
-            StartCoroutine(WaitForChase());
+            anim.SetBool("Looking", true);            
+        }
+    }
+
+    void AtackPlayer()
+    {
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
+        {
+            Debug.Log("Atacando");
+            anim.SetBool("StabPlayer", true);
+            agent.isStopped = true;
+        }
+        else
+        {
+            anim.SetBool("StabPlayer", false);
+            agent.isStopped = false;
         }
     }
 
@@ -156,23 +157,16 @@ public class NpcAi : MonoBehaviour
 
         anim.SetBool("Looking", false);
         canLooking = false;
-        canHear = false;        
-    }   
+        canHear = false;
+    }
 
     IEnumerator WaitForChase()
     {
+        yield return new WaitForSeconds(3);
         agent.isStopped = false;
-       if(Count <= 4)
-        {
-            Debug.Log("Contador: " + Count);
-            for(int i= 0; i <=5; i++)
-            {
-                Count++;
-                LastPosPlayer = player.transform.position;                
-                GoToLastPlayerPosition();
-                yield return null;
-            }         
-        }
-        seeLastPosition = false;         
+        anim.SetBool("Looking", false);
+        agent.SetDestination(LastPosPlayer);
+        LastPosPlayer = player.transform.position;
+        GoToLastPlayerPosition();
     }
 }
