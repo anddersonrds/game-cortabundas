@@ -43,10 +43,12 @@ public class NpcAi : MonoBehaviour
 
     IEnumerator TimeSearching()
     {
+        print("entrou");
         yield return new WaitForSeconds(5);
         LastPosPlayer = (player.transform.position);
         agent.SetDestination(LastPosPlayer);
-        counter = counter +1;           
+        counter = counter +1;
+        print(LastPosPlayer + " " + counter);
 
         if(counter >= 3)
         {
