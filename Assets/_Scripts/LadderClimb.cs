@@ -12,8 +12,8 @@ public class LadderClimb : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
-        {
-            player.gameObject.GetComponent<Player>().enabled = false;
+        {           
+            player.gameObject.GetComponent<Player>().enabled = false;            
             canClimb = true;              
         }
     }
@@ -31,11 +31,11 @@ public class LadderClimb : MonoBehaviour
     {
         if (canClimb)
         {
-            player.GetComponent<Rigidbody>().useGravity = false;           
+            player.GetComponent<Rigidbody>().useGravity = false;
 
             if (Input.GetKey(KeyCode.W))
             {               
-                player.transform.Translate ( new Vector3 (0, 1, 0) * Time.deltaTime * speed);
+                player.transform.Translate ( new Vector3 (0, 1, 0) * Time.deltaTime * speed);               
             }
 
             if (Input.GetKey(KeyCode.S))
