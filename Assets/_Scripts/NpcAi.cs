@@ -14,7 +14,7 @@ public class NpcAi : MonoBehaviour
     private int currentWP;
 
     //IA Memory
-    private int Count = 0;
+    private float searchTime = 5;
     private bool seeLastPosition = false;
     private bool isChasing = false;
 
@@ -43,7 +43,7 @@ public class NpcAi : MonoBehaviour
     }
 
     void Update()
-    {
+    {      
         fov = GetComponent<FieldOfView>().ItsInFoV;
 
         if (fov == false && canHear == false && seeLastPosition == false && isChasing == false)
@@ -60,10 +60,9 @@ public class NpcAi : MonoBehaviour
         {
             Chase();
         }
-        else
-        {
-            Debug.Log("Procurando");
-            GoToLastPlayerPosition();
+        else if(fov == false && isChasing == true)
+        {            
+            SearchingPlayer();
         }
     }
 
@@ -79,15 +78,13 @@ public class NpcAi : MonoBehaviour
                 currentWP = 0;
             }
         }
-        agent.SetDestination(wayPoints[currentWP].transform.position);
-        //Debug.Log("Patrulhando");
+        agent.SetDestination(wayPoints[currentWP].transform.position);        
     }
 
     void Chase()
     {
         if (fov == true)
-        {
-            //Debug.Log("Perseguindo");
+        {           
             agent.SetDestination(player.transform.position);
             isChasing = true;
         }
@@ -108,8 +105,7 @@ public class NpcAi : MonoBehaviour
     }
 
     void GoToNoisePosition()
-    {
-        //Debug.Log("Ouvindo");
+    {        
         agent.SetDestination(noisePosition);
 
         if (Vector3.Distance(transform.position, noisePosition) <= 2f && canLooking == true)
@@ -123,23 +119,12 @@ public class NpcAi : MonoBehaviour
             canLooking = false;
             Chase();
         }
-    }
-
-    void GoToLastPlayerPosition()
-    {
-        StartCoroutine(WaitForChase());
-        if (Vector3.Distance(transform.position, LastPosPlayer) <= 2f)
-        {
-            agent.isStopped = true;
-            anim.SetBool("Looking", true);            
-        }
-    }
+    }   
 
     void AtackPlayer()
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
         {
-            Debug.Log("Atacando");
             anim.SetBool("StabPlayer", true);
             agent.isStopped = true;
         }
@@ -150,6 +135,20 @@ public class NpcAi : MonoBehaviour
         }
     }
 
+    void SearchingPlayer()
+    {
+        if (searchTime > 0 && fov == false)
+        {          
+            searchTime -= Time.deltaTime;
+            agent.SetDestination(player.transform.position);
+        }
+        else
+        {
+            searchTime = 5;
+            isChasing = false;           
+        }        
+    }
+
     IEnumerator WaitTimeLokking()
     {
         yield return new WaitForSeconds(5);
@@ -157,15 +156,5 @@ public class NpcAi : MonoBehaviour
         anim.SetBool("Looking", false);
         canLooking = false;
         canHear = false;
-    }
-
-    IEnumerator WaitForChase()
-    {
-        yield return new WaitForSeconds(3);
-        agent.isStopped = false;
-        anim.SetBool("Looking", false);
-        agent.SetDestination(LastPosPlayer);
-        LastPosPlayer = player.transform.position;
-        GoToLastPlayerPosition();
-    }
+    }    
 }

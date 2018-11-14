@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float speed;
-
+    public float jumpForce = 3.5f;
+    private Rigidbody rb;
+    private bool canJump;
+    private CapsuleCollider playerColider;
     
     public AudioSource walking;
     public AudioSource running;
@@ -28,18 +31,28 @@ public class Player : MonoBehaviour
 
         staminaFall = 1;
         staminaRegen = 1;
+
+        rb = GetComponent<Rigidbody>();
+        playerColider = GetComponent<CapsuleCollider>();
         
     }
 
     private void FixedUpdate()
-    {        
+    {
+        canJump = IsGrounded();        
+
         float translation = Input.GetAxis("Vertical") * speed;
         float straffe = Input.GetAxis("Horizontal") * speed;
+
         translation *= Time.deltaTime;
         straffe *= Time.deltaTime;
 
         transform.Translate(straffe, 0, translation);
 
+        if (canJump && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
         
         if (Input.GetKey(KeyCode.LeftShift))
         { 
@@ -77,7 +90,17 @@ public class Player : MonoBehaviour
         {
             RadialBlur camera = GetComponentInChildren<RadialBlur>();
             camera.StartShader();
-        }
+        }       
+    }
+
+    private bool IsGrounded()
+    {
+        Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
+
+        if(Physics.Raycast(playerColider.bounds.center,Vector3.down, playerColider.height/2))
+        return true;
+
+        return false;
     }
 
 }

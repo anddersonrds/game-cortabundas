@@ -31588,7 +31588,7 @@ GameObject:
   - component: {fileID: 1458127276}
   - component: {fileID: 1458127275}
   - component: {fileID: 1458127274}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Cena01Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40146,12 +40146,12 @@ Prefab:
         type: 2}
       propertyPath: walking
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1957725661}
     - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
         type: 2}
       propertyPath: running
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1957725661}
     - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
         type: 2}
       propertyPath: staminaSlider
@@ -40297,6 +40297,11 @@ Prefab:
         type: 2}
       propertyPath: m_HDR
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
+        type: 2}
+      propertyPath: jumpForce
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136243921176430076, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
@@ -41041,6 +41046,11 @@ MeshFilter:
 --- !u!1 &1957725660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1994257815455204, guid: 690c5cd8e5994a547b2762175a01f375,
+    type: 2}
+  m_PrefabInternal: {fileID: 1923819885}
+--- !u!82 &1957725661 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82946956394057816, guid: 690c5cd8e5994a547b2762175a01f375,
     type: 2}
   m_PrefabInternal: {fileID: 1923819885}
 --- !u!136 &1957725666
