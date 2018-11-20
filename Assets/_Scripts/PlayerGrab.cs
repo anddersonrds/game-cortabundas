@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour {
 
+    private int layerMask;
     private bool grabbing;
     private bool onReach;
+    private bool kinematicObject;
     private GameObject objectReached;
     private float distance;
     private UnityEngine.UI.RawImage handIcon;
     // Use this for initialization
     void Start () {
+        grabbing = false;
         objectReached = null;
-        Canvas canvas = FindObjectOfType<Canvas>();
-        handIcon = canvas.GetComponentInChildren<UnityEngine.UI.RawImage>();
+        GameObject handObject = GameObject.Find("HandIcon");
+        handIcon = handObject.GetComponent<UnityEngine.UI.RawImage>();
+        layerMask = LayerMask.GetMask("Obstacles");
     }
 	
 	// Update is called once per frame
@@ -32,24 +36,32 @@ public class PlayerGrab : MonoBehaviour {
         if (objectReached != null)
             MoveObject();
     }
-    
+
     private void GrabObject()
     {
         RaycastHit hit;
-        int layerMask = LayerMask.GetMask("Obstacles");
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
         {
+            grabbing = true;
             objectReached = hit.collider.gameObject;
             distance = 0.9f*(transform.position - objectReached.transform.position).magnitude;
             objectReached.GetComponent<Rigidbody>().useGravity = false;
-            objectReached.GetComponent<Rigidbody>().isKinematic = false;
+            kinematicObject = objectReached.GetComponent<Rigidbody>().isKinematic;
+            if (kinematicObject)
+                objectReached.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        else
+        {
+            Debug.Log("Nao entrou");
         }
     }
 
     private void ReleaseObject()
     {
+        grabbing = false;
         objectReached.GetComponent<Rigidbody>().useGravity = true;
-        objectReached.GetComponent<Rigidbody>().isKinematic = true;
+        if (kinematicObject)
+            objectReached.GetComponent<Rigidbody>().isKinematic = true;
         objectReached = null;
     }
 
@@ -57,8 +69,32 @@ public class PlayerGrab : MonoBehaviour {
     {
         if (other.CompareTag("Grabbable"))
         {
-            onReach = true;
-            handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            {
+                if (hit.collider.gameObject.name == other.name)
+                {
+                    onReach = true;
+                    handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Grabbable"))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            {
+                //Debug.Log(hit.collider.gameObject.name + " " + other.name);
+                if (hit.collider.gameObject.name == other.name)
+                {
+                    onReach = true;
+                    handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+                }
+            }
         }
     }
 
@@ -66,8 +102,10 @@ public class PlayerGrab : MonoBehaviour {
     {
         if (other.CompareTag("Grabbable"))
         {
+            onReach = false;
             handIcon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
-            ReleaseObject();
+            if (objectReached != null)
+                ReleaseObject();
         }
     }
 

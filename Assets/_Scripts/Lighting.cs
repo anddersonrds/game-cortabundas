@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lighting : MonoBehaviour {
 
+    bool hasFlashlight;
     Light playerLight;
     bool flashing;
     float flashingTimer;
@@ -16,13 +17,14 @@ public class Lighting : MonoBehaviour {
         playerLight = GetComponent<Light>();
         flashing = false;
         chanceTimer = 0.0f;
+        hasFlashlight = false;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         bool flashlightPressed = Input.GetKeyDown(KeyCode.F);
         bool candlePressed = Input.GetKeyDown(KeyCode.C);
-        if ((flashlightPressed || candlePressed) && !flashing)
+        if ((flashlightPressed || candlePressed) && hasFlashlight && !flashing)
         {
             string lightType;
             if (flashlightPressed)

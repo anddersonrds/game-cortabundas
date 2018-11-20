@@ -12,6 +12,7 @@ public class NpcAi : MonoBehaviour
     public GameObject[] wayPoints;
     public float accuracy = 3.0f;
     private int currentWP;
+    private bool stopped = false;
 
     //IA Memory
     private float searchTime = 5;
@@ -28,7 +29,7 @@ public class NpcAi : MonoBehaviour
 
     void Awake()
     {
-        wayPoints = GameObject.FindGameObjectsWithTag("waypoints");
+        //wayPoints = GameObject.FindGameObjectsWithTag("waypoints");
     }
 
     void Start()
@@ -45,6 +46,9 @@ public class NpcAi : MonoBehaviour
     void Update()
     {      
         fov = GetComponent<FieldOfView>().ItsInFoV;
+
+        if (stopped)
+            return;
 
         if (fov == false && canHear == false && seeLastPosition == false && isChasing == false)
         {
@@ -156,5 +160,20 @@ public class NpcAi : MonoBehaviour
         anim.SetBool("Looking", false);
         canLooking = false;
         canHear = false;
-    }    
+    }
+
+    public void Stop()
+    {
+        anim.SetBool("Looking", true);
+        agent.isStopped = true;
+        stopped = true;
+    }
+
+    public void Resume()
+    {
+        anim.SetBool("Looking", false);
+        agent.isStopped = false;
+        stopped = false;
+        agent.SetDestination(wayPoints[currentWP].transform.position);
+    }
 }
