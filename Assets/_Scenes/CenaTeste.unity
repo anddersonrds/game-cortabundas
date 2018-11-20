@@ -157,21 +157,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 221609113}
-    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
-        type: 2}
-      propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
-        type: 2}
-      propertyPath: m_Acceleration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 195032944549398522, guid: a9caf26b232dbd0428601e1513e9b09f,
-        type: 2}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9caf26b232dbd0428601e1513e9b09f, type: 2}
   m_IsPrefabAsset: 0
@@ -536,6 +521,14 @@ Prefab:
         type: 2}
       propertyPath: jumpForce
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994257815455204, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637674956924018, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
