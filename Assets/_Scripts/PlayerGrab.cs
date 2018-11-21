@@ -11,6 +11,7 @@ public class PlayerGrab : MonoBehaviour {
     private GameObject objectReached;
     private float distance;
     private UnityEngine.UI.RawImage handIcon;
+    private Camera camera;
     // Use this for initialization
     void Start () {
         grabbing = false;
@@ -18,6 +19,9 @@ public class PlayerGrab : MonoBehaviour {
         GameObject handObject = GameObject.Find("HandIcon");
         handIcon = handObject.GetComponent<UnityEngine.UI.RawImage>();
         layerMask = LayerMask.GetMask("Obstacles");
+        camera = GameObject.FindObjectOfType<Camera>();
+
+        Debug.Log(camera);
     }
 	
 	// Update is called once per frame
@@ -40,11 +44,11 @@ public class PlayerGrab : MonoBehaviour {
     private void GrabObject()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
         {
             grabbing = true;
             objectReached = hit.collider.gameObject;
-            distance = 0.9f*(transform.position - objectReached.transform.position).magnitude;
+            distance = 0.8f*(camera.transform.position - objectReached.transform.position).magnitude;
             objectReached.GetComponent<Rigidbody>().useGravity = false;
             kinematicObject = objectReached.GetComponent<Rigidbody>().isKinematic;
             if (kinematicObject)
@@ -70,8 +74,9 @@ public class PlayerGrab : MonoBehaviour {
         if (other.CompareTag("Grabbable"))
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
+                //Debug.Log("Enter: " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == other.name)
                 {
                     onReach = true;
@@ -86,9 +91,10 @@ public class PlayerGrab : MonoBehaviour {
         if (other.CompareTag("Grabbable"))
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            //Debug.Log(transform.TransformDirection(Vector3.forward) + " " + camera.transform.TransformDirection(Vector3.forward));
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
-                //Debug.Log(hit.collider.gameObject.name + " " + other.name);
+                //Debug.Log("Stay: " +  hit.collider.gameObject.name + " " + other.name);
                 if (hit.collider.gameObject.name == other.name)
                 {
                     onReach = true;
@@ -100,6 +106,7 @@ public class PlayerGrab : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exit: " + other.name);
         if (other.CompareTag("Grabbable"))
         {
             onReach = false;
@@ -113,7 +120,7 @@ public class PlayerGrab : MonoBehaviour {
     {
         if (objectReached != null)
         {
-            objectReached.GetComponent<Rigidbody>().MovePosition(transform.position + distance * transform.TransformDirection(Vector3.forward));
+            objectReached.GetComponent<Rigidbody>().MovePosition(camera.transform.position + distance * camera.transform.TransformDirection(Vector3.forward));
             //objectReached.transform.position = transform.position + distance * transform.TransformDirection(Vector3.forward);
         }
     }
