@@ -129,6 +129,7 @@ public class NpcAi : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
         {
+            player.GetComponent<Player>().DamagePlayer();
             anim.SetBool("StabPlayer", true);
             agent.isStopped = true;
         }

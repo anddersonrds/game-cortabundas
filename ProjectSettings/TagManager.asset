@@ -9,6 +9,9 @@ TagManager:
   - Climbable
   - waypoints
   - Enemy
+  - Door
+  - KeyDoor
+  - Key
   layers:
   - Default
   - TransparentFX

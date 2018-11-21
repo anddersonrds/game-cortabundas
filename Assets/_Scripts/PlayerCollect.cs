@@ -27,19 +27,22 @@ public class PlayerCollect : MonoBehaviour {
         int layerMask = LayerMask.GetMask("Hit");
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
         {
-
+            if(hit.collider.CompareTag("Key"))
+            hit.collider.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
-            onReach = true;
-    }
+            onReach = true;       
+    }  
+
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Collectible"))
             onReach = false;
     }
+
 }
