@@ -6,13 +6,16 @@ public class LadderClimb : MonoBehaviour
 {
     public GameObject player;
     public bool canClimb = false;
-    public float speed = 1;
+    public float speed = 3;
+   
     
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
-        {           
+        {
+            other.attachedRigidbody.useGravity = false;
+            Debug.Log(other.attachedRigidbody.useGravity);
             player.gameObject.GetComponent<Player>().enabled = false;            
             canClimb = true;              
         }
@@ -22,6 +25,7 @@ public class LadderClimb : MonoBehaviour
     {
         if(other.gameObject == player)
         {
+            other.attachedRigidbody.useGravity = true;
             player.gameObject.GetComponent<Player>().enabled = true;
             canClimb = false;
         }
@@ -30,8 +34,7 @@ public class LadderClimb : MonoBehaviour
     void Update ()
     {
         if (canClimb)
-        {
-            player.GetComponent<Rigidbody>().useGravity = false;
+        {           
 
             if (Input.GetKey(KeyCode.W))
             {               
@@ -46,7 +49,7 @@ public class LadderClimb : MonoBehaviour
 
         else
         {
-            player.GetComponent<Rigidbody>().useGravity = true;
+            player.GetComponent<Collider>().attachedRigidbody.useGravity = true;
         }
 		
 	}
