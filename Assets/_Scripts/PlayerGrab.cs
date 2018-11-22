@@ -67,13 +67,16 @@ public class PlayerGrab : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if (other.CompareTag("Grabbable"))
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
+                Debug.Log("Hit " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == other.name)
                 {
+                    Debug.Log("Entrou");
                     onReach = true;
                     handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
                 }
