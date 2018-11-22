@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
+        //Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
 
         if(Physics.Raycast(playerColider.bounds.center,Vector3.down, playerColider.height/2))
         return true;
@@ -136,6 +136,25 @@ public class Player : MonoBehaviour
     {
         RadialBlur camera = GetComponentInChildren<RadialBlur>();
         camera.StartShader();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Cena1Checkpoint")
+        {
+            GameObject ai = GameObject.Find("EnemyNPCCena1");
+            GameObject area = GameObject.Find("StayArea");
+
+            NpcAi aiScript = ai.GetComponent<NpcAi>();
+            CheckPlayer aiCheck = ai.GetComponent<CheckPlayer>();
+            DetectPlayer areaScript = area.GetComponent<DetectPlayer>();
+
+            aiScript.Resume();
+            aiCheck.ClearWarning();
+            areaScript.ClearWarning();
+
+            aiCheck.enabled = false;
+        }
     }
 
 }

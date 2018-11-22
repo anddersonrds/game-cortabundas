@@ -27,6 +27,7 @@ public class CheckPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (Vector3.Distance(wayPoint.transform.position, this.transform.position) < accuracy && timer < 2.0f)
         {
             if (!checking)
@@ -45,25 +46,21 @@ public class CheckPlayer : MonoBehaviour {
 
     void checkPlayer()
     {
-       if (!areaScript.isPlayerInside())
+       if (!areaScript.IsPlayerInside())
         {
             if (!warned)
             {
-                areaScript.Warn();
-                text.text = "Mantenha-se na área de visão";
-                text.color = Color.red;
                 timesWarned += 1;
-                warned = true;
+                Warn();
+                areaScript.Warn();
             }
         }
        else
         {
-            warned = false;
             checking = false;
-            text.text = "";
-            text.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
             aiScript.Resume();
             timer = 5.0f;
+            ClearWarning();
         }
 
         if (timesWarned > 2)
@@ -72,5 +69,19 @@ public class CheckPlayer : MonoBehaviour {
             text.color = Color.red;
             Time.timeScale = 0;
         }
+    }
+
+    public void Warn()
+    {
+        text.text = "Mantenha-se na área de visão";
+        text.color = Color.red;
+        warned = true;
+    }
+
+    public void ClearWarning()
+    {
+        warned = false;
+        text.text = "";
+        text.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
     }
 }

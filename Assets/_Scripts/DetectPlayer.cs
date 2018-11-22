@@ -36,7 +36,6 @@ public class DetectPlayer : MonoBehaviour {
             if (warned)
                 renderer.materials[0].color = color;
             playerInside = false;
-            Debug.Log(playerInside);
         }
     }
 
@@ -46,7 +45,12 @@ public class DetectPlayer : MonoBehaviour {
         renderer.materials[0].color = color;
     }
 
-    public bool isPlayerInside()
+    public void ClearWarning()
+    {
+        renderer.materials[0].color = transparentColor;
+    }
+
+    public bool IsPlayerInside()
     {
         return playerInside;
     }
