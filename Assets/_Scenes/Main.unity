@@ -93491,6 +93491,11 @@ Prefab:
       propertyPath: chounchSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54215799146074920, guid: 690c5cd8e5994a547b2762175a01f375,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
   m_IsPrefabAsset: 0
