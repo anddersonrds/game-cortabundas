@@ -5,49 +5,52 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
-    private float interactionDistance = 3f;
-    public float jumpForce = 3.5f;
-    private Rigidbody rb;
-    private bool canJump;
-    private CapsuleCollider playerColider;
-    public Text interactText;
-    private Camera cam;
-    public GameObject keyDoor;
-    
-    public AudioSource walking;
-    public AudioSource running;
+    [SerializeField]
+    private float chounchSpeed,speed,jumpForce = 3.5f;
+    [SerializeField]
+    private Text interactText;
+    [SerializeField]
+    private GameObject keyDoor;
 
-    public Slider staminaSlider;
-    public int maxStamina;
-    private int staminaFall;
-    public int staminaFallMult;
-    private int staminaRegen;
-    public int staminaRegenMult;
+    private float interactionDistance = 3f;    
+    private Rigidbody rb;
+    private bool canJump, isChounching = false;
+    private CapsuleCollider playerColider;
+    private Camera cam;
+    private Transform trCrounch;
+    
+    
+    //public AudioSource walking;
+    //public AudioSource running;
+
+    //public Slider staminaSlider;
+    //public int maxStamina;
+    //private int staminaFall;
+    //public int staminaFallMult;
+    //private int staminaRegen;
+    //public int staminaRegenMult;
     
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        
-        staminaSlider.maxValue = maxStamina;
-        staminaSlider.value = maxStamina;
 
-        staminaFall = 1;
-        staminaRegen = 1;
+        //staminaSlider.maxValue = maxStamina;
+        //staminaSlider.value = maxStamina;
 
+        //staminaFall = 1;
+        //staminaRegen = 1;        
         rb = GetComponent<Rigidbody>();
         playerColider = GetComponent<CapsuleCollider>();
-        cam = GetComponentInChildren<Camera>();       
-        
+        cam = GetComponentInChildren<Camera>();
+        trCrounch = this.transform;
     }
 
     private void FixedUpdate()
-    {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+    {        
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
+        
         RaycastHit hit;   
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
@@ -57,7 +60,7 @@ public class Player : MonoBehaviour
                 interactText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-            }
+            }           
             else if (hit.collider.CompareTag("KeyDoor"))
             {               
                 interactText.gameObject.SetActive(true);
@@ -69,11 +72,11 @@ public class Player : MonoBehaviour
             {
                 hit.collider.gameObject.SetActive(false);
                 keyDoor.GetComponent<DoorScript>().key = true;
-            }
+            }            
             else
             {
                 interactText.text = "Pressione (E) para interagir";
-                interactText.gameObject.SetActive(false);
+                interactText.gameObject.SetActive(false);                
             }
         }
 
@@ -91,7 +94,13 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-        
+        else if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            isChounching = !isChounching;
+            CrouchControll(isChounching);
+        }
+
+        /*
         if (Input.GetKey(KeyCode.LeftShift))
         { 
             staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
@@ -114,7 +123,7 @@ public class Player : MonoBehaviour
             speed = 3.0F;
             this.running.Stop();
         }
-        
+        */
 
         if (Input.GetKeyDown("escape"))
         {
@@ -124,13 +133,27 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        //Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
-
+        Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
         if(Physics.Raycast(playerColider.bounds.center,Vector3.down, playerColider.height/2))
         return true;
 
         return false;
     }
+    
+    private void CrouchControll(bool crounch)
+    {
+        if (crounch)
+        {
+            trCrounch.localScale = new Vector3(1, 0.42f, 1);
+            speed = chounchSpeed;
+        }
+        else
+        {
+            trCrounch.localScale = new Vector3(1, 0.84f, 1);
+            speed = 2;
+        }
+    }
+
 
     public void DamagePlayer()
     {

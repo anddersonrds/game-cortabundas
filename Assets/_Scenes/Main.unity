@@ -51521,7 +51521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1023360986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93684,7 +93684,7 @@ Prefab:
     - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
         type: 2}
       propertyPath: jumpForce
-      value: 3
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
         type: 2}
@@ -93714,6 +93714,11 @@ Prefab:
     - target: {fileID: 54215799146074920, guid: 690c5cd8e5994a547b2762175a01f375,
         type: 2}
       propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
+        type: 2}
+      propertyPath: chounchSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
