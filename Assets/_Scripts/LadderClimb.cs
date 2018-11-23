@@ -15,9 +15,9 @@ public class LadderClimb : MonoBehaviour
         if (other.gameObject == player)
         {
             other.attachedRigidbody.useGravity = false;
-            Debug.Log(other.attachedRigidbody.useGravity);
+            other.attachedRigidbody.isKinematic = true;
             player.gameObject.GetComponent<Player>().enabled = false;            
-            canClimb = true;              
+            canClimb = true;   
         }
     }
 
@@ -25,13 +25,14 @@ public class LadderClimb : MonoBehaviour
     {
         if(other.gameObject == player)
         {
+            other.attachedRigidbody.isKinematic = false;
             other.attachedRigidbody.useGravity = true;
             player.gameObject.GetComponent<Player>().enabled = true;
             canClimb = false;
         }
     }
 
-    void Update ()
+    private void FixedUpdate()
     {
         if (canClimb)
         {           
