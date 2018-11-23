@@ -70,7 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 0.15
     - _Parallax: 0.005
-    - _Shininess: 0.078125
+    - _Shininess: 0.09
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -79,4 +79,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
