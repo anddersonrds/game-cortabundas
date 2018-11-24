@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name == "Cena1Checkpoint")
         {
-            GameObject ai = GameObject.Find("EnemyNPC");
+            GameObject ai = GameObject.Find("EnemyNPCCena1");
             GameObject area = GameObject.Find("StayArea");
 
             NpcAi aiScript = ai.GetComponent<NpcAi>();
