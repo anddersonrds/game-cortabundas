@@ -9,9 +9,9 @@ public class NpcAi : MonoBehaviour
     public bool fov;
     public Vector3 LastPosPlayer, playerPos;
     public NavMeshAgent agent;
-    public GameObject[] wayPoints;
+    public Transform[] wayPoints;
     public float accuracy = 3.0f;
-    private int currentWP;
+    private int currentWP = 0;
     private bool stopped = false;
 
     //IA Memory
@@ -27,16 +27,24 @@ public class NpcAi : MonoBehaviour
     private bool canLooking = false;
 
 
-    void Awake()
-    {
-        //wayPoints = GameObject.FindGameObjectsWithTag("waypoints");
-    }
-
     void Start()
     {
         anim = GetComponent<Animator>();
-        currentWP = 0;
+        agent = GetComponent<NavMeshAgent>();
+        agent.autoBraking = false;
+        GoToNextPoint();
     }
+
+    void GoToNextPoint()
+    {
+        if (wayPoints.Length == 0)
+            return;
+
+        agent.destination = wayPoints[currentWP].position;
+        currentWP = (currentWP + 1) % wayPoints.Length;
+        
+    }
+
 
     private void FixedUpdate()
     {
@@ -50,9 +58,9 @@ public class NpcAi : MonoBehaviour
         if (stopped)
             return;
 
-        if (fov == false && canHear == false && seeLastPosition == false && isChasing == false)
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && fov == false && canHear == false && seeLastPosition == false && isChasing == false)
         {
-            Patrol();
+            GoToNextPoint();
             NoiseCheck();
         }
         else if (canHear == true && fov == false)
@@ -68,22 +76,7 @@ public class NpcAi : MonoBehaviour
         {            
             SearchingPlayer();
         }
-    }
-
-    void Patrol()
-    {
-        if (wayPoints.Length == 0) return;
-
-        if (Vector3.Distance(wayPoints[currentWP].transform.position, this.transform.position) < accuracy)
-        {
-            currentWP++;
-            if (currentWP >= wayPoints.Length)
-            {
-                currentWP = 0;
-            }
-        }
-        agent.SetDestination(wayPoints[currentWP].transform.position);        
-    }
+    }  
 
     void Chase()
     {
