@@ -23,7 +23,7 @@ public class PlayerGrab : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (onReach)
         {
             if (Input.GetKeyDown("e"))

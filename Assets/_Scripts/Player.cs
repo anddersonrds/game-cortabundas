@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject keyDoor;
 
+    private Light flashlight;
+
     private float interactionDistance = 3f;    
     private Rigidbody rb;
     private bool canJump, isChounching = false;
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
         playerColider = GetComponent<CapsuleCollider>();
         cam = GetComponentInChildren<Camera>();
         trCrounch = this.transform;
+        flashlight = GetComponentInChildren<Light>();
     }
 
     private void FixedUpdate()
@@ -54,7 +57,8 @@ public class Player : MonoBehaviour
         RaycastHit hit;   
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
-        {            
+        {
+            Debug.Log(hit.collider.name + " " + hit.collider.tag);
             if (hit.collider.CompareTag("Door"))
             {                
                 interactText.gameObject.SetActive(true);
@@ -72,7 +76,12 @@ public class Player : MonoBehaviour
             {
                 hit.collider.gameObject.SetActive(false);
                 keyDoor.GetComponent<DoorScript>().key = true;
-            }            
+            }
+            else if (hit.collider.CompareTag("Flashlight"))
+            {
+                hit.collider.gameObject.SetActive(false);
+                flashlight.enabled = true;
+            }
             else
             {
                 interactText.text = "Pressione (E) para interagir";
