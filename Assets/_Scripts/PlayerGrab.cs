@@ -12,6 +12,7 @@ public class PlayerGrab : MonoBehaviour {
     private float distance;
     private UnityEngine.UI.RawImage handIcon;
     private Camera camera;
+    private Player playerScript;
     // Use this for initialization
     void Start () {
         grabbing = false;
@@ -20,6 +21,7 @@ public class PlayerGrab : MonoBehaviour {
         handIcon = handObject.GetComponent<UnityEngine.UI.RawImage>();
         layerMask = LayerMask.GetMask("Obstacles");
         camera = GameObject.FindObjectOfType<Camera>();
+        playerScript = GetComponent<Player>();
     }
 	
 	// Update is called once per frame
@@ -28,6 +30,11 @@ public class PlayerGrab : MonoBehaviour {
         {
             if (Input.GetKeyDown("e"))
             {
+                if (playerScript.getTimesInteractWarned() == 0)
+                {
+                    playerScript.clearInteractionText();
+                    playerScript.setTimesInteractWarned();
+                }
                 if (grabbing)
                     ReleaseObject();
                 else
@@ -67,6 +74,10 @@ public class PlayerGrab : MonoBehaviour {
     {
         if (other.CompareTag("Grabbable"))
         {
+            if (playerScript.getTimesInteractWarned() == 0)
+            {
+                playerScript.showInteractionText("Pressione (E) para interagir");
+            }
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {

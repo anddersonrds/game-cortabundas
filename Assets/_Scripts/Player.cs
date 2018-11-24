@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float chounchSpeed,speed,jumpForce = 3.5f;
     [SerializeField]
-    private Text interactText;
+    private Text instructionText;
     [SerializeField]
     private GameObject keyDoor;
 
@@ -20,8 +20,11 @@ public class Player : MonoBehaviour
     private CapsuleCollider playerColider;
     private Camera cam;
     private Transform trCrounch;
-    
-    
+    private int layerMask;
+    private int timesInteractWarned = 0;
+    private int timesCrouchedWarned = 0;
+
+
     //public AudioSource walking;
     //public AudioSource running;
 
@@ -31,7 +34,7 @@ public class Player : MonoBehaviour
     //public int staminaFallMult;
     //private int staminaRegen;
     //public int staminaRegenMult;
-    
+
 
     void Start()
     {
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
         trCrounch = this.transform;
         flashlight = GetComponentInChildren<Light>();
+        layerMask = LayerMask.GetMask("Hit");
     }
 
     private void FixedUpdate()
@@ -54,23 +58,32 @@ public class Player : MonoBehaviour
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         
-        RaycastHit hit;   
+        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, interactionDistance))
+        if (Physics.Raycast(ray, out hit, interactionDistance, layerMask))
         {
-            Debug.Log(hit.collider.name + " " + hit.collider.tag);
+            bool keyPressed = false;
+            if (timesInteractWarned == 0)
+                showInteractionText("Pressione (E) para interagir");
+
             if (hit.collider.CompareTag("Door"))
             {                
-                interactText.gameObject.SetActive(true);
+                instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
+                {
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                    keyPressed = true;
+                }
             }           
             else if (hit.collider.CompareTag("KeyDoor"))
             {               
-                interactText.gameObject.SetActive(true);
+                instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
-                    interactText.text = "Está trancada";
+                {
+                    instructionText.text = "Está trancada";
                     hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
+                    keyPressed = true;
+                }
             }
             else if (hit.collider.CompareTag("Key"))
             {
@@ -79,13 +92,22 @@ public class Player : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Flashlight"))
             {
-                hit.collider.gameObject.SetActive(false);
-                flashlight.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    flashlight.enabled = true;
+                    keyPressed = true;
+                    GameObject flashlightGO = GameObject.Find("Flashlight");
+                    Light spotLight = flashlightGO.GetComponentInChildren<Light>();
+                    spotLight.enabled = false;
+                }
             }
-            else
+
+            if (keyPressed && timesInteractWarned == 0)
             {
-                interactText.text = "Pressione (E) para interagir";
-                interactText.gameObject.SetActive(false);                
+                timesInteractWarned = 1;
+                clearInteractionText();
+                keyPressed = false;
             }
         }
 
@@ -144,13 +166,23 @@ public class Player : MonoBehaviour
     {
         Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
         if(Physics.Raycast(playerColider.bounds.center,Vector3.down, playerColider.height/2))
-        return true;
+            return true;
 
         return false;
     }
     
     private void CrouchControll(bool crounch)
     {
+        if (timesCrouchedWarned == 1)
+        {
+            clearInteractionText();
+            timesCrouchedWarned = 2;
+        }
+        else if (timesCrouchedWarned == 0)
+        {
+            timesCrouchedWarned = 2;
+        }
+
         if (crounch)
         {
             trCrounch.localScale = new Vector3(1, 0.42f, 1);
@@ -187,6 +219,39 @@ public class Player : MonoBehaviour
 
             aiCheck.enabled = false;
         }
+
+        else if (other.gameObject.name == "CrouchTrigger")
+        {
+            if (timesCrouchedWarned == 0)
+            {
+                showInteractionText("Pressione Control Esquerdo (Ctrl) para agachar");
+                timesCrouchedWarned = 1;
+                other.enabled = false;
+            }
+        }
+    }
+
+    public void showInteractionText(string message)
+    {
+        Debug.Log(instructionText + " " + message);
+        instructionText.text = message;
+        instructionText.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+    }
+
+    public void clearInteractionText()
+    {
+        instructionText.text = "";
+        instructionText.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    }
+
+    public int getTimesInteractWarned()
+    {
+        return timesInteractWarned;
+    }
+
+    public void setTimesInteractWarned()
+    {
+        timesInteractWarned += 1;
     }
 
 }

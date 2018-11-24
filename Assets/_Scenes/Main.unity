@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2869c66e822baa941bb52b0e6ec3dfdf, type: 2}
@@ -11955,12 +11955,12 @@ GameObject:
   - component: {fileID: 198224561}
   - component: {fileID: 198224560}
   m_Layer: 5
-  m_Name: InteractText
+  m_Name: InstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &198224559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11976,8 +11976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 176.62, y: 30}
+  m_AnchoredPosition: {x: 0, y: -83}
+  m_SizeDelta: {x: 480, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198224560
 MonoBehaviour:
@@ -11991,7 +11991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12011,7 +12011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pressione (E) para interagir
+  m_Text: 
 --- !u!222 &198224561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41424,6 +41424,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1769569760809254, guid: 8ee3a762566007b4b91ffcee3d523f55, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994683646602240, guid: 8ee3a762566007b4b91ffcee3d523f55, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee3a762566007b4b91ffcee3d523f55, type: 2}
   m_IsPrefabAsset: 0
@@ -49259,7 +49267,7 @@ GameObject:
   - component: {fileID: 972994536}
   - component: {fileID: 972994537}
   - component: {fileID: 972994538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spot Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59693,6 +59701,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1183362402}
   m_Mesh: {fileID: 4300084, guid: 9eb4d689eea78e54da10689d7d578cef, type: 3}
+--- !u!1 &1187315624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187315626}
+  - component: {fileID: 1187315625}
+  m_Layer: 0
+  m_Name: CrouchTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1187315625
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187315624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1187315626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187315624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.454, y: 4.3811827, z: -3.986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189225279
 GameObject:
   m_ObjectHideFlags: 0
@@ -68352,9 +68402,9 @@ GameObject:
   - component: {fileID: 1393337890}
   - component: {fileID: 1393337889}
   - component: {fileID: 1393337888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flashlight_LOD2
-  m_TagString: Untagged
+  m_TagString: Flashlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68373,21 +68423,18 @@ Transform:
   m_Father: {fileID: 808982945}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 173.327, y: 0, z: 0}
---- !u!64 &1393337888
-MeshCollider:
+--- !u!65 &1393337888
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 6400004, guid: 3875ca2c5689e804aace57bc0f79edd1,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1393337886}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 3875ca2c5689e804aace57bc0f79edd1, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.13559176, y: 0.3117712, z: 0.20821473}
+  m_Center: {x: -0.0014151406, y: -0.0036612467, z: 0.05615672}
 --- !u!23 &1393337889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90490,7 +90537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808982945}
   - component: {fileID: 1858751883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flashlight
   m_TagString: Flashlight
   m_Icon: {fileID: 0}
@@ -93501,6 +93548,11 @@ Prefab:
       propertyPath: m_ShadowRadius
       value: 4.59
       objectReference: {fileID: 0}
+    - target: {fileID: 114205446154617260, guid: 690c5cd8e5994a547b2762175a01f375,
+        type: 2}
+      propertyPath: instructionText
+      value: 
+      objectReference: {fileID: 198224560}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690c5cd8e5994a547b2762175a01f375, type: 2}
   m_IsPrefabAsset: 0
@@ -93801,7 +93853,7 @@ GameObject:
   - component: {fileID: 1934383219}
   - component: {fileID: 1934383218}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

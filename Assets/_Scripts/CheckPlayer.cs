@@ -21,7 +21,7 @@ public class CheckPlayer : MonoBehaviour {
         aiScript = GetComponent<NpcAi>();
         areaScript = stayArea.GetComponent<DetectPlayer>();
         checking = false;
-        text = GameObject.FindObjectOfType<UnityEngine.UI.Text>();
+        text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();
         timer = 0.0f;
     }
 	
