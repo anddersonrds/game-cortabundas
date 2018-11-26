@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    public bool open,key;
+    public bool open,key,inside;
     private Animator anim;
     private AudioSource audioData;
     public AudioClip[] fxSound;
@@ -13,7 +13,8 @@ public class DoorScript : MonoBehaviour
     {
         audioData = GetComponent<AudioSource>();
         key = false;
-        anim = GetComponent<Animator>();  
+        anim = GetComponent<Animator>();
+        inside = false;
     }
 
     public void ChangeDoorState()
@@ -51,4 +52,23 @@ public class DoorScript : MonoBehaviour
             }
         }        
     }    
+
+    public void InsedDoor()
+    {
+        if (inside)
+        {
+            open = !open;
+
+            if (open)
+            {
+                anim.SetBool("Open", open);
+                audioData.PlayOneShot(fxSound[0]);
+            }
+            else
+            {
+                anim.SetBool("Open", open);
+                audioData.PlayOneShot(fxSound[1]);
+            }
+        }
+    }
 }

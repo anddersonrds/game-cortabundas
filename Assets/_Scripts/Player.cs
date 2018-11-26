@@ -87,6 +87,18 @@ public class Player : MonoBehaviour
                     StartCoroutine(DoorAnimarion());
                 }
             }
+            else if (hit.collider.CompareTag("InsideDoor"))
+            {
+                instructionText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
+                {
+                    instructionText.text = "Está trancada por dentro";
+                    hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
+                    keyPressed = true;
+                    canOpenDoor = false;
+                    StartCoroutine(DoorAnimarion());
+                }
+            }
             else if (hit.collider.CompareTag("Key"))
             {
                 instructionText.text = "Chave de alguma porta";
@@ -105,6 +117,16 @@ public class Player : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                     keyPressed = true;
                     TurnOnFlashlight();
+                }
+            }
+            else if (hit.collider.CompareTag("Pliers"))
+            {
+                instructionText.text = "Alicate";
+                instructionText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    keyPressed = true;                    
                 }
             }
             else if (hit.collider.CompareTag("Grabbable"))
