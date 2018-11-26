@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float chounchSpeed, speed, jumpForce = 3.5f;
+    private float chounchSpeed, jumpForce = 3.5f;
+    public float speed;
     [SerializeField]
     private Text instructionText;
     [SerializeField]
