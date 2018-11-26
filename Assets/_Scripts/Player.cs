@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float chounchSpeed, speed, jumpForce = 3.5f;
+    private float chounchSpeed, jumpForce = 3.5f;
+    public float speed;
     [SerializeField]
     private Text instructionText;
     [SerializeField]
@@ -30,27 +31,9 @@ public class Player : MonoBehaviour
     private GameMaster gm;
     private Lighting lightScript;
 
-
-    //public AudioSource walking;
-    //public AudioSource running;
-
-    //public Slider staminaSlider;
-    //public int maxStamina;
-    //private int staminaFall;
-    //public int staminaFallMult;
-    //private int staminaRegen;
-    //public int staminaRegenMult;
-
-
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
-        //staminaSlider.maxValue = maxStamina;
-        //staminaSlider.value = maxStamina;
-
-        //staminaFall = 1;
-        //staminaRegen = 1;        
         rb = GetComponent<Rigidbody>();
         playerColider = GetComponent<CapsuleCollider>();
         cam = GetComponentInChildren<Camera>();
@@ -95,7 +78,7 @@ public class Player : MonoBehaviour
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    instructionText.text = "Está trancada";
+                    instructionText.text = "Est� trancada";
                     hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
                     keyPressed = true;
                 }
@@ -171,31 +154,6 @@ public class Player : MonoBehaviour
             isChounching = !isChounching;
             CrouchControll(isChounching);
         }
-
-        /*
-        if (Input.GetKey(KeyCode.LeftShift))
-        { 
-            staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
-            speed = 6.0F;
-        }
-        else
-        {
-            staminaSlider.value += Time.deltaTime / staminaRegen * staminaRegenMult;
-            speed = 4.0F;
-            this.running.Play();
-        }
-
-        if (staminaSlider.value >= maxStamina)
-        {
-            staminaSlider.value = maxStamina;
-        }
-        else if (staminaSlider.value <= 0)
-        {
-            staminaSlider.value = 0;
-            speed = 3.0F;
-            this.running.Stop();
-        }
-        */
 
         if (Input.GetKeyDown("escape"))
         {
@@ -317,9 +275,4 @@ public class Player : MonoBehaviour
         lightScript.SetFlashlight(true);
     }
 }
-
-
-    
-
-
 
