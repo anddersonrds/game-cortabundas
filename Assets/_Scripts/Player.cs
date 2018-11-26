@@ -31,27 +31,9 @@ public class Player : MonoBehaviour
     private GameMaster gm;
     private Lighting lightScript;
 
-
-    //public AudioSource walking;
-    //public AudioSource running;
-
-    //public Slider staminaSlider;
-    //public int maxStamina;
-    //private int staminaFall;
-    //public int staminaFallMult;
-    //private int staminaRegen;
-    //public int staminaRegenMult;
-
-
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
-        //staminaSlider.maxValue = maxStamina;
-        //staminaSlider.value = maxStamina;
-
-        //staminaFall = 1;
-        //staminaRegen = 1;        
         rb = GetComponent<Rigidbody>();
         playerColider = GetComponent<CapsuleCollider>();
         cam = GetComponentInChildren<Camera>();
@@ -175,31 +157,6 @@ public class Player : MonoBehaviour
             CrouchControll(isChounching);
         }
 
-        /*
-        if (Input.GetKey(KeyCode.LeftShift))
-        { 
-            staminaSlider.value -= Time.deltaTime / staminaFall * staminaFallMult;
-            speed = 6.0F;
-        }
-        else
-        {
-            staminaSlider.value += Time.deltaTime / staminaRegen * staminaRegenMult;
-            speed = 4.0F;
-            this.running.Play();
-        }
-
-        if (staminaSlider.value >= maxStamina)
-        {
-            staminaSlider.value = maxStamina;
-        }
-        else if (staminaSlider.value <= 0)
-        {
-            staminaSlider.value = 0;
-            speed = 3.0F;
-            this.running.Stop();
-        }
-        */
-
         if (Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -311,9 +268,3 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
-
-
-    
-
-
-
