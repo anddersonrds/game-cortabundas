@@ -63,7 +63,9 @@ public class Player : MonoBehaviour
         
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         transform.position = gm.lastCheckPointPos;
-        lightScript.SetFlashlight(gm.hasFlashlight);
+        if (gm.hasFlashlight)
+            TurnOnFlashlight();
+        Debug.Log("light script set flashligt: " + gm.hasFlashlight);
     }
 
     private void Update()
@@ -108,12 +110,8 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
-                    flashlight.enabled = true;
                     keyPressed = true;
-                    GameObject flashlightGO = GameObject.Find("Flashlight");
-                    Light spotLight = flashlightGO.GetComponentInChildren<Light>();
-                    spotLight.enabled = false;
-                    lightScript.SetFlashlight(true);
+                    TurnOnFlashlight();
                 }
             }
             else if (hit.collider.CompareTag("Grabbable"))
@@ -308,6 +306,15 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Reload");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void TurnOnFlashlight()
+    {
+        GameObject flashlightGO = GameObject.Find("Flashlight");
+        Light spotLight = flashlightGO.GetComponentInChildren<Light>();
+        spotLight.enabled = false;
+        flashlight.enabled = true;
+        lightScript.SetFlashlight(true);
     }
 }
 

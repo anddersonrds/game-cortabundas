@@ -17,7 +17,7 @@ public class Lighting : MonoBehaviour {
         chanceTimer = 0.0f;
         hasFlashlight = false;
         
-        playerLight.intensity = 5.0f;
+        playerLight.intensity = 1.0f;
         playerLight.color = new Color(1.0f, 1.0f, 1.0f);
     }
 	
@@ -26,7 +26,10 @@ public class Lighting : MonoBehaviour {
         bool flashlightPressed = Input.GetKeyDown(KeyCode.F);
         if (flashlightPressed && hasFlashlight && !flashing)
         {
-            playerLight.enabled = !playerLight.enabled;
+            if (playerLight.intensity == 0.0f)
+                playerLight.intensity = 1.0f;
+            else
+                playerLight.intensity = 0.0f;
         }
         
         if (playerLight.enabled || flashing)
@@ -61,13 +64,18 @@ public class Lighting : MonoBehaviour {
             flashingTimer -= Time.deltaTime;
 
             if (flashEffect == "off")
-                playerLight.enabled = false;
+                playerLight.intensity = 0.0f;
             else
-                playerLight.enabled = !playerLight.enabled;
+            {
+                if (playerLight.intensity == 0.0f)
+                    playerLight.intensity = 1.0f;
+                else
+                    playerLight.intensity = 0.0f;
+            }
         }
         if (flashingTimer < 0)
         {
-            playerLight.enabled = true;
+            playerLight.intensity = 1.0f;
             flashing = false;
             flashingTimer = 0.0f;
         }

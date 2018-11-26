@@ -11,10 +11,8 @@ public class CheckFall : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("fall");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("passou pelo trigger");
             Player playerScript = other.GetComponent<Player>();
             playerScript.ReloadCheckpoint();
         }

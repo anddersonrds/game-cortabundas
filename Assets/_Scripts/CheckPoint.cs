@@ -17,6 +17,7 @@ public class CheckPoint : MonoBehaviour {
             Debug.Log("setting checkpoint cena 2");
             gm.lastCheckPointPos = transform.position;
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
+            Debug.Log(gm.hasFlashlight);
         }
     }
 }
