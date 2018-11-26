@@ -77,6 +77,7 @@ public class NpcAi : MonoBehaviour
         {
             canLooking = true;
             GoToNoisePosition();
+            Debug.Log("Escutou");
         }
         else if (fov == true && isChasing == false)
         {

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private float interactionDistance = 2f;
     private Rigidbody rb;
-    private bool canJump, isChounching = false;
+    private bool canOpenDoor = true, canJump, isChounching = false;
     private CapsuleCollider playerColider;
     private Camera cam;
     private Transform trCrounch;
@@ -67,26 +67,36 @@ public class Player : MonoBehaviour
             if (hit.collider.CompareTag("Door"))
             {
                 instructionText.gameObject.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
                 {
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     keyPressed = true;
+                    canOpenDoor = false;
+                    StartCoroutine(DoorAnimarion());
                 }
             }
             else if (hit.collider.CompareTag("KeyDoor"))
             {
                 instructionText.gameObject.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
                 {
                     instructionText.text = "Está trancada";
                     hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
                     keyPressed = true;
+                    canOpenDoor = false;
+                    StartCoroutine(DoorAnimarion());
                 }
             }
             else if (hit.collider.CompareTag("Key"))
             {
-                hit.collider.gameObject.SetActive(false);
-                keyDoor.GetComponent<DoorScript>().key = true;
+                instructionText.text = "Chave de alguma porta";
+                instructionText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    keyPressed = true;
+                    keyDoor.GetComponent<DoorScript>().key = true;
+                }                
             }
             else if (hit.collider.CompareTag("Flashlight"))
             {
@@ -274,5 +284,12 @@ public class Player : MonoBehaviour
         flashlight.enabled = true;
         lightScript.SetFlashlight(true);
     }
+
+    IEnumerator DoorAnimarion()
+    {        
+        yield return new WaitForSeconds(4);
+        canOpenDoor = true;
+    }
+
 }
 
