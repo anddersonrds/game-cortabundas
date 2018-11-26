@@ -18,6 +18,7 @@ public class NpcAi : MonoBehaviour
     private float searchTime = 5;
     private bool seeLastPosition = false;
     private bool isChasing = false;
+    private bool attacking = false;
 
 
     //IA Hearing 
@@ -45,10 +46,19 @@ public class NpcAi : MonoBehaviour
         
     }
 
-
     private void FixedUpdate()
     {
-        AtackPlayer();
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
+            AttackPlayer();
+        else
+        {
+            if (attacking)
+            {
+                anim.SetBool("StabPlayer", false);
+                agent.isStopped = false;
+                attacking = false;
+            }
+        }
     }
 
     void Update()
@@ -118,19 +128,12 @@ public class NpcAi : MonoBehaviour
         }
     }   
 
-    void AtackPlayer()
+    void AttackPlayer()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
-        {
-            player.GetComponent<Player>().DamagePlayer();
-            anim.SetBool("StabPlayer", true);
-            agent.isStopped = true;
-        }
-        else
-        {
-            anim.SetBool("StabPlayer", false);
-            agent.isStopped = false;
-        }
+        attacking = true;
+        player.GetComponent<Player>().DamagePlayer();
+        anim.SetBool("StabPlayer", true);
+        agent.isStopped = true;
     }
 
     void SearchingPlayer()
@@ -169,5 +172,10 @@ public class NpcAi : MonoBehaviour
         agent.isStopped = false;
         stopped = false;
         agent.SetDestination(wayPoints[currentWP].transform.position);
+    }
+
+    public bool isStopped()
+    {
+        return agent.isStopped;
     }
 }

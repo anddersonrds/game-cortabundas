@@ -57,6 +57,7 @@ public class CheckPlayer : MonoBehaviour {
         }
        else
         {
+            Debug.Log("Entrou aqui antes");
             checking = false;
             aiScript.Resume();
             timer = 5.0f;

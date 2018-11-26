@@ -10,28 +10,22 @@ public class Lighting : MonoBehaviour {
     float flashingTimer;
     float chanceTimer;
     string flashEffect;
-    Color lightColor = new Color(1.0f, 1.0f, 1.0f);
-    Color candleColor = new Color(0.96f, 0.38f, 0.03f);
     // Use this for initialization
     void Start () {
         playerLight = GetComponent<Light>();
         flashing = false;
         chanceTimer = 0.0f;
         hasFlashlight = false;
-	}
+        
+        playerLight.intensity = 5.0f;
+        playerLight.color = new Color(1.0f, 1.0f, 1.0f);
+    }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
         bool flashlightPressed = Input.GetKeyDown(KeyCode.F);
-        bool candlePressed = Input.GetKeyDown(KeyCode.C);
-        if ((flashlightPressed || candlePressed) && hasFlashlight && !flashing)
+        if (flashlightPressed && hasFlashlight && !flashing)
         {
-            string lightType;
-            if (flashlightPressed)
-                lightType = "flashlight";
-            else
-                lightType = "candle";
-            setLightType(lightType);
             playerLight.enabled = !playerLight.enabled;
         }
         
@@ -87,19 +81,8 @@ public class Lighting : MonoBehaviour {
             chanceTimer = 0.0f;
     }
 
-    private void setLightType(string lightType)
+    public void SetFlashlight(bool value)
     {
-        if (lightType == "flashlight")
-        {
-            playerLight.type = LightType.Spot;
-            playerLight.intensity = 5.0f;
-            playerLight.color = lightColor;
-        }
-        else
-        {
-            playerLight.type = LightType.Point;
-            playerLight.intensity = 1.0f;
-            playerLight.color = candleColor;
-        }
+        hasFlashlight = value;
     }
 }

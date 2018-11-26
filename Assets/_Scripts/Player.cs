@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float chounchSpeed,speed,jumpForce = 3.5f;
+    private float chounchSpeed, speed, jumpForce = 3.5f;
     [SerializeField]
     private Text instructionText;
     [SerializeField]
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
 
     private Light flashlight;
 
-    private float interactionDistance = 3f;    
+    private float interactionDistance = 2f;
     private Rigidbody rb;
     private bool canJump, isChounching = false;
     private CapsuleCollider playerColider;
@@ -23,6 +24,11 @@ public class Player : MonoBehaviour
     private int layerMask;
     private int timesInteractWarned = 0;
     private int timesCrouchedWarned = 0;
+    private UnityEngine.UI.RawImage handIcon;
+    private bool grabbing;
+    private PlayerGrab grabScript;
+    private GameMaster gm;
+    private Lighting lightScript;
 
 
     //public AudioSource walking;
@@ -51,32 +57,39 @@ public class Player : MonoBehaviour
         trCrounch = this.transform;
         flashlight = GetComponentInChildren<Light>();
         layerMask = LayerMask.GetMask("Hit");
+        handIcon = GameObject.Find("HandIcon").GetComponent<UnityEngine.UI.RawImage>();
+        grabScript = GetComponent<PlayerGrab>();
+        lightScript = GetComponentInChildren<Lighting>();
+        
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = gm.lastCheckPointPos;
+        lightScript.SetFlashlight(gm.hasFlashlight);
     }
 
-    private void FixedUpdate()
-    {        
+    private void Update()
+    {
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        
+
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, interactionDistance, layerMask))
         {
             bool keyPressed = false;
             if (timesInteractWarned == 0)
-                showInteractionText("Pressione (E) para interagir");
+                showInteractionText("Pressione (E) para interagir com objetos");
 
             if (hit.collider.CompareTag("Door"))
-            {                
+            {
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     keyPressed = true;
                 }
-            }           
+            }
             else if (hit.collider.CompareTag("KeyDoor"))
-            {               
+            {
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -100,8 +113,31 @@ public class Player : MonoBehaviour
                     GameObject flashlightGO = GameObject.Find("Flashlight");
                     Light spotLight = flashlightGO.GetComponentInChildren<Light>();
                     spotLight.enabled = false;
+                    lightScript.SetFlashlight(true);
                 }
             }
+            else if (hit.collider.CompareTag("Grabbable"))
+            {
+                if (Input.GetKeyDown("e"))
+                {
+                    if (timesInteractWarned == 0)
+                    {
+                        clearInteractionText();
+                        setTimesInteractWarned();
+                    }
+                    if (grabbing)
+                    {
+                        grabbing = false;
+                        grabScript.ReleaseObject();
+                    }
+                    else
+                    {
+                        grabbing = true;
+                        grabScript.GrabObject();
+                    }
+                }
+            }
+            handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
 
             if (keyPressed && timesInteractWarned == 0)
             {
@@ -110,8 +146,15 @@ public class Player : MonoBehaviour
                 keyPressed = false;
             }
         }
+        else
+        {
+            if (handIcon.color.a > 0.0f)
+                handIcon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+            if (timesInteractWarned == 0 && instructionText.text != "")
+                clearInteractionText();
+        }
 
-        canJump = IsGrounded();        
+        canJump = IsGrounded();
 
         float translation = Input.GetAxis("Vertical") * speed;
         float straffe = Input.GetAxis("Horizontal") * speed;
@@ -164,14 +207,14 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Debug.DrawRay(playerColider.bounds.center,Vector3.down, Color.red);
-        if(Physics.Raycast(playerColider.bounds.center,Vector3.down, playerColider.height/2))
+        Debug.DrawRay(playerColider.bounds.center, Vector3.down, Color.red);
+        if (Physics.Raycast(playerColider.bounds.center, Vector3.down, playerColider.height / 2))
             return true;
 
         return false;
     }
-    
-    private void CrouchControll(bool crounch)
+
+    private void CrouchControll(bool crouch)
     {
         if (timesCrouchedWarned == 1)
         {
@@ -183,7 +226,7 @@ public class Player : MonoBehaviour
             timesCrouchedWarned = 2;
         }
 
-        if (crounch)
+        if (crouch)
         {
             trCrounch.localScale = new Vector3(1, 0.42f, 1);
             speed = chounchSpeed;
@@ -213,7 +256,8 @@ public class Player : MonoBehaviour
             CheckPlayer aiCheck = ai.GetComponent<CheckPlayer>();
             DetectPlayer areaScript = area.GetComponent<DetectPlayer>();
 
-            aiScript.Resume();
+            if (aiScript.isStopped())
+                aiScript.Resume();
             aiCheck.ClearWarning();
             areaScript.ClearWarning();
 
@@ -226,14 +270,20 @@ public class Player : MonoBehaviour
             {
                 showInteractionText("Pressione Control Esquerdo (Ctrl) para agachar");
                 timesCrouchedWarned = 1;
-                other.enabled = false;
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "Crouch Trigger" && timesCrouchedWarned == 1)
+        {
+            clearInteractionText();
         }
     }
 
     public void showInteractionText(string message)
     {
-        Debug.Log(instructionText + " " + message);
         instructionText.text = message;
         instructionText.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     }
@@ -254,6 +304,11 @@ public class Player : MonoBehaviour
         timesInteractWarned += 1;
     }
 
+    public void ReloadCheckpoint()
+    {
+        Debug.Log("Reload");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 
 

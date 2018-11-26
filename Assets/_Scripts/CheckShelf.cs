@@ -17,20 +17,21 @@ public class CheckShelf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int numberObjects = CheckObjectsInShelf();
-
-		if (numberObjects == 0 && !changedProperties)
+        
+        if (numberObjects == 0 && !changedProperties)
 		{
 			changedProperties = true;
-			box.enabled = true;
+            mesh.enabled = false;
+            box.isTrigger = false;
 			this.tag = "Grabbable";
-			mesh.convex = true;
+            gameObject.layer = LayerMask.NameToLayer("Hit");
 		}
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		collisions.Add(other);
-	}
+    }
 
 	void OnTriggerExit(Collider other)
 	{
