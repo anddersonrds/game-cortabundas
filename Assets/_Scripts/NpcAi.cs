@@ -48,7 +48,7 @@ public class NpcAi : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 2f && fov == true)
+        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f && fov == true)
             AttackPlayer();
         else
         {
@@ -102,6 +102,7 @@ public class NpcAi : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+            Debug.Log("Apertou mouse1");
             noisePosition = player.transform.position;
             canHear = true;
         }

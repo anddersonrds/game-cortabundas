@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class InsideOpen : MonoBehaviour
 {
-    private GameObject dS;
-
+    public GameObject dS;
+    private bool inside = true;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            dS.GetComponent<DoorScript>().inside = true;           
+            dS.GetComponent<DoorScript>().inside = inside;            
         }            
     }
 

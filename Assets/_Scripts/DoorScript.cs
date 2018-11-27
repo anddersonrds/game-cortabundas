@@ -53,7 +53,7 @@ public class DoorScript : MonoBehaviour
         }        
     }    
 
-    public void InsedDoor()
+    public void InsideDoorOpen()
     {
         if (inside)
         {
