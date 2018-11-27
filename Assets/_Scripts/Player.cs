@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private float interactionDistance = 2f;
     private Rigidbody rb;
-    private bool canOpenDoor = true, canJump, isChounching = false;
+    public bool canOpenDoor = true, canJump, isChounching = false;
     private CapsuleCollider playerColider;
     private Camera cam;
     private Transform trCrounch;
