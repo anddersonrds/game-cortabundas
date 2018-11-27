@@ -14,21 +14,22 @@ public class PlayerRunning : MonoBehaviour {
     private float currentStamina;
     private float fallStamina;
     private float staminaRegen;
+    private bool tiredSteps;
 
     private void Start()
     {
         speedWalking = GetComponent<Player>().speed;
-        staminaBar.maxValue = maxStamina;
+        staminaBar.value = maxStamina;
         currentStamina = maxStamina;
         fallStamina = 1f;
         staminaRegen = 0.3f;
+        tiredSteps = false;
     }
 
     private void Update() {
         if (Input.GetKey(KeyCode.LeftShift))
         {
             Runnig();
-
         }
         else
         {
@@ -38,27 +39,38 @@ public class PlayerRunning : MonoBehaviour {
 
     private void Runnig()
     {
-        if(staminaBar.value > 0) {
+        if((staminaBar.value > 0) && (tiredSteps == false)) {
             staminaBar.value -= fallStamina * Time.deltaTime;
             maxStamina = staminaBar.value;
             GetComponent<Player>().speed = speedRun;
         }
         else
         {
-            GetComponent<Player>().speed = 1f;
+            tiredSteps = true;
+            regenStamina();
         }
     }
 
     private void regenStamina()
     {
-        GetComponent<Player>().speed = speedWalking;
-        staminaBar.value += staminaRegen * Time.deltaTime;
-        maxStamina = staminaBar.value;
-
-        if (staminaBar.value >= currentStamina)
+        if (tiredSteps)
         {
-            maxStamina = currentStamina;
-            staminaBar.value = maxStamina;
+            GetComponent<Player>().speed = 1f;
+            staminaBar.value += staminaRegen * Time.deltaTime;
+            maxStamina = staminaBar.value;
+
+            if (staminaBar.value >= currentStamina)
+            {
+                maxStamina = currentStamina;
+                staminaBar.value = maxStamina;
+                tiredSteps = false;
+            }
         }
+        else
+        {
+            GetComponent<Player>().speed = speedWalking;
+        }
+            
     }
+
 }
