@@ -56,21 +56,27 @@ public class PlayerRunning : MonoBehaviour {
         if (tiredSteps)
         {
             GetComponent<Player>().speed = 1f;
-            staminaBar.value += staminaRegen * Time.deltaTime;
-            maxStamina = staminaBar.value;
-
-            if (staminaBar.value >= currentStamina)
-            {
-                maxStamina = currentStamina;
-                staminaBar.value = maxStamina;
-                tiredSteps = false;
-            }
+            Regen();
         }
         else
         {
             GetComponent<Player>().speed = speedWalking;
+            Regen();
         }
             
+    }
+
+    private void Regen()
+    {
+        staminaBar.value += staminaRegen * Time.deltaTime;
+        maxStamina = staminaBar.value;
+
+        if (staminaBar.value >= currentStamina)
+        {
+            maxStamina = currentStamina;
+            staminaBar.value = maxStamina;
+            tiredSteps = false;
+        }
     }
 
 }
