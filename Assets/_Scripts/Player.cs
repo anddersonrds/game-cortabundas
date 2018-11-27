@@ -78,13 +78,20 @@ public class Player : MonoBehaviour
             else if (hit.collider.CompareTag("KeyDoor"))
             {
                 instructionText.gameObject.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
+
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    instructionText.text = "Está trancada";
-                    hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
-                    keyPressed = true;
-                    canOpenDoor = false;
-                    StartCoroutine(DoorAnimarion());
+                    if (keyDoor.GetComponent<DoorScript>().key)
+                    {
+                        hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
+                        keyPressed = true;
+                        canOpenDoor = false;
+                        StartCoroutine(DoorAnimarion());
+                    }
+                    else
+                    {
+                        showInteractionText("Esta trancada");
+                    }
                 }
             }
             else if (hit.collider.CompareTag("InsideDoor"))
@@ -92,7 +99,7 @@ public class Player : MonoBehaviour
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
                 {
-                    instructionText.text = "Está trancada por dentro";
+                    instructionText.text = "Esta trancada por dentro";
                     hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
                     keyPressed = true;
                     canOpenDoor = false;

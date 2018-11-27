@@ -14,10 +14,14 @@ public class CheckPoint : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("setting checkpoint cena 2");
             gm.lastCheckPointPos = transform.position;
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
-            Debug.Log(gm.hasFlashlight);
+
+            if (gameObject.name == "CheckPointCena3")
+            {
+                GameObject forroTrigger = GameObject.Find("ForroTrigger");
+                forroTrigger.SetActive(false);
+            }
         }
     }
 }
