@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: blood3
-  m_Shader: {fileID: 31, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 52, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 815ba632b4464eb4a813592a7f01fb7b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5443cb6468b321439a3e386c3821790, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -49,7 +49,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _ColorMask: 15
-    - _Cutoff: 0.468
+    - _Cutoff: 0.21
     - _EnableExternalAlpha: 0
     - _InvFade: 1
     - _MaskSoftnessX: 0
