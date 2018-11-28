@@ -71,4 +71,9 @@ public class DoorScript : MonoBehaviour
             }
         }
     }
+
+    public void IronLastDoor()
+    {
+        anim.SetBool("Open", true);      
+    }
 }

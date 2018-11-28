@@ -16,6 +16,8 @@ TagManager:
   - GM
   - Pliers
   - InsideDoor
+  - Chains
+  - IronDoor
   layers:
   - Default
   - TransparentFX
