@@ -48,7 +48,7 @@ public class NpcAi : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f && fov == true)
+        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f && fov)
             AttackPlayer();
         else
         {
@@ -83,7 +83,7 @@ public class NpcAi : MonoBehaviour
         {
             Chase();
         }
-        else if(isChasing == true)
+        else if(isChasing == true && !attacking)
         {            
             SearchingPlayer();
         }
@@ -91,10 +91,10 @@ public class NpcAi : MonoBehaviour
 
     void Chase()
     {
-        if (fov == true)
+        if (fov == true && !attacking)
         {           
             agent.SetDestination(player.transform.position);
-            isChasing = true;
+            isChasing = true;            
         }
     }
 
@@ -135,14 +135,15 @@ public class NpcAi : MonoBehaviour
         attacking = true;
         player.GetComponent<Player>().DamagePlayer();
         anim.SetBool("StabPlayer", true);
-        agent.isStopped = true;
+        agent.speed = 0;
+        StartCoroutine(WaitTimeAttack());
     }
 
     void SearchingPlayer()
     {
         if (searchTime > 0 && fov == false)
         {          
-            searchTime -= Time.deltaTime;
+            searchTime -= Time.deltaTime;           
             agent.SetDestination(player.transform.position);
         }
         else
@@ -159,6 +160,12 @@ public class NpcAi : MonoBehaviour
         anim.SetBool("Looking", false);
         canLooking = false;
         canHear = false;
+    }
+
+    IEnumerator WaitTimeAttack()
+    {
+        yield return new WaitForSeconds(2.10f);
+        agent.speed = 1.8f;
     }
 
     public void Stop()
