@@ -18,6 +18,7 @@ TagManager:
   - InsideDoor
   - Chains
   - IronDoor
+  - JumpScareDoor
   layers:
   - Default
   - TransparentFX

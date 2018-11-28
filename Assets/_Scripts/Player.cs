@@ -174,6 +174,18 @@ public class Player : MonoBehaviour
                     instructionText.text = "Porta trancada com corrente";
                 }
             }
+            else if (hit.collider.CompareTag("JumpScareDoor"))
+            {
+                Debug.Log("PortaJumpScare");
+                if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
+                {
+                    Debug.Log("Chegou aqui");
+                    hit.collider.transform.GetComponent<JumpScareDoors>().JumpScareSound();
+                    keyPressed = true;
+                    canOpenDoor = false;
+                    StartCoroutine(DoorAnimarion());
+                }                
+            }
             else if (hit.collider.CompareTag("Grabbable"))
             {
                 if (Input.GetKeyDown("e"))
