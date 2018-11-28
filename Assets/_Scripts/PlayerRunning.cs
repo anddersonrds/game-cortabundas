@@ -29,7 +29,10 @@ public class PlayerRunning : MonoBehaviour {
     private void Update() {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Runnig();
+            if(!GetComponent<Player>().isChounching)
+            {
+                Runnig();
+            }
         }
         else
         {
