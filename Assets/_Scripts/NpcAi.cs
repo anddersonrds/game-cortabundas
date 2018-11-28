@@ -15,7 +15,7 @@ public class NpcAi : MonoBehaviour
     private bool stopped = false;
 
     //IA Memory
-    private float searchTime = 5;
+    private float searchTime = 3;
     private bool seeLastPosition = false;
     private bool isChasing = false;
     private bool attacking = false;
@@ -83,7 +83,7 @@ public class NpcAi : MonoBehaviour
         {
             Chase();
         }
-        else if(fov == false && isChasing == true)
+        else if(isChasing == true)
         {            
             SearchingPlayer();
         }
@@ -147,7 +147,7 @@ public class NpcAi : MonoBehaviour
         }
         else
         {
-            searchTime = 5;
+            searchTime = 3;
             isChasing = false;           
         }        
     }

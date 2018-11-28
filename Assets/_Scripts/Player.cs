@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private float interactionDistance = 2f;
     private Rigidbody rb;
-    public bool canOpenDoor = true, canJump, isChounching = false;
+    public bool pliers,canOpenDoor = true, canJump, isChounching = false, chain = false;
     private CapsuleCollider playerColider;
     private Camera cam;
     private Transform trCrounch;
@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         handIcon = GameObject.Find("HandIcon").GetComponent<UnityEngine.UI.RawImage>();
         grabScript = GetComponent<PlayerGrab>();
         lightScript = GetComponentInChildren<Lighting>();
+        
         
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         transform.position = gm.lastCheckPointPos;
@@ -100,17 +101,17 @@ public class Player : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
                 {
-                    if(!keyDoor.GetComponent<DoorScript>().inside)
+                    if (!keyDoor.GetComponent<DoorScript>().inside)
                     {
                         hit.collider.transform.parent.GetComponent<DoorScript>().InsideDoorOpen();
                         keyPressed = true;
                         canOpenDoor = false;
-                        StartCoroutine(DoorAnimarion());                        
+                        StartCoroutine(DoorAnimarion());
                     }
                     else
                     {
                         showInteractionText("Esta trancada por dentro");
-                    }                  
+                    }
                 }
             }
             else if (hit.collider.CompareTag("Key"))
@@ -122,7 +123,7 @@ public class Player : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                     keyPressed = true;
                     keyDoor.GetComponent<DoorScript>().key = true;
-                }                
+                }
             }
             else if (hit.collider.CompareTag("Flashlight"))
             {
@@ -140,7 +141,37 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
-                    keyPressed = true;                    
+                    pliers = true;
+                    keyPressed = true;
+                }
+            }
+            else if (hit.collider.CompareTag("Chains"))
+            {
+                instructionText.text = "Corte a corrente";
+                instructionText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && pliers)
+                {
+                    chain = true;                  
+                    hit.collider.gameObject.SetActive(false);                    
+                    keyPressed = true;
+                }
+                else
+                {
+                    instructionText.text = "Falta uma ferramenta";
+                }
+            }
+            else if (hit.collider.CompareTag("IronDoor"))
+            {
+                instructionText.text = "Abrir porta";
+                instructionText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && chain)
+                {
+                    hit.collider.transform.GetComponent<DoorScript>().IronLastDoor();
+                    keyPressed = true;
+                }
+                else
+                {
+                    instructionText.text = "Porta trancada com corrente";
                 }
             }
             else if (hit.collider.CompareTag("Grabbable"))
