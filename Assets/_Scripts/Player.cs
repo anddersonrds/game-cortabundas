@@ -50,12 +50,10 @@ public class Player : MonoBehaviour
         transform.position = gm.lastCheckPointPos;
         if (gm.hasFlashlight)
             TurnOnFlashlight();
-        Debug.Log("light script set flashligt: " + gm.hasFlashlight);
     }
 
     private void Update()
     {
-
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
@@ -250,7 +248,6 @@ public class Player : MonoBehaviour
             if (timesInteractWarned == 0 && instructionText.text != "")
                 clearInteractionText();
         }
-        Debug.Log(icon.color);
 
         canJump = IsGrounded();
 
@@ -318,6 +315,13 @@ public class Player : MonoBehaviour
         camera.StartShader();
     }
 
+    public void ShowShadow()
+    {
+        Debug.Log("Show shadow");
+        ShadowEffect camera = GetComponentInChildren<ShadowEffect>();
+        camera.StartShader();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Cena1Checkpoint")
@@ -344,6 +348,16 @@ public class Player : MonoBehaviour
                 showInteractionText("Pressione Control Esquerdo (Ctrl) para agachar");
                 timesCrouchedWarned = 1;
             }
+        }
+
+        else if (other.CompareTag("ShadowTrigger"))
+        {
+            if (other.gameObject.name == "ShadowTrigger1")
+            {
+
+            }
+            else
+                ShowShadow();
         }
     }
 
@@ -379,7 +393,6 @@ public class Player : MonoBehaviour
 
     public void ReloadCheckpoint()
     {
-        Debug.Log("Reload");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

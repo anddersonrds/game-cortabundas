@@ -29,32 +29,37 @@ public class PlayerRunning : MonoBehaviour {
     private void Update() {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            if(!GetComponent<Player>().isChounching)
-            {
-                Runnig();
-            }
+            Runnig();
+        }
+        else if(GetComponent<Player>().isChounching)
+        {
+            Chounching();
         }
         else
         {
-            regenStamina();
+            RegenStamina();
         }
     }
 
     private void Runnig()
     {
-        if((staminaBar.value > 0) && (tiredSteps == false)) {
-            staminaBar.value -= fallStamina * Time.deltaTime;
-            maxStamina = staminaBar.value;
-            GetComponent<Player>().speed = speedRun;
-        }
-        else
+        if (!GetComponent<Player>().isChounching)
         {
-            tiredSteps = true;
-            regenStamina();
+            if ((staminaBar.value > 0) && (tiredSteps == false))
+            {
+                staminaBar.value -= fallStamina * Time.deltaTime;
+                maxStamina = staminaBar.value;
+                GetComponent<Player>().speed = speedRun;
+            }
+            else
+            {
+                tiredSteps = true;
+                RegenStamina();
+            }
         }
     }
 
-    private void regenStamina()
+    private void RegenStamina()
     {
         if (tiredSteps)
         {
@@ -80,6 +85,12 @@ public class PlayerRunning : MonoBehaviour {
             staminaBar.value = maxStamina;
             tiredSteps = false;
         }
+    }
+
+    private void Chounching()
+    {
+        GetComponent<Player>().speed = 1f;
+        Regen();
     }
 
 }
