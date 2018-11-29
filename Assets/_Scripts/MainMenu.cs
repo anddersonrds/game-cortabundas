@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
     public void ShowCredits()
