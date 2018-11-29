@@ -302,7 +302,7 @@ public class Player : MonoBehaviour
         if (crouch)
         {
             trCrounch.localScale = new Vector3(1, 0.42f, 1);
-            speed = chounchSpeed;
+            speed = chounchSpeed;            
         }
         else
         {
