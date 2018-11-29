@@ -32,7 +32,7 @@ public class Lighting : MonoBehaviour {
                 playerLight.intensity = 0.0f;
         }
         
-        if (playerLight.enabled || flashing)
+        if (playerLight.intensity == 1.0f || flashing)
         {
             if (!flashing && chanceTimer == 0.0f)
             {

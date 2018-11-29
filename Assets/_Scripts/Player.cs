@@ -352,12 +352,8 @@ public class Player : MonoBehaviour
 
         else if (other.CompareTag("ShadowTrigger"))
         {
-            if (other.gameObject.name == "ShadowTrigger1")
-            {
-
-            }
-            else
-                ShowShadow();
+            ShowShadow();
+            other.enabled = false;
         }
     }
 
