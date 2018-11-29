@@ -25,11 +25,12 @@ public class Player : MonoBehaviour
     private int layerMask;
     private int timesInteractWarned = 0;
     private int timesCrouchedWarned = 0;
-    private UnityEngine.UI.RawImage handIcon;
+    private UnityEngine.UI.RawImage icon;
     private bool grabbing;
     private PlayerGrab grabScript;
     private GameMaster gm;
     private Lighting lightScript;
+    public GameObject[] icones;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
         trCrounch = this.transform;
         flashlight = GetComponentInChildren<Light>();
         layerMask = LayerMask.GetMask("Hit");
-        handIcon = GameObject.Find("HandIcon").GetComponent<UnityEngine.UI.RawImage>();
+        icon = GameObject.Find("Icon").GetComponent<UnityEngine.UI.RawImage>();
         grabScript = GetComponent<PlayerGrab>();
         lightScript = GetComponentInChildren<Lighting>();
         
@@ -67,6 +68,8 @@ public class Player : MonoBehaviour
 
             if (hit.collider.CompareTag("Door"))
             {
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                icon = icones[2].GetComponent<UnityEngine.UI.RawImage>();
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && canOpenDoor)
                 {
@@ -84,6 +87,8 @@ public class Player : MonoBehaviour
                 {
                     if (keyDoor.GetComponent<DoorScript>().key)
                     {
+                        icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                        icon = icones[2].GetComponent<UnityEngine.UI.RawImage>();
                         hit.collider.transform.parent.GetComponent<DoorScript>().KeyDoorOpen();
                         keyPressed = true;
                         canOpenDoor = false;
@@ -91,6 +96,8 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
+                        icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                        icon = icones[3].GetComponent<UnityEngine.UI.RawImage>();
                         showInteractionText("Esta trancada");
                     }
                 }
@@ -116,6 +123,8 @@ public class Player : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Key"))
             {
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                icon = icones[4].GetComponent<UnityEngine.UI.RawImage>();
                 instructionText.text = "Chave de alguma porta";
                 instructionText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
@@ -127,6 +136,8 @@ public class Player : MonoBehaviour
             }
             else if (hit.collider.CompareTag("Flashlight"))
             {
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                icon = icones[6].GetComponent<UnityEngine.UI.RawImage>();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
@@ -138,6 +149,8 @@ public class Player : MonoBehaviour
             {
                 instructionText.text = "Alicate";
                 instructionText.gameObject.SetActive(true);
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                icon = icones[9].GetComponent<UnityEngine.UI.RawImage>();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
@@ -190,6 +203,8 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKeyDown("e"))
                 {
+                    icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                    icon = icones[1].GetComponent<UnityEngine.UI.RawImage>();
                     if (timesInteractWarned == 0)
                     {
                         clearInteractionText();
@@ -206,8 +221,20 @@ public class Player : MonoBehaviour
                         grabScript.GrabObject();
                     }
                 }
+                else
+                {
+                    if (!grabbing)
+                    {
+                        icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                        icon = icones[0].GetComponent<UnityEngine.UI.RawImage>();
+                    }
+                }
             }
-            handIcon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+            else
+            {
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+            }
+            icon.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
 
             if (keyPressed && timesInteractWarned == 0)
             {
@@ -218,11 +245,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (handIcon.color.a > 0.0f)
-                handIcon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+            if (icon.color.a > 0.0f)
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
             if (timesInteractWarned == 0 && instructionText.text != "")
                 clearInteractionText();
         }
+        Debug.Log(icon.color);
 
         canJump = IsGrounded();
 
