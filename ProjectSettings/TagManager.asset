@@ -19,6 +19,7 @@ TagManager:
   - Chains
   - IronDoor
   - JumpScareDoor
+  - ShadowTrigger
   layers:
   - Default
   - TransparentFX
