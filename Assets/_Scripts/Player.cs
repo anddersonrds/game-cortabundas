@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     private GameMaster gm;
     private Lighting lightScript;
     public GameObject[] icones;
+    private GameObject enemyShadow;
+    private bool enemyShadowStarted = false;
+    private int enemyShadowTriggerCount = 0;
 
     void Start()
     {
@@ -44,6 +47,8 @@ public class Player : MonoBehaviour
         icon = GameObject.Find("Icon").GetComponent<UnityEngine.UI.RawImage>();
         grabScript = GetComponent<PlayerGrab>();
         lightScript = GetComponentInChildren<Lighting>();
+        enemyShadow = GameObject.Find("EnemyShadow");
+        enemyShadow.SetActive(false);
         
         
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
@@ -259,6 +264,15 @@ public class Player : MonoBehaviour
 
         transform.Translate(straffe, 0, translation);
 
+        if (enemyShadowStarted)
+        {
+            if (translation != 0 || straffe != 0)
+                enemyShadow.SetActive(true);
+            else
+                enemyShadow.SetActive(false);
+        }
+
+
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -347,6 +361,17 @@ public class Player : MonoBehaviour
             {
                 showInteractionText("Pressione Control Esquerdo (Ctrl) para agachar");
                 timesCrouchedWarned = 1;
+            }
+        }
+
+        else if (other.gameObject.name == "ShadowTrigger")
+        {
+            enemyShadowTriggerCount += 1;
+            if (enemyShadowTriggerCount == 2)
+            {
+                other.enabled = false;
+                enemyShadow.SetActive(true);
+                enemyShadowStarted = true;
             }
         }
 
