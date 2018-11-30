@@ -29356,7 +29356,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &610820625
 GameObject:
@@ -31304,7 +31304,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &668046505
 Prefab:
@@ -31417,7 +31417,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -50614,7 +50614,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1036598861
 BoxCollider:
@@ -52944,7 +52944,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &1090321989 stripped
 Transform:
@@ -73538,7 +73538,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1566918852
 GameObject:
@@ -88530,7 +88530,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4795650800406168, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4795650800406168, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -88558,15 +88558,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4795650800406168, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.76783
+      value: 0.580372
       objectReference: {fileID: 0}
     - target: {fileID: 4795650800406168, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7678298
+      value: 0.5803718
       objectReference: {fileID: 0}
     - target: {fileID: 4795650800406168, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.7678298
+      value: 0.5803718
       objectReference: {fileID: 0}
     - target: {fileID: 1639354913839844, guid: 4e089bf6ba34e5348857a7163b8e1cdc, type: 2}
       propertyPath: m_Name
@@ -98041,7 +98041,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &2086503612
 GameObject:
