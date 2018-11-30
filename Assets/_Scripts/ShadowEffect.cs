@@ -7,7 +7,7 @@ public class ShadowEffect : MonoBehaviour
     float timer;
     bool triggered;
 
-    public float hitPeriod = 1.0f;
+    public float showPeriod = 1.0f;
     // Creates a private material used to the effect
     void Awake()
     {
@@ -21,7 +21,7 @@ public class ShadowEffect : MonoBehaviour
         if (triggered)
         {
             timer += Time.deltaTime;
-            if (timer > hitPeriod)
+            if (timer > showPeriod)
                 triggered = false;
         }
     }

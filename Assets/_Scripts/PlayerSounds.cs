@@ -4,33 +4,73 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour {
 
-    public AudioSource andando, correndo;
+    private AudioSource playerSource;
+    public AudioClip andando, correndo;
     private float horizontal, vertical;
+    private bool playing;
+    private int pace; // -1: andando, 0: parado, 1: andando
+    private bool changedPace;
 
-	void Start () {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("vertical");
+	void Start ()
+    {
+        playerSource = GetComponent<AudioSource>();
+        playing = false;
+        pace = 0;
     }
 	
 	void Update () 
     {
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("vertical");
+        vertical = Input.GetAxis("Vertical");
 
-        if(horizontal != 0 && vertical != 0)
+        bool running = Input.GetKey(KeyCode.LeftShift);
+
+        if ((horizontal != 0 || vertical != 0))
         {
-            MovimentSound();
-        }  
+            if (running)
+            {
+                if (pace != 1)
+                    changedPace = true;
+                else
+                    changedPace = false;
+                pace = 1;
+            }
+            else
+            {
+                if (pace != -1)
+                    changedPace = true;
+                else
+                    changedPace = false;
+                pace = -1;
+            }
+
+            if (changedPace || !playing)
+            {
+                playing = true;
+                MovimentSound(running);
+            }
+        }
+        else
+        {
+            pace = 0;
+            if (playing)
+            {
+                playerSource.Stop();
+                playing = false;
+            }
+        }
 	}
 
-    private void MovimentSound()
+    private void MovimentSound(bool running)
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(running)
         {
-            correndo.Play();
+            playerSource.clip = correndo;
         }
-        else{
-            andando.Play();
+        else
+        {
+            playerSource.clip = andando;
         }
+        playerSource.Play();
     }
 }
