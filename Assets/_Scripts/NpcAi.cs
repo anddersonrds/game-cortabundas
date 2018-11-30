@@ -23,9 +23,10 @@ public class NpcAi : MonoBehaviour
 
     //IA Hearing 
     Vector3 noisePosition;
-    private bool canHear = false;
+    public bool canHear = false;
     public float noiseDistance = 50f;
     private bool canLooking = false;
+    public GlassTrigger glassTrigger;
 
 
     void Start()
@@ -71,13 +72,13 @@ public class NpcAi : MonoBehaviour
         if (stopped)
             return;
 
-        if (!agent.pathPending && agent.remainingDistance < 0.5f && fov == false && canHear == false && seeLastPosition == false && isChasing == false)
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && fov == false && seeLastPosition == false && isChasing == false)
         {
-            GoToNextPoint();
-            NoiseCheck();
+            GoToNextPoint();            
         }
         else if (canHear == true && fov == false)
         {
+            NoiseCheck();
             canLooking = true;
             GoToNoisePosition();
             Debug.Log("Escutou");
@@ -105,8 +106,7 @@ public class NpcAi : MonoBehaviour
     {
         if (canHear)
         {
-            noisePosition = player.transform.position;
-            canHear = true;
+            noisePosition = glassTrigger.GetComponent<GlassTrigger>().npcDestiny.transform.position;            
         }
         else
         {
@@ -119,7 +119,7 @@ public class NpcAi : MonoBehaviour
     {        
         agent.SetDestination(noisePosition);
 
-        if (Vector3.Distance(transform.position, noisePosition) <= 2f && canLooking == true)
+        if (Vector3.Distance(transform.position, noisePosition) <= 1f && canLooking == true)
         {
             anim.SetBool("Looking", true);
             StartCoroutine(WaitTimeLokking());
