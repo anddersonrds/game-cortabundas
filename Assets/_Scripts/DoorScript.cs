@@ -79,12 +79,12 @@ public class DoorScript : MonoBehaviour
         if (open)
         {
             
-            anim.SetBool("Open", open);
+            anim.SetBool("OpenFast", open);
             audioData.PlayOneShot(fxSound[0]);
         }
         else
         {
-            anim.SetBool("Open", open);
+            anim.SetBool("OpenFast", false);
             audioData.PlayOneShot(fxSound[1]);
         }        
     }
