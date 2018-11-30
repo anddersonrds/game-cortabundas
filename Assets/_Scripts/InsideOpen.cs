@@ -6,6 +6,7 @@ public class InsideOpen : MonoBehaviour
 {
     public GameObject dS;
     private bool inside = true;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
