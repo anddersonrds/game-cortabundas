@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour {
 
-    public AudioSource walkingSound, runningSound;
+    public AudioSource andando, correndo;
+    private float horizontal, vertical;
 
 	void Start () {
-		
-	}
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("vertical");
+    }
 	
 	void Update () 
     {
-        MovimentSound();
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("vertical");
+
+        if(horizontal != 0 && vertical != 0)
+        {
+            MovimentSound();
+        }  
 	}
 
     private void MovimentSound()
     {
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            runningSound.Play();
+            correndo.Play();
         }
         else{
-            walkingSound.Play();
+            andando.Play();
         }
     }
 }
