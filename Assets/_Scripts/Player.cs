@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private Light flashlight;
 
-    private float interactionDistance = 2f;
+    private float interactionDistance = 0.8f;
     private Rigidbody rb;
     public bool pliers,canOpenDoor = true, canJump, isChounching = false, chain = false;
     private CapsuleCollider playerColider;

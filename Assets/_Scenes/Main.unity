@@ -56096,6 +56096,10 @@ Prefab:
       propertyPath: glassTrigger
       value: 
       objectReference: {fileID: 1414535470}
+    - target: {fileID: 1310817507415620, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
   m_IsPrefabAsset: 0
@@ -57172,8 +57176,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169965112}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.22, y: -0.385, z: -6.995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.22, y: -0.5, z: -6.995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1726609950}
@@ -77513,7 +77517,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1849108946010312, guid: 73ff890c62c55ee418eb0c0d0297e8f6, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224796487502448678, guid: 73ff890c62c55ee418eb0c0d0297e8f6,
         type: 2}
@@ -77820,7 +77824,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635041977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.78, y: -0.385, z: -6.424}
+  m_LocalPosition: {x: -6.78, y: -0.5, z: -6.424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1726609950}
@@ -81345,6 +81349,16 @@ Prefab:
       propertyPath: glassTrigger
       value: 
       objectReference: {fileID: 1414535470}
+    - target: {fileID: 114574529768902280, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95040994160279928, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2,
+        type: 2}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64494837852742204, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
@@ -90667,6 +90681,16 @@ Prefab:
       propertyPath: showPeriod
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 108094088429577460, guid: 56aa9fbddd2b6974094a0798fd133126,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108094088429577460, guid: 56aa9fbddd2b6974094a0798fd133126,
+        type: 2}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 2800000, guid: 0908ab733cd223249aac7188395c4c82, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
   m_IsPrefabAsset: 0
@@ -92372,7 +92396,6 @@ GameObject:
   - component: {fileID: 1957725661}
   - component: {fileID: 1957725670}
   - component: {fileID: 1957725671}
-  - component: {fileID: 1957725672}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -92389,7 +92412,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1957725660}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.35
   m_Height: 2
   m_Direction: 1
@@ -92651,43 +92674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   andando: {fileID: 8300000, guid: df30928475c50a84c95c143a4b16e605, type: 3}
   correndo: {fileID: 8300000, guid: 9b748a90ff311bb469053918bfb8e388, type: 3}
---- !u!108 &1957725672
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1957725660}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &1958345949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1317334723510746, guid: 531aeafbc8a46b04488ec3c1c1ff574d,
