@@ -16,7 +16,6 @@ public class NpcAi : MonoBehaviour
 
     //IA Memory
     private float searchTime = 3;
-    private bool seeLastPosition = false;
     private bool isChasing = false;
     private bool attacking = false;
 
@@ -38,21 +37,19 @@ public class NpcAi : MonoBehaviour
     }
 
     void GoToNextPoint()
-    {
-        if (wayPoints.Length == 0)
-            return;
+    {       
+        agent.destination = wayPoints[currentWP].transform.position;       
 
-        agent.destination = wayPoints[currentWP].position;       
-        if(Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 1.5f)
+        if(Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 0.5f)
         {
-            anim.SetBool("Looking", true);
-            StartCoroutine(WaitToNextWayPoint());
+            anim.SetBool("Looking", true);           
+            StartCoroutine(WaitToNextWayPoint());           
         }              
     }
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f && fov)
+        if (Vector3.Distance(transform.position, player.transform.position) <= 0.5f && fov)
             AttackPlayer();
         else
         {
@@ -72,8 +69,8 @@ public class NpcAi : MonoBehaviour
         if (stopped)
             return;
 
-        if (!agent.pathPending && agent.remainingDistance < 0.5f && fov == false && seeLastPosition == false && isChasing == false)
-        {
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && fov == false && isChasing == false)
+        {           
             GoToNextPoint();            
         }
         else if (canHear == true && fov == false)
@@ -173,8 +170,14 @@ public class NpcAi : MonoBehaviour
     IEnumerator WaitToNextWayPoint()
     {
         yield return new WaitForSeconds(Random.Range(5,10));
+
         anim.SetBool("Looking", false);
-        currentWP = (currentWP + 1) % wayPoints.Length;
+        currentWP++;
+         
+        if (currentWP >= wayPoints.Length)
+        {
+            currentWP = 0;
+        }
     }
 
     public void Stop()
