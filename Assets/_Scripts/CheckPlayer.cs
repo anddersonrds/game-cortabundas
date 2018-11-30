@@ -14,6 +14,7 @@ public class CheckPlayer : MonoBehaviour {
     private bool warned = false;
     private float timer;
     private int timesWarned = 0;
+    private GameMaster gm;
     // Use this for initialization
     void Start () {
         wayPoint = GameObject.Find("WP1");
@@ -22,11 +23,15 @@ public class CheckPlayer : MonoBehaviour {
         areaScript = stayArea.GetComponent<DetectPlayer>();
         checking = false;
         text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();
+        text.text = "";
+        text.color = Color.white;
         timer = 0.0f;
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if (Vector3.Distance(wayPoint.transform.position, this.transform.position) < accuracy && timer < 2.0f)
         {
@@ -57,7 +62,6 @@ public class CheckPlayer : MonoBehaviour {
         }
        else
         {
-            Debug.Log("Entrou aqui antes");
             checking = false;
             aiScript.Resume();
             timer = 5.0f;
@@ -66,9 +70,7 @@ public class CheckPlayer : MonoBehaviour {
 
         if (timesWarned > 2)
         {
-            text.text = "GAME OVER";
-            text.color = Color.red;
-            Time.timeScale = 0;
+            gm.GameOver();
         }
     }
 

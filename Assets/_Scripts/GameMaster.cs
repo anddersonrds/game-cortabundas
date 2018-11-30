@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameMaster : MonoBehaviour {
 
     private static GameMaster instance;
     public Vector3 lastCheckPointPos;
     public bool hasFlashlight;
-	// Use this for initialization
-	void Start () {
-		
+    private UnityEngine.UI.Text text;
+
+    // Use this for initialization
+    void Start () {
+
+        text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();
+
         if (instance == null)
         {
             instance = this;
@@ -25,4 +31,13 @@ public class GameMaster : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void GameOver()
+    {
+        text.text = "Fim de Jogo";
+        text.color = Color.red;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
 }

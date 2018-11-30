@@ -15,6 +15,7 @@ public class PlayerRunning : MonoBehaviour {
     private float fallStamina;
     private float staminaRegen;
     private bool tiredSteps;
+    public bool isRunning;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class PlayerRunning : MonoBehaviour {
     private void Update() {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Runnig();
+            Running();
         }
         else if(GetComponent<Player>().isChounching)
         {
@@ -41,7 +42,7 @@ public class PlayerRunning : MonoBehaviour {
         }
     }
 
-    private void Runnig()
+    private void Running()
     {
         if (!GetComponent<Player>().isChounching)
         {
@@ -50,13 +51,17 @@ public class PlayerRunning : MonoBehaviour {
                 staminaBar.value -= fallStamina * Time.deltaTime;
                 maxStamina = staminaBar.value;
                 GetComponent<Player>().speed = speedRun;
+                isRunning = true;
             }
             else
             {
                 tiredSteps = true;
                 RegenStamina();
+                isRunning = false;
             }
         }
+        else
+            isRunning = false;
     }
 
     private void RegenStamina()
@@ -89,6 +94,7 @@ public class PlayerRunning : MonoBehaviour {
 
     private void Chounching()
     {
+        isRunning = false;
         GetComponent<Player>().speed = 1f;
         Regen();
     }

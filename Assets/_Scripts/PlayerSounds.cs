@@ -10,12 +10,14 @@ public class PlayerSounds : MonoBehaviour {
     private bool playing;
     private int pace; // -1: andando, 0: parado, 1: andando
     private bool changedPace;
+    private PlayerRunning runningScript;
 
 	void Start ()
     {
         playerSource = GetComponent<AudioSource>();
         playing = false;
         pace = 0;
+        runningScript = GetComponent<PlayerRunning>();
     }
 	
 	void Update () 
@@ -23,11 +25,11 @@ public class PlayerSounds : MonoBehaviour {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        bool running = Input.GetKey(KeyCode.LeftShift);
+        bool running = runningScript.isRunning;
 
         if ((horizontal != 0 || vertical != 0))
         {
-            if (running)
+            if (running )
             {
                 if (pace != 1)
                     changedPace = true;
@@ -44,7 +46,7 @@ public class PlayerSounds : MonoBehaviour {
                 pace = -1;
             }
 
-            if (changedPace || !playing)
+            if (changedPace || !playing || (playing && !playerSource.isPlaying))
             {
                 playing = true;
                 MovimentSound(running);
@@ -59,6 +61,8 @@ public class PlayerSounds : MonoBehaviour {
                 playing = false;
             }
         }
+        
+
 	}
 
     private void MovimentSound(bool running)

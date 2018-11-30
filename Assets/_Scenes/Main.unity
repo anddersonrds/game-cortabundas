@@ -74053,7 +74053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastCheckPointPos: {x: -6.249, y: 0.93, z: -3.001}
-  hasFlashlight: 1
+  hasFlashlight: 0
 --- !u!4 &1570292878
 Transform:
   m_ObjectHideFlags: 0
@@ -92500,6 +92500,7 @@ MonoBehaviour:
   speedRun: 3.5
   staminaBar: {fileID: 761488369}
   maxStamina: 3
+  isRunning: 0
 --- !u!114 &1957725671
 MonoBehaviour:
   m_ObjectHideFlags: 0

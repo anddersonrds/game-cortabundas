@@ -13,6 +13,7 @@ public class NpcAi : MonoBehaviour
     public float accuracy = 0.5f;
     private int currentWP = 0;
     private bool stopped = false;
+    private AudioSource npcSource;
 
     //IA Memory
     private float searchTime = 3;
@@ -34,6 +35,7 @@ public class NpcAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
         GoToNextPoint();
+        npcSource = GetComponent<AudioSource>();
     }
 
     void GoToNextPoint()
@@ -157,7 +159,9 @@ public class NpcAi : MonoBehaviour
 
     IEnumerator WaitTimeLokking()
     {
+        npcSource.Stop();
         yield return new WaitForSeconds(5);
+        npcSource.Play();
 
         anim.SetBool("Looking", false);
         canLooking = false;
@@ -166,19 +170,25 @@ public class NpcAi : MonoBehaviour
 
     IEnumerator WaitTimeAttack()
     {
+        npcSource.Stop();
         yield return new WaitForSeconds(2.10f);
+        npcSource.Play();
         agent.speed = 1.8f;
     }
 
     IEnumerator WaitToNextWayPoint()
     {
+        Debug.Log(npcSource + " " + this.name);
+        npcSource.Stop();
         yield return new WaitForSeconds(Random.Range(5,10));
+        npcSource.Play();
         anim.SetBool("Looking", false);
         currentWP = (currentWP + 1) % wayPoints.Length;
     }
 
     public void Stop()
     {
+        npcSource.Stop();
         anim.SetBool("Looking", true);
         agent.isStopped = true;
         stopped = true;
@@ -186,6 +196,7 @@ public class NpcAi : MonoBehaviour
 
     public void Resume()
     {
+        npcSource.Play();
         anim.SetBool("Looking", false);
         agent.isStopped = false;
         stopped = false;
