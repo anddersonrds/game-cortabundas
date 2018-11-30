@@ -103,9 +103,8 @@ public class NpcAi : MonoBehaviour
 
     void NoiseCheck()
     {
-        if (Input.GetButton("Fire1"))
+        if (canHear)
         {
-            Debug.Log("Apertou mouse1");
             noisePosition = player.transform.position;
             canHear = true;
         }
