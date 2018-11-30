@@ -10,7 +10,7 @@ public class NpcAi : MonoBehaviour
     public Vector3 LastPosPlayer, playerPos;
     public NavMeshAgent agent;
     public Transform[] wayPoints;
-    public float accuracy = 3.0f;
+    public float accuracy = 0.5f;
     private int currentWP = 0;
     private bool stopped = false;
 
@@ -41,9 +41,12 @@ public class NpcAi : MonoBehaviour
         if (wayPoints.Length == 0)
             return;
 
-        agent.destination = wayPoints[currentWP].position;
-        currentWP = (currentWP + 1) % wayPoints.Length;
-        
+        agent.destination = wayPoints[currentWP].position;       
+        if(Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 1.5f)
+        {
+            anim.SetBool("Looking", true);
+            StartCoroutine(WaitToNextWayPoint());
+        }              
     }
 
     private void FixedUpdate()
@@ -63,7 +66,7 @@ public class NpcAi : MonoBehaviour
 
     void Update()
     {      
-        fov = GetComponent<FieldOfView>().ItsInFoV;
+        fov = GetComponent<FieldOfView>().ItsInFoV;       
 
         if (stopped)
             return;
@@ -166,6 +169,13 @@ public class NpcAi : MonoBehaviour
     {
         yield return new WaitForSeconds(2.10f);
         agent.speed = 1.8f;
+    }
+
+    IEnumerator WaitToNextWayPoint()
+    {
+        yield return new WaitForSeconds(Random.Range(5,10));
+        anim.SetBool("Looking", false);
+        currentWP = (currentWP + 1) % wayPoints.Length;
     }
 
     public void Stop()
