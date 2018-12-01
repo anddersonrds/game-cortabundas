@@ -11,7 +11,7 @@ public class LadderExit : MonoBehaviour
         if(other.gameObject == player)
         {
             player.gameObject.GetComponent<Player>().enabled = true;
-            player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            player.gameObject.GetComponent<Rigidbody>().isKinematic = false;            
         }
     }
 
