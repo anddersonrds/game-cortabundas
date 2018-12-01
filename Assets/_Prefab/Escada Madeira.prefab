@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4572647427209944}
   - component: {fileID: 114788633430114496}
   - component: {fileID: 65168881037789882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 64588145766138982}
   - component: {fileID: 65218939187895044}
   - component: {fileID: 114722811373454438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Escada Madeira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4675913696036058}
   - component: {fileID: 114101878830383498}
   - component: {fileID: 65150342361569844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Exit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653945851722976}
   m_LocalRotation: {x: -0.051362697, y: -0.6204393, z: -0.045556575, w: 0.7812436}
-  m_LocalPosition: {x: -13.925, y: 0.294, z: -9.568}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -8.92, y: -0.925, z: -8.049}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.010000002}
   m_Children:
   - {fileID: 4572647427209944}
   - {fileID: 4675913696036058}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1516246562579224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -51.6, z: -31.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4452892460231602}
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934098022681010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 382.1, z: 0}
+  m_LocalPosition: {x: -0, y: 357.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 4452892460231602}
@@ -121,7 +121,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2f7d8107f916db541a422bdc7e7b4e89, type: 3}
+  - {fileID: 2100000, guid: f4caa11616ecb9041b459a020c575a12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,8 +172,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 90, y: 50, z: 100}
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Size: {x: 70, y: 10, z: 50}
+  m_Center: {x: 0, y: 11.96, z: 25}
 --- !u!65 &65168881037789882
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -184,8 +184,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 50, z: 100}
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Size: {x: 90, y: 10, z: 70}
+  m_Center: {x: 0, y: 11.96, z: 25}
 --- !u!65 &65218939187895044
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -196,8 +196,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 66, y: 400, z: 50}
-  m_Center: {x: 0.2, y: 180, z: 1}
+  m_Size: {x: 5, y: 175, z: 7.0000205}
+  m_Center: {x: 1, y: 265.5, z: 15}
 --- !u!114 &114101878830383498
 MonoBehaviour:
   m_ObjectHideFlags: 1
