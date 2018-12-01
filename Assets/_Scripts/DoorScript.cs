@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    public bool open,key,inside;
+    public bool open,key,inside,canOpenDoor = true;
     private Animator anim;
     private AudioSource audioData;
     public AudioClip[] fxSound;
@@ -72,8 +72,30 @@ public class DoorScript : MonoBehaviour
         }
     }
 
+    public void NpcOpenDoor()
+    {
+        open = !open;
+        StartCoroutine(DoorAnimarion());
+        if (open)
+        {
+            
+            anim.SetBool("OpenFast", open);
+            audioData.PlayOneShot(fxSound[0]);
+        }
+        else
+        {
+            anim.SetBool("OpenFast", false);
+            audioData.PlayOneShot(fxSound[1]);
+        }        
+    }
+
     public void IronLastDoor()
     {
         anim.SetBool("Open", true);      
+    }
+
+    IEnumerator DoorAnimarion()
+    {
+        yield return new WaitForSeconds(10);       
     }
 }
