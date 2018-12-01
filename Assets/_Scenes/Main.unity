@@ -28904,20 +28904,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1957725660}
-    - target: {fileID: 4346825001429310, guid: dbe07ea175de3704db9850050af6e88a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 166.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 65916776795783628, guid: dbe07ea175de3704db9850050af6e88a,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 79.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65916776795783628, guid: dbe07ea175de3704db9850050af6e88a,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe07ea175de3704db9850050af6e88a, type: 2}
   m_IsPrefabAsset: 0
