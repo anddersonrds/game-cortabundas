@@ -4759,7 +4759,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.0100000035}
   m_Children: []
   m_Father: {fileID: 758203197}
-  m_RootOrder: 410
+  m_RootOrder: 406
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &96790347
 MeshCollider:
@@ -23812,7 +23812,7 @@ Transform:
   m_LocalScale: {x: 0.17732029, y: 0.14477141, z: 0.124987654}
   m_Children: []
   m_Father: {fileID: 758203197}
-  m_RootOrder: 516
+  m_RootOrder: 496
   m_LocalEulerAnglesHint: {x: 89.857, y: 0, z: 180.00002}
 --- !u!64 &455106804
 MeshCollider:
@@ -24735,7 +24735,7 @@ Transform:
   m_LocalScale: {x: 0.33839017, y: 0.16717006, z: 0.16613}
   m_Children: []
   m_Father: {fileID: 758203197}
-  m_RootOrder: 426
+  m_RootOrder: 416
   m_LocalEulerAnglesHint: {x: 82.046005, y: 0, z: 270}
 --- !u!64 &477166164
 MeshCollider:
@@ -38690,24 +38690,25 @@ Transform:
   - {fileID: 1892004738}
   - {fileID: 2088995886}
   - {fileID: 390714739}
+  - {fileID: 893456205}
   - {fileID: 1203841908}
   - {fileID: 732823181}
   - {fileID: 513901256}
   - {fileID: 495581313}
   - {fileID: 241076539}
-  - {fileID: 893456205}
   - {fileID: 8667974}
   - {fileID: 164146692}
+  - {fileID: 96790346}
   - {fileID: 1985754378}
   - {fileID: 919797358}
   - {fileID: 1877228986}
   - {fileID: 1916358078}
-  - {fileID: 96790346}
   - {fileID: 1223935963}
   - {fileID: 601305777}
   - {fileID: 1968050416}
   - {fileID: 1745057940}
   - {fileID: 39685309}
+  - {fileID: 477166163}
   - {fileID: 2126131247}
   - {fileID: 498883325}
   - {fileID: 1736769851}
@@ -38718,7 +38719,6 @@ Transform:
   - {fileID: 2055314578}
   - {fileID: 1951285654}
   - {fileID: 1802997730}
-  - {fileID: 477166163}
   - {fileID: 1309196252}
   - {fileID: 51489291}
   - {fileID: 2043465051}
@@ -38774,11 +38774,11 @@ Transform:
   - {fileID: 1518805822}
   - {fileID: 333801324}
   - {fileID: 2043709984}
+  - {fileID: 861411438}
   - {fileID: 669527385}
   - {fileID: 556952671}
   - {fileID: 304896233}
   - {fileID: 1163669602}
-  - {fileID: 861411438}
   - {fileID: 777322789}
   - {fileID: 125213540}
   - {fileID: 416935883}
@@ -38788,6 +38788,7 @@ Transform:
   - {fileID: 184740043}
   - {fileID: 165444597}
   - {fileID: 668046506}
+  - {fileID: 455106803}
   - {fileID: 291198593}
   - {fileID: 1989148138}
   - {fileID: 2124683486}
@@ -38808,7 +38809,6 @@ Transform:
   - {fileID: 1819872181}
   - {fileID: 1652458675}
   - {fileID: 572102413}
-  - {fileID: 455106803}
   - {fileID: 252489643}
   - {fileID: 1560179345}
   - {fileID: 900272865}
@@ -43649,7 +43649,7 @@ Transform:
   m_LocalScale: {x: 0.118485324, y: 0.096744, z: 0.08352}
   m_Children: []
   m_Father: {fileID: 758203197}
-  m_RootOrder: 486
+  m_RootOrder: 482
   m_LocalEulerAnglesHint: {x: 89.857, y: 0.003, z: -89.997}
 --- !u!64 &861411439
 MeshCollider:
@@ -45344,7 +45344,7 @@ Transform:
   m_LocalScale: {x: 0.046295937, y: 0.020016558, z: 0.0220585}
   m_Children: []
   m_Father: {fileID: 758203197}
-  m_RootOrder: 403
+  m_RootOrder: 398
   m_LocalEulerAnglesHint: {x: 88.009, y: 0, z: 270.001}
 --- !u!64 &893456206
 MeshCollider:
@@ -78332,7 +78332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d638f85ad49542a7991c835501d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckPointPos: {x: -6.02, y: 0.93, z: -6.371}
+  lastCheckPointPos: {x: -6.249, y: 0.93, z: -3.001}
   hasFlashlight: 0
 --- !u!4 &1570292878
 Transform:
