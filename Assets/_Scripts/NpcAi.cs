@@ -49,11 +49,6 @@ public class NpcAi : MonoBehaviour
         }              
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     void Update()
     {      
         fov = GetComponent<FieldOfView>().ItsInFoV;       
@@ -72,7 +67,7 @@ public class NpcAi : MonoBehaviour
             GoToNoisePosition();
         }
         else if (fov == true && isChasing == false)
-        {
+        {            
             Chase();
         }
         else if(isChasing == true && !attacking)
@@ -88,7 +83,8 @@ public class NpcAi : MonoBehaviour
     void Chase()
     {
         if (fov == true && !attacking)
-        {           
+        {
+            anim.SetBool("Looking", false);
             agent.SetDestination(player.transform.position);
             isChasing = true;            
         }
