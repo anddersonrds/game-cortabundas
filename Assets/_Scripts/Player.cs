@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     private GameObject enemyShadow;
     private bool enemyShadowStarted = false;
     private int enemyShadowTriggerCount = 0;
+    public float blurPeriod = 5.0f;
+    public float hitTime = 0.0f;
 
     void Start()
     {
@@ -62,6 +64,13 @@ public class Player : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
+
+        if (hitTime > 0.0f)
+        {
+            hitTime += Time.deltaTime;
+            if (hitTime > blurPeriod)
+                hitTime = 0.0f;
+        }
 
         if (Physics.Raycast(ray, out hit, interactionDistance, layerMask))
         {
@@ -325,13 +334,19 @@ public class Player : MonoBehaviour
 
     public void DamagePlayer()
     {
+        if (hitTime > 0.0f && hitTime < blurPeriod)
+        {
+            gm.GameOver();
+        }
+        else
+            hitTime = Time.deltaTime;
+
         RadialBlur camera = GetComponentInChildren<RadialBlur>();
         camera.StartShader();
     }
 
     public void ShowShadow()
     {
-        Debug.Log("Show shadow");
         ShadowEffect camera = GetComponentInChildren<ShadowEffect>();
         camera.StartShader();
     }
@@ -347,7 +362,7 @@ public class Player : MonoBehaviour
             CheckPlayer aiCheck = ai.GetComponent<CheckPlayer>();
             DetectPlayer areaScript = area.GetComponent<DetectPlayer>();
 
-            if (aiScript.isStopped())
+            if (aiScript.IsStopped())
                 aiScript.Resume();
             aiCheck.ClearWarning();
             areaScript.ClearWarning();

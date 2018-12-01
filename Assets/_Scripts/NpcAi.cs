@@ -51,17 +51,7 @@ public class NpcAi : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f && fov)
-            AttackPlayer();
-        else
-        {
-            if (attacking)
-            {
-                anim.SetBool("StabPlayer", false);
-                agent.isStopped = false;
-                attacking = false;
-            }
-        }
+
     }
 
     void Update()
@@ -80,7 +70,6 @@ public class NpcAi : MonoBehaviour
             NoiseCheck();
             canLooking = true;
             GoToNoisePosition();
-            Debug.Log("Escutou");
         }
         else if (fov == true && isChasing == false)
         {
@@ -90,6 +79,10 @@ public class NpcAi : MonoBehaviour
         {            
             SearchingPlayer();
         }
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f && fov)
+            if (!attacking)
+                AttackPlayer();
     }  
 
     void Chase()
@@ -121,7 +114,7 @@ public class NpcAi : MonoBehaviour
         if (Vector3.Distance(transform.position, noisePosition) <= 1f && canLooking == true)
         {
             anim.SetBool("Looking", true);
-            StartCoroutine(WaitTimeLokking());
+            StartCoroutine(WaitTimeLooking());
         }
         else if (Vector3.Distance(transform.position, noisePosition) <= 2f && fov == true)
         {
@@ -134,10 +127,10 @@ public class NpcAi : MonoBehaviour
     void AttackPlayer()
     {
         attacking = true;
-        player.GetComponent<Player>().DamagePlayer();
         anim.SetBool("StabPlayer", true);
         agent.speed = 0;
         StartCoroutine(WaitTimeAttack());
+        StartCoroutine(WaitAttackAgain());
     }
 
     void SearchingPlayer()
@@ -154,7 +147,7 @@ public class NpcAi : MonoBehaviour
         }        
     }
 
-    IEnumerator WaitTimeLokking()
+    IEnumerator WaitTimeLooking()
     {
         npcSource.Stop();
         yield return new WaitForSeconds(5);
@@ -168,14 +161,23 @@ public class NpcAi : MonoBehaviour
     IEnumerator WaitTimeAttack()
     {
         npcSource.Stop();
+        yield return new WaitForSeconds(0.90f);
+        player.GetComponent<Player>().DamagePlayer();
+    }
+
+    IEnumerator WaitAttackAgain()
+    {
         yield return new WaitForSeconds(2.10f);
         npcSource.Play();
         agent.speed = 1.8f;
+
+        attacking = false;
+        anim.SetBool("StabPlayer", false);
+        agent.isStopped = false;
     }
 
     IEnumerator WaitToNextWayPoint()
     {
-        Debug.Log(npcSource + " " + this.name);
         npcSource.Stop();
         yield return new WaitForSeconds(Random.Range(5,10));
         npcSource.Play();
@@ -205,7 +207,7 @@ public class NpcAi : MonoBehaviour
         agent.SetDestination(wayPoints[currentWP].transform.position);
     }
 
-    public bool isStopped()
+    public bool IsStopped()
     {
         return agent.isStopped;
     }
