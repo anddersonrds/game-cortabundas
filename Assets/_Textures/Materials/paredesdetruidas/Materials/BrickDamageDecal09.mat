@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BrickDamageDecal09
-  m_Shader: {fileID: 54, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 52, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -64,11 +64,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.968
+    - _Cutoff: 0.81
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.2
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0.038
     - _Mode: 1
@@ -83,4 +83,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}

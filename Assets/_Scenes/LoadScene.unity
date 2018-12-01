@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 538254728}
   - component: {fileID: 538254727}
   - component: {fileID: 538254726}
+  - component: {fileID: 538254729}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -342,6 +343,101 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &538254729
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538254725}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b43728ed88e8e694d96a9f991a37f39c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &622010348
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +496,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d36b351a85b20274790035699f13cb6d, type: 3}
-    m_FontSize: 20
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -412,16 +508,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.5
   m_Text: "H\xC1 ALGUNS ANOS EXISTIU UM PSICOPATA NO BAIRRO DO JOS\xC9 WALTER, ERA
-    CHAMADO CORTABUNDAS.\n\rELE ATACAVA MULHERES, N\xC3O IMPORTANDO A IDADE, CORTANDO
+    CHAMADO CORTABUNDAS.\n\n\rELE ATACAVA MULHERES, N\xC3O IMPORTANDO A IDADE, CORTANDO
     SUAS N\xC1DEGAS...\r\n\r\nOS CRIMES ACONTECERAM POR TR\xCAS ANOS E A POPULA\xC7\xC3O
-    DO BAIRRO VIVIA ATERRORIZADA.\n\rNA EP\xD3CA, AS PESSOAS SE TRANCARAM EM SUAS
+    DO BAIRRO VIVIA ATERRORIZADA.\n\n\rNA EP\xD3CA, AS PESSOAS SE TRANCARAM EM SUAS
     CASAS, COLOCARAM GRADES E AT\xC9 PANELAS PR\xD3XIMAS \xC0S PORTAS E JANELAS PARA
-    FAZEREM BARULHO CASO ALGU\xC9M ENTRASSE, VIVIAM EM PLENO TERROR...\r\n\rO MAN\xCDACO
+    FAZEREM BARULHO CASO ALGU\xC9M ENTRASSE, VIVIAM EM PLENO TERROR...\r\n\n\rO MAN\xCDACO
     FEZ MUITAS V\xCDTIMAS, TANTAS QUE AT\xC9 SE QUESTIONAVAM:\r\n\nHAVERIA APENAS
     UM CORTABUNDAS?\n\n\rFORAM IDENTIFICADOS DOIS SUSPEITOS, AT\xC9 ACHAREM O TERCEIRO
     HOMEM, QUE SERIA O \u201CVERDADEIRO\u201D CORTABUNDAS.\n\r\nDANDO FIM \xC0QUELE
-    EPIS\xD3DIO TERR\xCDVEL NA VIDA DOS MORADORES DO BAIRRO.\nMAS SER\xC1 QUE OS CRIMES
-    TERMINARAM PARA SEMPRE?\n\r\nACREDIT\xC1VAMOS QUE SIM, AT\xC9 A NOITE DE HOJE\u2026"
+    EPIS\xD3DIO TERR\xCDVEL NA VIDA DOS MORADORES DO BAIRRO.\n\nMAS SER\xC1 QUE OS
+    CRIMES TERMINARAM PARA SEMPRE?\n\r\nACREDIT\xC1VAMOS QUE SIM, AT\xC9 A NOITE DE
+    HOJE\u2026"
 --- !u!222 &622010351
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float chounchSpeed, jumpForce = 3.5f;
+    private float chounchSpeed =1, jumpForce = 3.5f;
     public float speed;
     [SerializeField]
     private Text instructionText;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private Light flashlight;
 
-    private float interactionDistance = 2f;
+    private float interactionDistance = 1f;
     private Rigidbody rb;
     public bool pliers,canOpenDoor = true, canJump, isChounching = false, chain = false;
     private CapsuleCollider playerColider;
@@ -298,7 +298,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    private void CrouchControll(bool crouch)
+    public void CrouchControll(bool crouch)
     {
         if (timesCrouchedWarned == 1)
         {
