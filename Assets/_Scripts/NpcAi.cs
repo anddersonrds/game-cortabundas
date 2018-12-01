@@ -49,7 +49,7 @@ public class NpcAi : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 0.5f && fov)
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f && fov)
             AttackPlayer();
         else
         {
