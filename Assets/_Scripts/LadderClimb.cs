@@ -34,6 +34,7 @@ public class LadderClimb : MonoBehaviour
         {          
             player.gameObject.GetComponent<Player>().enabled = true;
             canClimb = false;
+            other.attachedRigidbody.isKinematic = false;
         }
     }
 

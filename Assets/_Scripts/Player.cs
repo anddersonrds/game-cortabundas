@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float chounchSpeed, jumpForce = 3.5f;
+    private float chounchSpeed =1, jumpForce = 3.5f;
     public float speed;
     [SerializeField]
     private Text instructionText;
@@ -298,7 +298,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    private void CrouchControll(bool crouch)
+    public void CrouchControll(bool crouch)
     {
         if (timesCrouchedWarned == 1)
         {
