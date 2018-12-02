@@ -709,7 +709,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4180899}
-  m_LocalRotation: {x: 0.088401645, y: 0.8457653, z: -0.5049153, w: 0.14807723}
+  m_LocalRotation: {x: 0.088401854, y: 0.8457653, z: -0.5049151, w: 0.14807774}
   m_LocalPosition: {x: -13.1525, y: 19.67009, z: 2.824459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41955,6 +41955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc28510af56df904481996d2d6e0c5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutSceneOne: {fileID: 0}
 --- !u!136 &822054463
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70357,6 +70358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc28510af56df904481996d2d6e0c5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutSceneOne: {fileID: 1563161594}
 --- !u!136 &1384401627
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -86759,7 +86761,7 @@ Prefab:
       objectReference: {fileID: 970821362}
     - target: {fileID: 1310817507415620, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b8a7a492c11e9842bbc2b65fe66b3d2, type: 2}
@@ -96398,31 +96400,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.7079997
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 1.9180717
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.893
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.088401854
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.8457653
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.5049151
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.14807774
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_RootOrder
@@ -98368,7 +98370,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
