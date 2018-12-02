@@ -709,7 +709,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4180899}
-  m_LocalRotation: {x: 0.08840222, y: 0.8457654, z: -0.5049152, w: 0.14807642}
+  m_LocalRotation: {x: 0.08839996, y: 0.845766, z: -0.50491565, w: 0.14807273}
   m_LocalPosition: {x: -13.1525, y: 19.67009, z: 2.824459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -45833,7 +45833,7 @@ MonoBehaviour:
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: f578dfa8ee0fa1c409248f03830b5a34, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
