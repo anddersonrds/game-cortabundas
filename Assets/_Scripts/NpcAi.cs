@@ -19,6 +19,7 @@ public class NpcAi : MonoBehaviour
     private float searchTime = 3;
     private bool isChasing = false;
     private bool attacking = false;
+    private bool arrivedWaypoint = false;
 
 
     //IA Hearing 
@@ -36,17 +37,6 @@ public class NpcAi : MonoBehaviour
         agent.autoBraking = false;
         GoToNextPoint();
         npcSource = GetComponent<AudioSource>();
-    }
-
-    void GoToNextPoint()
-    {       
-        agent.destination = wayPoints[currentWP].transform.position;       
-
-        if(Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 0.5f)
-        {
-            anim.SetBool("Looking", true);           
-            StartCoroutine(WaitToNextWayPoint());           
-        }              
     }
 
     void Update()
@@ -78,7 +68,22 @@ public class NpcAi : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) < 1.5f && fov)
             if (!attacking)
                 AttackPlayer();
-    }  
+    }
+
+    void GoToNextPoint()
+    {
+        agent.destination = wayPoints[currentWP].transform.position;
+
+        if (Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 0.5f)
+        {
+            if (!arrivedWaypoint)
+            {
+                arrivedWaypoint = true;
+                anim.SetBool("Looking", true);
+                StartCoroutine(WaitToNextWayPoint());
+            }
+        }
+    }
 
     void Chase()
     {
@@ -147,6 +152,7 @@ public class NpcAi : MonoBehaviour
     {
         npcSource.Stop();
         yield return new WaitForSeconds(5);
+
         npcSource.Play();
 
         anim.SetBool("Looking", false);
@@ -176,6 +182,7 @@ public class NpcAi : MonoBehaviour
     {
         npcSource.Stop();
         yield return new WaitForSeconds(Random.Range(5,10));
+
         npcSource.Play();
         anim.SetBool("Looking", false);
         currentWP++;
@@ -184,6 +191,7 @@ public class NpcAi : MonoBehaviour
         {
             currentWP = 0;
         }
+        arrivedWaypoint = false;
     }
 
     public void Stop()
