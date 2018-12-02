@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.Playables;
 using UnityEngine;
 
 public class CamMouseLook : MonoBehaviour
 {
+    public PlayableDirector director;
     Vector2 mouseLook, SmoothV;
 
     public float sensitivity = 5.0f, smoothing = 2.0f;
@@ -17,19 +17,26 @@ public class CamMouseLook : MonoBehaviour
 	
 	void Update ()
     {
-        var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        if (director.state == PlayState.Playing)
+        {
+            return;
+        }
+        else
+        {
+            var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
-        md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
+            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
 
-        SmoothV.x = Mathf.Lerp(SmoothV.x, md.x, 1f / smoothing);
-        SmoothV.y = Mathf.Lerp(SmoothV.y, md.y, 1f / smoothing);
+            SmoothV.x = Mathf.Lerp(SmoothV.x, md.x, 1f / smoothing);
+            SmoothV.y = Mathf.Lerp(SmoothV.y, md.y, 1f / smoothing);
 
-        mouseLook += SmoothV;
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -70f, 90f);
+            mouseLook += SmoothV;
+            mouseLook.y = Mathf.Clamp(mouseLook.y, -70f, 90f);
 
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
 
-        player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
+            player.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, player.transform.up);
+        }
 
     }
 }

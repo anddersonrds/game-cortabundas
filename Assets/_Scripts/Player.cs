@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Playables;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private int timesInteractWarned = 0;
     private int timesCrouchedWarned = 0;
     private UnityEngine.UI.RawImage icon;
-    private bool grabbing;
+    private bool grabbing,playingCutScene;
     private PlayerGrab grabScript;
     private GameMaster gm;
     private Lighting lightScript;
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     private int enemyShadowTriggerCount = 0;
     public float blurPeriod = 5.0f;
     public float hitTime = 0.0f;
+    public PlayableDirector director;
 
     void Start()
     {
@@ -62,6 +63,17 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(director.state == PlayState.Playing)
+        {
+            playingCutScene = true;
+        }
+        else if (director.state == PlayState.Paused)
+        {
+            playingCutScene = false;
+        }
+
+        MovePlayer();
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
@@ -266,23 +278,6 @@ public class Player : MonoBehaviour
 
         canJump = IsGrounded();
 
-        float translation = Input.GetAxis("Vertical") * speed;
-        float straffe = Input.GetAxis("Horizontal") * speed;
-
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
-
-        transform.Translate(straffe, 0, translation);
-
-        if (enemyShadowStarted)
-        {
-            if (translation != 0 || straffe != 0)
-                enemyShadow.SetActive(true);
-            else
-                enemyShadow.SetActive(false);
-        }
-
-
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -326,6 +321,33 @@ public class Player : MonoBehaviour
             speed = 2;
         }
     }
+
+    public void MovePlayer()
+    {
+        if (playingCutScene)
+        {
+            return;
+        }
+        else
+        {
+            float translation = Input.GetAxis("Vertical") * speed;
+            float straffe = Input.GetAxis("Horizontal") * speed;
+
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
+
+            transform.Translate(straffe, 0, translation);
+
+            if (enemyShadowStarted)
+            {
+                if (translation != 0 || straffe != 0)
+                    enemyShadow.SetActive(true);
+                else
+                    enemyShadow.SetActive(false);
+            }
+        }        
+    }
+
 
 
     public void DamagePlayer()
