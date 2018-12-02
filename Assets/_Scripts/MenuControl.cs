@@ -5,12 +5,13 @@ using UnityEngine;
 public class MenuControl : MonoBehaviour {
 
     public static bool gameIsPaused = false;
+    public CamMouseLook camMouse;
     public GameObject pauseMenu;
     private float volumeMaster;
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             if(gameIsPaused)
             {
@@ -27,6 +28,8 @@ public class MenuControl : MonoBehaviour {
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        camMouse.GetComponent<CamMouseLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
         gameIsPaused = false;
     }
 
@@ -34,6 +37,8 @@ public class MenuControl : MonoBehaviour {
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        camMouse.GetComponent<CamMouseLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
         gameIsPaused = true;
     }
 

@@ -90605,6 +90605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c3ef7be274a7f448435e67ff6b3f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camMouse: {fileID: 1068711111}
   pauseMenu: {fileID: 336428147}
 --- !u!1001 &1791316811
 Prefab:
