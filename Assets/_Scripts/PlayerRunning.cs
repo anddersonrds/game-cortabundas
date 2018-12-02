@@ -57,15 +57,13 @@ public class PlayerRunning : MonoBehaviour {
             {
                 tiredSteps = true;
                 RegenStamina();
-                isRunning = false;
             }
         }
-        else
-            isRunning = false;
     }
 
     private void RegenStamina()
     {
+        isRunning = false;
         if (tiredSteps)
         {
             GetComponent<Player>().speed = 1f;

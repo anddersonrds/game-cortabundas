@@ -7,7 +7,7 @@ public class MenuControl : MonoBehaviour {
     public static bool gameIsPaused = false;
     public CamMouseLook camMouse;
     public GameObject pauseMenu;
-    private float volumeMaster;
+    private float volumeMaster = 0.5f;
 
     private void Update()
     {

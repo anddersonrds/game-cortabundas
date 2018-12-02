@@ -385,6 +385,18 @@ public class Player : MonoBehaviour
                 enemyShadowStarted = true;
             }
         }
+        else if (other.gameObject.name == "ForroTriggerOff")
+        {
+            GameObject forroTrigger = GameObject.Find("ForroTrigger");
+            forroTrigger.SetActive(false);
+            other.enabled = false;
+        }
+        else if (other.gameObject.name == "JumpScareTrigger")
+        {
+            GameObject jumpScareNpc = GameObject.Find("JumpScareNpc");
+            Animator npcAnimator = jumpScareNpc.GetComponent<Animator>();
+            npcAnimator.applyRootMotion = true;
+        }
 
         else if (other.CompareTag("ShadowTrigger"))
         {

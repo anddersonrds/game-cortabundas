@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPlayer : MonoBehaviour {
 
     public float accuracy = 1.0f;
-    private GameObject wayPoint;
+    public GameObject wayPoint;
     private GameObject stayArea;
     private NpcAi aiScript;
     private DetectPlayer areaScript;
@@ -17,7 +17,6 @@ public class CheckPlayer : MonoBehaviour {
     private GameMaster gm;
     // Use this for initialization
     void Start () {
-        wayPoint = GameObject.Find("WP1");
         stayArea = GameObject.Find("StayArea");
         aiScript = GetComponent<NpcAi>();
         areaScript = stayArea.GetComponent<DetectPlayer>();

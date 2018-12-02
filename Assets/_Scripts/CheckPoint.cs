@@ -16,12 +16,6 @@ public class CheckPoint : MonoBehaviour {
         {
             gm.lastCheckPointPos = transform.position;
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
-
-            if (gameObject.name == "CheckPointCena3")
-            {
-                GameObject forroTrigger = GameObject.Find("ForroTrigger");
-                forroTrigger.SetActive(false);
-            }
         }
     }
 }
