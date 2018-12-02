@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         playerColider = GetComponent<CapsuleCollider>();
         cam = GetComponentInChildren<Camera>();
@@ -290,12 +291,7 @@ public class Player : MonoBehaviour
         {
             isChounching = !isChounching;
             CrouchControll(isChounching);
-        }
-
-        if (Input.GetKeyDown("escape"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
+        }       
     }
 
     private bool IsGrounded()

@@ -30,12 +30,14 @@ public class MenuControl : MonoBehaviour {
         Time.timeScale = 1f;
         camMouse.GetComponent<CamMouseLook>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         gameIsPaused = false;
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        Cursor.visible = true;
         Time.timeScale = 0f;
         camMouse.GetComponent<CamMouseLook>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
