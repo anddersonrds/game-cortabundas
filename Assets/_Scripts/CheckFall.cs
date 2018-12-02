@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckFall : MonoBehaviour {
-
+    public GameObject cutSceneFall;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,8 +13,9 @@ public class CheckFall : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
+            cutSceneFall.active = true;
             Player playerScript = other.GetComponent<Player>();
-            playerScript.ReloadCheckpoint();
+            //playerScript.ReloadCheckpoint();
         }
     }
 }
