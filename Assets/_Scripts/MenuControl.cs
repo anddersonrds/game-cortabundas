@@ -7,10 +7,16 @@ public class MenuControl : MonoBehaviour {
     public static bool gameIsPaused = false;
     public CamMouseLook camMouse;
     public GameObject pauseMenu;
-    private float volumeMaster = 0.5f;
+    private static float volumeMaster = 10.0f;
+
+    private void Start()
+    {
+        AudioListener.volume = volumeMaster;
+    }
 
     private void Update()
     {
+        Debug.Log("volume: " + AudioListener.volume);
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(gameIsPaused)
@@ -37,6 +43,11 @@ public class MenuControl : MonoBehaviour {
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        UnityEngine.UI.Slider volumeSlider = GameObject.Find("VolumeSlider").GetComponent<UnityEngine.UI.Slider>();
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = volumeMaster;
+        }
         Cursor.visible = true;
         Time.timeScale = 0f;
         camMouse.GetComponent<CamMouseLook>().enabled = false;
