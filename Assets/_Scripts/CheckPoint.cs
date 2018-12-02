@@ -11,10 +11,11 @@ public class CheckPoint : MonoBehaviour {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 	}
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Entrou");
             cutSceneOne.active = false;
             gm.lastCheckPointPos = transform.position;
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
