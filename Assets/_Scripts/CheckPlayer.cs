@@ -15,6 +15,7 @@ public class CheckPlayer : MonoBehaviour {
     private float timer;
     private int timesWarned = 0;
     private GameMaster gm;
+    private string[] warnings = { "Mantenha-se na área de visão" , "Pela segunda vez, não saia da área de visão", "Último aviso!"};
     // Use this for initialization
     void Start () {
         stayArea = GameObject.Find("StayArea");
@@ -55,6 +56,13 @@ public class CheckPlayer : MonoBehaviour {
             if (!warned)
             {
                 timesWarned += 1;
+
+                if (timesWarned > 3)
+                {
+                    gm.GameOver();
+                    return;
+                }
+
                 Warn();
                 areaScript.Warn();
             }
@@ -63,19 +71,16 @@ public class CheckPlayer : MonoBehaviour {
         {
             checking = false;
             aiScript.Resume();
-            timer = 5.0f;
+            timer = 12.0f;
             ClearWarning();
         }
 
-        if (timesWarned > 2)
-        {
-            gm.GameOver();
-        }
     }
 
     public void Warn()
     {
-        text.text = "Mantenha-se na área de visão";
+        Debug.Log(timesWarned);
+        text.text = warnings[timesWarned-1];
         text.color = Color.red;
         warned = true;
     }
