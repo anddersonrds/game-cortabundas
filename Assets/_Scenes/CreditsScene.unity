@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Me.Lindolfo Ramalho Farias J\xFAnior"
+  m_Text: "Me. Lindolfo Ramalho Farias J\xFAnior"
 --- !u!222 &40431459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1043,7 +1043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ME.Nilbio Th\xE9"
+  m_Text: "ME. Nilbio Th\xE9"
 --- !u!222 &1281966322
 CanvasRenderer:
   m_ObjectHideFlags: 0

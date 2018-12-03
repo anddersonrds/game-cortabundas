@@ -20,4 +20,24 @@ public class CheckPoint : MonoBehaviour {
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            cutSceneOne.SetActive(false);
+            gm.lastCheckPointPos = transform.position;
+            gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            cutSceneOne.SetActive(false);
+            gm.lastCheckPointPos = transform.position;
+            gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
+        }
+    }
 }

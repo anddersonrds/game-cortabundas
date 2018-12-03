@@ -10,5 +10,5 @@ public class GameOverTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         gm.gameObject.GetComponent<GameMaster>().GameOver();
-    }
+    }   
 }
