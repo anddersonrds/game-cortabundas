@@ -13,7 +13,7 @@ public class GameMaster : MonoBehaviour {
     public bool hasFlashlight;
     private UnityEngine.UI.Text text;
     private Transform playerPos,RagReset;
-    public Animator anim;
+    private Animator anim;
     private AudioSource source;
     
 
@@ -55,6 +55,7 @@ public class GameMaster : MonoBehaviour {
     }   
     public void EndGame()
     {
+        anim = GameObject.Find("LevelFade").GetComponent<Animator>();
         anim.SetTrigger("FadeOut");
         source.Play();
 
