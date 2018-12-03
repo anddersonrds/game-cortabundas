@@ -57,9 +57,11 @@ public class GameMaster : MonoBehaviour {
 
     IEnumerator WaitToCredits()
     {
-        yield return new WaitForSeconds(5.0f);
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSeconds(5.45f);
+
+        source.Stop();
+        SceneManager.LoadScene(2);
     }
+    
 
 }

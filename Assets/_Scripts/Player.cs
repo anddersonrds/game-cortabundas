@@ -204,7 +204,11 @@ public class Player : MonoBehaviour
                 instructionText.text = "Abrir porta";
                 instructionText.gameObject.SetActive(true);
                 icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
-                icon = icones[3].GetComponent<UnityEngine.UI.RawImage>();
+                if (!pliers)
+                    icon = icones[3].GetComponent<UnityEngine.UI.RawImage>();
+                else
+                    icon = icones[2].GetComponent<UnityEngine.UI.RawImage>();
+
                 if (Input.GetKeyDown(KeyCode.E) && chain)
                 {
                     hit.collider.transform.GetComponent<DoorScript>().IronLastDoor();
@@ -350,9 +354,7 @@ public class Player : MonoBehaviour
             }
         }        
     }
-
-
-
+    
     public void DamagePlayer()
     {
         if (hitTime > 0.0f && hitTime < blurPeriod)
