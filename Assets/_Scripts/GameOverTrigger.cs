@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOverTrigger : MonoBehaviour {
 
-    public GameMaster gm;
+    public GameObject gm;
 
     private void OnTriggerEnter(Collider other)
     {
-        gm.GameOver();
+        gm.gameObject.GetComponent<GameMaster>().GameOver();
     }
 }

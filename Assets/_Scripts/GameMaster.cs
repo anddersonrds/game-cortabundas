@@ -11,7 +11,6 @@ public class GameMaster : MonoBehaviour {
     public GameObject deadCutScene,CutSceneModel,deadCam;
     public Vector3 lastCheckPointPos;
     public bool hasFlashlight;
-    private UnityEngine.UI.Text text;
     private Transform playerPos,RagReset;
     private Animator anim;
     private AudioSource source;
@@ -19,8 +18,7 @@ public class GameMaster : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();
+               
         source = GetComponent<AudioSource>();
 
 
@@ -36,9 +34,7 @@ public class GameMaster : MonoBehaviour {
 	}
     
     public void GameOver()
-    {        
-        //text.text = "Fim de Jogo";
-        //text.color = Color.red;
+    {       
         deadCutScene.SetActive(true);        
         playerPos = GameObject.Find("Player").GetComponent<Transform>();
         CutSceneModel.transform.position = playerPos.transform.position * transform.position.y ;        
