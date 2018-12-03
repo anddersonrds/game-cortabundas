@@ -15,7 +15,7 @@ public class CheckPoint : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {           
-            cutSceneOne.active = false;
+            cutSceneOne.SetActive(false);
             gm.lastCheckPointPos = transform.position;
             gm.hasFlashlight = other.GetComponentInChildren<Light>().enabled;
         }
