@@ -6,7 +6,7 @@ public class DestroyPlank : MonoBehaviour
 {	
 	void Start ()
     {
-        Destroy(this.gameObject, 3);		
+        Destroy(this.gameObject, 6);		
 	}	
 	
 }
