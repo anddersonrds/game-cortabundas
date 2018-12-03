@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
     private Text instructionText;
     [SerializeField]
     private GameObject keyDoor;
-
+    public AudioClip clikFx;
     private Light flashlight;
-
+    private AudioSource audio;
     private float interactionDistance = 1.5f;
     private Rigidbody rb;
     public bool pliers,canOpenDoor = true, canJump, isChounching = false, chain = false;
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
@@ -235,6 +236,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKeyDown("e"))
                 {
+                    audio.PlayOneShot(clikFx);
                     icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
                     icon = icones[1].GetComponent<UnityEngine.UI.RawImage>();
                     if (timesInteractWarned == 0)

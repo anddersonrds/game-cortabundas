@@ -38,7 +38,7 @@ public class GameMaster : MonoBehaviour {
     public void GameOver()
     {        
         //text.text = "Fim de Jogo";
-        text.color = Color.red;
+        //text.color = Color.red;
         deadCutScene.SetActive(true);        
         playerPos = GameObject.Find("Player").GetComponent<Transform>();
         CutSceneModel.transform.position = playerPos.transform.position * transform.position.y ;        
