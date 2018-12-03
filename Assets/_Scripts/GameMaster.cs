@@ -13,10 +13,16 @@ public class GameMaster : MonoBehaviour {
     public bool hasFlashlight;
     private UnityEngine.UI.Text text;
     private Transform playerPos,RagReset;
+    public Animator anim;
+    private AudioSource source;
+    
+
     // Use this for initialization
     void Start () {
 
-        text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();        
+        text = GameObject.Find("DialogText").GetComponent<UnityEngine.UI.Text>();
+        source = GetComponent<AudioSource>();
+
 
         if (instance == null)
         {
@@ -47,6 +53,23 @@ public class GameMaster : MonoBehaviour {
         deadCutScene.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);       
     }   
+    public void EndGame()
+    {
+        anim.SetTrigger("FadeOut");
+        source.Play();
+
+        StartCoroutine(WaitToCredits());
+    }
+
+    IEnumerator WaitToCredits()
+    {
+        yield return new WaitForSeconds(5.45f);
+
+        source.Stop();
+        SceneManager.LoadScene(2);
+    }
+    
+
 }
 
 

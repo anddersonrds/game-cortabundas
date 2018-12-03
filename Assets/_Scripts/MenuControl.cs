@@ -16,7 +16,6 @@ public class MenuControl : MonoBehaviour {
 
     private void Update()
     {
-        Debug.Log("volume: " + AudioListener.volume);
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(gameIsPaused)

@@ -7,8 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu,optionsMenu,credits;
     public Animator anim;
-
-
+    
 
     public void Play()
     {
@@ -18,8 +17,6 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-
-        Debug.Log("Saiu");
     }
 
     public void OptionsMenu()
