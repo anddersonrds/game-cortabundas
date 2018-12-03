@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckFall : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GameObject cutSceneFall,CutSceneModel;
+    public Transform playerPos;
+    public Player playerScript;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Player playerScript = other.GetComponent<Player>();
-            playerScript.ReloadCheckpoint();
+            cutSceneFall.active = true;
+            CutSceneModel.transform.position = playerPos.transform.position;
+            StartCoroutine(WaitToReload());            
         }
     }
+
+    IEnumerator WaitToReload()
+    {
+        yield return new WaitForSeconds(3);
+        playerScript.ReloadCheckpoint();
+        cutSceneFall.active = false;
+        
+    }   
 }
