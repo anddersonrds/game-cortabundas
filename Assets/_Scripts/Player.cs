@@ -176,6 +176,7 @@ public class Player : MonoBehaviour
                 instructionText.gameObject.SetActive(true);
                 icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
                 icon = icones[9].GetComponent<UnityEngine.UI.RawImage>();
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.gameObject.SetActive(false);
@@ -202,6 +203,8 @@ public class Player : MonoBehaviour
             {
                 instructionText.text = "Abrir porta";
                 instructionText.gameObject.SetActive(true);
+                icon.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                icon = icones[3].GetComponent<UnityEngine.UI.RawImage>();
                 if (Input.GetKeyDown(KeyCode.E) && chain)
                 {
                     hit.collider.transform.GetComponent<DoorScript>().IronLastDoor();

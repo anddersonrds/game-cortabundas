@@ -58944,7 +58944,7 @@ GameObject:
   - component: {fileID: 1150681993}
   - component: {fileID: 1150681994}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59011,9 +59011,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -76771,7 +76771,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1480130913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 6.851055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2108853117}
@@ -76779,7 +76779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 416.2851, y: 209.1584}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480130915
@@ -80897,7 +80897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d638f85ad49542a7991c835501d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckPointPos: {x: -6.249, y: 1.079, z: -1.92}
+  lastCheckPointPos: {x: -30.773, y: 1.079, z: -11.469}
   hasFlashlight: 0
 --- !u!4 &1570292878
 Transform:
@@ -80906,7 +80906,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1570292876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.249, y: 0.93, z: -3.001}
+  m_LocalPosition: {x: -6.249, y: 1.079, z: -1.92}
   m_LocalScale: {x: 1, y: 0.83, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100062,7 +100062,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1957725660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.249, y: 1.079, z: -1.92}
+  m_LocalPosition: {x: -30.773, y: 1.079, z: -11.469}
   m_LocalScale: {x: 1, y: 0.83, z: 1}
   m_Children:
   - {fileID: 379122627}
