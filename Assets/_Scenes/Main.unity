@@ -80897,7 +80897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d638f85ad49542a7991c835501d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckPointPos: {x: -30.773, y: 1.079, z: -11.469}
+  lastCheckPointPos: {x: -6.249, y: 1.079, z: -1.92}
   hasFlashlight: 0
 --- !u!4 &1570292878
 Transform:
@@ -98036,15 +98036,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 30.773
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: -1.3000001
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.469
       objectReference: {fileID: 0}
     - target: {fileID: 4853004771367272, guid: 56aa9fbddd2b6974094a0798fd133126, type: 2}
       propertyPath: m_LocalRotation.x
@@ -105316,6 +105316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneFall: {fileID: 468781428}
+  playerScript: {fileID: 1957725665}
 --- !u!1 &2071764135
 GameObject:
   m_ObjectHideFlags: 0
