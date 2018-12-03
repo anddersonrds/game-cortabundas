@@ -9,6 +9,7 @@ public class GlassTrigger : MonoBehaviour
     [SerializeField]
     private AudioClip fxGlass;
     public NpcAi npc;
+    public bool makeNoise = false;
 
 
 	
@@ -19,8 +20,9 @@ public class GlassTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && !makeNoise)
         {
+            makeNoise = true;
             audio.PlayOneShot(fxGlass);
             npc.GetComponent<NpcAi>().canHear = true;
         }
