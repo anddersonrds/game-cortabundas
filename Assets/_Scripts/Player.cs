@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     private Light flashlight;
 
-    private float interactionDistance = 1f;
+    private float interactionDistance = 1.2f;
     private Rigidbody rb;
     public bool pliers,canOpenDoor = true, canJump, isChounching = false, chain = false;
     private CapsuleCollider playerColider;
@@ -421,6 +421,15 @@ public class Player : MonoBehaviour
             GameObject jumpScareNpc = GameObject.Find("JumpScareNpc");
             Animator npcAnimator = jumpScareNpc.GetComponent<Animator>();
             npcAnimator.applyRootMotion = true;
+        }
+        else if (other.gameObject.name == "FinalCutsceneTrigger")
+        {
+            GameObject musicBox = GameObject.Find("Musical Box");
+            musicBox.GetComponent<AudioSource>().Stop();
+        }
+        else if (other.gameObject.name == "EndTrigger")
+        {
+            gm.EndGame();
         }
 
         else if (other.CompareTag("ShadowTrigger"))
