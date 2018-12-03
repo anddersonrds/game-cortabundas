@@ -58,6 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4141940364595648}
   - component: {fileID: 82026335854539364}
+  - component: {fileID: 114135598892379372}
   m_Layer: 10
   m_Name: Pecaquebrada
   m_TagString: Untagged
@@ -447,3 +448,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114135598892379372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464216424177248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d3f2a67e962d447931f60840e3c0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

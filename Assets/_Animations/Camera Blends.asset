@@ -17,3 +17,8 @@ MonoBehaviour:
     m_Blend:
       m_Style: 0
       m_Time: 2
+  - m_From: MainCam
+    m_To: CM vcam3
+    m_Blend:
+      m_Style: 0
+      m_Time: 2

@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private int timesInteractWarned = 0;
     private int timesCrouchedWarned = 0;
     private UnityEngine.UI.RawImage icon;
-    private bool grabbing,playingCutScene;
+    private bool grabbing, playingCutScene, dead = false;
     private PlayerGrab grabScript;
     private GameMaster gm;
     private Lighting lightScript;
@@ -357,7 +357,13 @@ public class Player : MonoBehaviour
     {
         if (hitTime > 0.0f && hitTime < blurPeriod)
         {
-            gm.GameOver();
+            if (!dead)
+            {
+                dead = true;
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+                this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                gm.GameOver();               
+            }            
         }
         else
             hitTime = Time.deltaTime;
