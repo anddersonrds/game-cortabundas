@@ -42,7 +42,9 @@ public class NpcAi : MonoBehaviour
     void Update()
     {      
         fov = GetComponent<FieldOfView>().ItsInFoV;
+
         CheckPossibleDestinyPlayer();
+
         if (stopped)
             return;
 
@@ -220,6 +222,12 @@ public class NpcAi : MonoBehaviour
     {      
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(player.transform.position, path);                   
-        Debug.Log(path.status);        
+        Debug.Log(path.status);     
+        if(path.status == NavMeshPathStatus.PathInvalid)
+        {
+            isChasing = false;
+            fov = false;
+            canHear = false;
+        }
     }  
 }

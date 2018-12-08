@@ -27,4 +27,12 @@ public class GlassTrigger : MonoBehaviour
             npc.GetComponent<NpcAi>().canHear = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && makeNoise)
+        {
+            makeNoise = false;            
+        }
+    }
 }
