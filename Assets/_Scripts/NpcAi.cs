@@ -41,8 +41,8 @@ public class NpcAi : MonoBehaviour
 
     void Update()
     {      
-        fov = GetComponent<FieldOfView>().ItsInFoV;       
-
+        fov = GetComponent<FieldOfView>().ItsInFoV;
+        CheckPossibleDestinyPlayer();
         if (stopped)
             return;
 
@@ -73,7 +73,7 @@ public class NpcAi : MonoBehaviour
     void GoToNextPoint()
     {
         agent.destination = wayPoints[currentWP].transform.position;
-
+        
         if (Vector3.Distance(transform.position, wayPoints[currentWP].transform.position) <= 0.5f)
         {
             if (!arrivedWaypoint)
@@ -215,4 +215,11 @@ public class NpcAi : MonoBehaviour
     {
         return agent.isStopped;
     }
+
+    public void CheckPossibleDestinyPlayer()
+    {      
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(player.transform.position, path);                   
+        Debug.Log(path.status);        
+    }  
 }
